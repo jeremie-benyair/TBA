@@ -1,6 +1,5 @@
 # Define the Player class.
 class Player():
-
     # Define the constructor.
     def __init__(self, name):
         self.name = name
@@ -11,7 +10,7 @@ class Player():
     def move(self, direction):
         # Get the next room from the exits dictionary of the current room.
         next_room = self.current_room.exits[direction]
-
+        self.historique.append(next_room)
         # If the next room is None, print an error message and return False.
         if next_room is None:
             print("\nAucune porte dans cette direction !\n")
