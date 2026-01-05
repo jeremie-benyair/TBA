@@ -27,6 +27,12 @@ class Game:
         go = Command("go", " <direction> : se déplacer dans une direction cardinale (N, E, S, O) ou <sortie>", Actions.go, 1)
         #modif au dessus
         self.commands["go"] = go
+        history = Command("history", " : afficher l'historique des lieux visités", Actions.history, 0)
+        self.commands["history"] = history
+        back = Command("back", " : revenir à la salle précédente", Actions.back, 0)
+        self.commands["back"] = back
+
+
         
         # Setup rooms
 
