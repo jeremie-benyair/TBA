@@ -36,6 +36,18 @@ class Player():
             return f"vous disposez des items suivants :\n"
             for item in self.inventory.keys():
                 print(item)
+    def back(self):
+        if len(self.historique) < 2:
+            print("\nImpossible de revenir en arrière.\n")
+            return False
+        self.historique.pop()
+        previous_room = self.historique[-1]
+        self.current_room = previous_room
+        print(self.current_room.get_long_description())
+        print(self.get_history())
+
+        return True
+
 
 
     
