@@ -31,15 +31,14 @@ class Player():
 
         return True
      def get_inventory(self):
-            
-         
-        if self.inventory=={}:
-            return "votre inventaire est vide."
-        else :
-            texte="vous disposez des items suivants : \n"
+         if self.inventory=={}:
+             return "votre inventaire est vide."
+         else :
+               texte="vous disposez des items suivants : \n"
             for item in self.inventory.keys():
                 texte+=f"    -{item}"
                 return texte
+             
     
     def back(self):
         if len(self.historique) < 2:
