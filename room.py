@@ -36,6 +36,7 @@ class Room:
         if self.inventory=={}:
             return "il n'y a rien ici."
         else :
-            return f"vous disposez des items suivants :\n"
+            texte="la pièce contient : \n"
             for item in self.inventory.keys():
-                print(item)
+                texte+=f"    -{item}"
+           
