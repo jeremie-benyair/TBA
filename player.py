@@ -5,6 +5,7 @@ class Player():
         self.name = name
         self.current_room = None
         self.historique = []
+        self.inventory=inventory
 
     def get_history(self):
         if not self.historique:
@@ -29,13 +30,16 @@ class Player():
         print(self.get_history())
 
         return True
-    def get_inventory(self):
-        if self.inventory=={}:
-            return "votre inventaire est vide."
-        else :
-            return f"vous disposez des items suivants :\n"
-            for item in self.inventory.keys():
-                print(item)
+     def get_inventory(self):
+            
+         
+            if self.inventory=={}:
+                return "votre inventaire est vide."
+            else :
+                texte="vous disposez des items suivants : \n"
+                for item in self.inventory.keys():
+                    texte+=f"    -{item}"
+    
     def back(self):
         if len(self.historique) < 2:
             print("\nImpossible de revenir en arrière.\n")
