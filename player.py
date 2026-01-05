@@ -39,6 +39,7 @@ class Player():
                 texte="vous disposez des items suivants : \n"
                 for item in self.inventory.keys():
                     texte+=f"    -{item}"
+                    return texte
     
     def back(self):
         if len(self.historique) < 2:
