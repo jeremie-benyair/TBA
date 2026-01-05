@@ -1,7 +1,7 @@
 # Define the Player class.
 class Player():
     # Define the constructor.
-    def __init__(self, name):
+    def __init__(self, name,inventory):
         self.name = name
         self.current_room = None
         self.historique = []
@@ -29,6 +29,13 @@ class Player():
         print(self.get_history())
 
         return True
+    def get_inventory(self):
+        if self.inventory=={}:
+            return "votre inventaire est vide."
+        else :
+            return f"vous disposez des items suivants :\n"
+            for item in self.inventory.keys():
+                print(item)
 
 
     
