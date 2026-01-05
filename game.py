@@ -32,6 +32,7 @@ class Game:
         back = Command("back", " : revenir à la salle précédente", Actions.back, 0)
         self.commands["back"] = back
         look=Command("look"," : afficher tous les objets présents dans la pièce s'il y en a",Actions.look,0)
+        self.commands["look"]=look
 
 
         
