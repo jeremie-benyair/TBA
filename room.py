@@ -3,7 +3,7 @@
 class Room:
 
     # Define the constructor. 
-    def __init__(self, name, description):
+    def __init__(self, name, description, inventory):
         self.name = name
         self.description = description
         self.exits = {}
@@ -29,3 +29,13 @@ class Room:
     # Return a long description of this room including exits.
     def get_long_description(self):
         return f"\nVous êtes {self.description}\n\n{self.get_exit_string()}\n"
+   
+    
+    def get_inventory(self):
+         def get_inventory(self):
+        if self.inventory=={}:
+            return "il n'y a rien ici."
+        else :
+            return f"vous disposez des items suivants :\n"
+            for item in self.inventory.keys():
+                print(item)
