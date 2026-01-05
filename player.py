@@ -37,7 +37,7 @@ class Player():
                texte="vous disposez des items suivants : \n"
             for item in self.inventory.keys():
                 texte+=f"    -{item}"
-                return texte
+            return texte
              
     
     def back(self):
