@@ -33,7 +33,7 @@ class Room:
    
     
     def get_inventory(self):
-         def get_inventory(self):
+         
         if self.inventory=={}:
             return "il n'y a rien ici."
         else :
