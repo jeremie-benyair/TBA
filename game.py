@@ -76,7 +76,7 @@ class Game:
 
         # Create exits for rooms
         
-        biblio={"sortie":Lindsey_street,"N": None,"E": None,"O":None,"S": None, "Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        biblio.exits={"sortie":Lindsey_street,"N": None,"E": None,"O":None,"S": None, "Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         bar.exits = {"sortie" :Sanders_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         cinema.exits = {"sortie" : Sanders_street,"N": None,  "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         eglise.exits = {"sortie" : Martin_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
