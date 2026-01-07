@@ -1,11 +1,11 @@
 # Define the Player class.
 class Player():
     # Define the constructor.
-    def __init__(self, name,inventory):
+    def __init__(self, name):
         self.name = name
         self.current_room = None
         self.historique = []
-        self.inventory=inventory
+        self.inventory={}
 
     def get_history(self):
         if not self.historique:
