@@ -184,6 +184,16 @@ class Actions:
             game.player.inventory[objet]=game.player.current_room.inventory[objet]
             print("L'item {game.player.current_room.inventory[objet].name} a été ajouté à votre inventaire\n")
             del game.player.current_room.inventory[objet]
+
+
+    def drop(game,list_of_words,numbrer_of_parameters):
+         l=len(list_of_words)
+        if l!=number_of_parameters + 1:
+            command_word=list_of_words[0]
+            print(MSG0.format(command_word=command_word))
+            return False
+        elif list_of_words[1] not in game.player.inventory:
+        
             
 
             
