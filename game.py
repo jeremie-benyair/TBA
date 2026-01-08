@@ -33,6 +33,10 @@ class Game:
         self.commands["back"] = back
         look=Command("look"," : afficher tous les items présents dans la pièce s'il y en a",Actions.look,0)
         self.commands["look"]=look
+        take=Command("take"," : prendre et ajouter un objet à son inventaire parmi tous les objets présents dans un lieu",Actions.take,1)
+        self.commands["take"]=take
+        drop=Command("drop"," : se débarasser d'un objet de son inventaire et le déposer dans le lieu où se trouve le joueur",Actions.drop,1)
+        self.commands["drop"]=drop
 
 
         
