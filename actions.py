@@ -214,6 +214,9 @@ class Actions:
                 print("Aucun objet n'est présent dans votre inventaire.\n")
         else:
             print("Vous avez actuellement dans votre inventaire : \n")
+            for item in game.player.inventory.values():
+                print (f"        -{item}   \n")
+        return True
             
             
 
