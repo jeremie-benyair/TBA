@@ -182,6 +182,9 @@ class Actions:
         else:
             objet=list_of_word[1]
             game.player.inventory[objet]=game.player.current_room.inventory[objet]
+            print("L'item {game.player.current_room.inventory[objet].name} a été ajouté à votre inventaire\n")
+            del game.player.current_room.inventory[objet]
+            
 
             
         
