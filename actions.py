@@ -177,6 +177,8 @@ class Actions:
             command_word=list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
+        elif list_of_words[1] not in 
+            
         
             
             
