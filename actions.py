@@ -177,7 +177,11 @@ class Actions:
             command_word=list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
-        elif list_of_words[1] not in 
+        elif list_of_words[1] not in game.player.current_room.inventory:
+            print("Cet objet n'est pas dans cet pièce\n")
+        else:
+            objet=list_of_word[1]
+            game.player.inventory[objet]=
             
         
             
