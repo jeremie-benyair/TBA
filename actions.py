@@ -192,7 +192,14 @@ class Actions:
             command_word=list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
-        elif list_of_words[1] not in game.player.inventory:
+        elif list_of_words[1] not in game.player.inventory.keys():
+            print("Cet objet n'est pas dans votre inventaire\n")
+        else:
+            objet=list_of_words[1]
+            
+            game.player.current_room.inventory[objet]=game.player.inventory[objet]
+            del game.player.inventory[objet]
+            print(f"L'item a été retiré de votre inventaire et déposé sur le sol.\n")
         
             
 
