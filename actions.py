@@ -186,7 +186,7 @@ class Actions:
             del game.player.current_room.inventory[objet]
 
 
-    def drop(game,list_of_words,numbrer_of_parameters):
+    def drop(game,list_of_words,number_of_parameters):
          l=len(list_of_words)
         if l!=number_of_parameters + 1:
             command_word=list_of_words[0]
