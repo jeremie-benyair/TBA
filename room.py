@@ -38,6 +38,6 @@ class Room:
             return "il n'y a rien ici."
         else :
             texte="la pièce contient : \n"
-            for item in self.inventory.keys():
+            for item in self.inventory.values():
                 texte+=f"    -{item}"
            
