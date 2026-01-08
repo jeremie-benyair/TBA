@@ -180,9 +180,9 @@ class Actions:
         elif list_of_words[1] not in game.player.current_room.inventory:
             print("Cet objet n'est pas dans cet pièce\n")
         else:
-            objet=list_of_word[1]
+            objet=list_of_words[1]
             game.player.inventory[objet]=game.player.current_room.inventory[objet]
-            print("L'item {game.player.current_room.inventory[objet].name} a été ajouté à votre inventaire\n")
+            print(f"L'item {game.player.current_room.inventory[objet].name} a été ajouté à votre inventaire\n")
             del game.player.current_room.inventory[objet]
         return True
 
