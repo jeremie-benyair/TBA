@@ -35,7 +35,7 @@ class Player():
             return "Votre inventaire est vide."
         else:
             texte = "Vous disposez des items suivants :\n"
-            for item in self.inventory.keys():
+            for item in self.inventory.values():
                 texte += f"  - {item}\n"
             return texte
              
