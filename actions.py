@@ -181,7 +181,8 @@ class Actions:
             print("Cet objet n'est pas dans cet pièce\n")
         else:
             objet=list_of_word[1]
-            game.player.inventory[objet]=
+            game.player.inventory[objet]=game.player.current_room.inventory[objet]
+
             
         
             
