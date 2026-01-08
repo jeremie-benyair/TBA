@@ -39,5 +39,5 @@ class Room:
         else :
             texte="la pièce contient : \n"
             for item in self.inventory.keys():
-                texte+=f"    -{item}"
+                texte+=f"    -{item.name} : {item.description} ({item.weight}\n"
            
