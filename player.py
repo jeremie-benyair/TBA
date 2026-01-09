@@ -6,6 +6,7 @@ class Player():
         self.current_room = None
         self.historique = []
         self.inventory={}
+        self.arme_equipé= None
 
     def get_history(self):
         if not self.historique:
