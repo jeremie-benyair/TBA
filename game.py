@@ -114,7 +114,7 @@ class Game:
                                     
         
                 """)
-        self.room.chambre_2.inventory["map"]=map
+        chambre_2.inventory["map"]=map
                  
                  
                  
