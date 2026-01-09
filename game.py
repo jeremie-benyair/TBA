@@ -75,12 +75,51 @@ class Game:
         chambre_2=Room(" chambre 2", " ")
         cave=Room("cave", " ")
         self.rooms.append(cave)
-        
-        
-        
-    
 
-        # Create exits for rooms
+        #setup items
+        map=Item("map","carte officielle du centre-ville de Silent Hill" ,0 ,
+                 """
+        
+
+         
+                
+                            _________________   |        |        |  _________________
+                            |               |   |                 |  |               |
+                            |   bar         |   |        |        |  |  cinéma       |   ____________________         
+                            |               |   |     Sanders     |  |               |  |                   |
+                            –––––––––––––––––   |     Streets     |  |               |  |    Pharmacie      |
+           ––––––––––––––––––––––––––––––––––   |        |        |  –––––––––––––––––--|                   |
+    _|_    |_________________________________|  |                 | |___________________|___________________|_______________                                           
+     |     –––––––––––––––––––––––––––––––––––––|        |        |–––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+––––––––––
+| église |
+|________|    --   --Martin Street-   __   __   __                 __   __   __   __   _ Lindsey Street  __   __   __   __   
+
+                                            
+           ––––––––––––––––––––––––––––––––––––––                 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+                     - - - - - - - - - - - - -   |       |        | ---------------------------------------------------------
+                     |                       |   |                | |_______________________________________________________|
+                     |                       |   |       |        | 
+                     |                       |   |     Neely      |  _______________________________
+                     |    parc               |   |       |        | |                               |
+                     |    pour enfants       |   |     Street     | |                               |                              
+                     |                       |   |       |        | |                               |
+                     |                       |   |                | |        hôtel                  |
+                     |                       |   |       |        | |                               |
+                     - - - - - - - - - - - - -   |                | |                               |
+                                                 |       |        | |                               |
+                                                 |                |  --------------------------------     
+                                
+                 
+                                    
+        
+                """)
+        self.room.chambre_2.inventory["map"]=map
+                 
+                 
+                 
+                 
+         # Create exits for rooms
         
         biblio.exits={"sortie":Lindsey_street,"N": None,"E": None,"O":None,"S": None, "Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         bar.exits = {"sortie" :Sanders_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
@@ -143,3 +182,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
