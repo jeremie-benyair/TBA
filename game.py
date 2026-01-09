@@ -37,6 +37,8 @@ class Game:
         self.commands["take"]=take
         drop=Command("drop"," : se débarasser d'un objet de son inventaire et le déposer dans le lieu où se trouve le joueur",Actions.drop,1)
         self.commands["drop"]=drop
+        check=Command("check"," : jeter un oeil à son inventaire",Actions.check,0)
+        self.commands["check"] = check 
 
 
         
