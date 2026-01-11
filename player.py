@@ -7,7 +7,7 @@ class Player():
         self.historique = []
         self.inventory={"beamer"}
         self.arme_equipé= None
-        self.max_weight=1.5
+        self.max_weight=2
 
     def get_history(self):
         if not self.historique:
