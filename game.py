@@ -115,6 +115,39 @@ class Game:
         
                 """)
         chambre_2.inventory["map"]=map
+        flyer=Item("flyer", "tract promotionnel de la ville de Silent Hill provenant de l'office de tourisme",0,
+                   """
+        ----------------------------------------------------------
+                        BIENVENUE À SILENT HILL !
+        ----------------------------------------------------------
+
+        Située entre lacs et collines, Silent Hill est une charmante 
+        petite ville américaine réputée pour son calme, sa nature et 
+        son accueil chaleureux.
+
+        À NE PAS MANQUER :
+        - Le cinéma de Senders Street, un bâtiment historique récemment 
+          restauré, apprécié pour son ambiance retro et ses projections format pellicule !
+          
+        - Le Grand Parc Municipal, vaste espace vert familial, idéal pour 
+          les promenades, pique-niques et jeux d’enfants. Très prisé durant 
+          l’été, il accueille régulièrement des animations pour petits et grands.
+
+        - L’église Saint Mary’s, construite en 1908, connue pour son 
+          architecture traditionnelle et sa jolie cloche visible depuis 
+          la place centrale.
+
+        Que vous soyez amateur de nature, d’histoire ou de balades paisibles, 
+        Silent Hill vous ouvre ses portes avec le sourire.
+
+        Office de Tourisme — 12 Jefferson Ave, SIlent Hill
+                    """)
+        hotel.inventory["flyer"]=flyer
+        
+    
+    
+        
+        
                  
                  
                  
@@ -134,7 +167,7 @@ class Game:
         Lindsey_street.exits={"N": None,"E":biblio,"O":pharma,"S":croisement,"Est": biblio, "Ouest": pharma,"Nord": None,"Sud": croisement,"est": biblio, "ouest": pharma,"nord": None,"sud": croisement}
         cave.exits={"sortie":hotel, "N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         hotel.exits={"sortie":Neely_street,"cave":cave, "étage": etage,"N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
-        etage.exits={"chambre 1": chambre_1, "chambre 2": chambre_2}
+        etage.exits={"chambre 1": chambre_1, "chambre 2": chambre_2,"hotel":hotel}
 
         # Setup player and starting room
 
