@@ -143,6 +143,8 @@ class Game:
         Office de Tourisme — 12 Jefferson Ave, SIlent Hill
                     """)
         hotel.inventory["flyer"]=flyer
+        flashlight=Item("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
+        chambre_2.inventory["flashlight"]=flashlight
         
     
     
