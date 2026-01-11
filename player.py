@@ -5,7 +5,7 @@ class Player():
         self.name = name
         self.current_room = None
         self.historique = []
-        self.inventory={"beamer"}
+        self.inventory={"beamer":beamer}
         self.arme_equipé= None
         self.max_weight=2
 
