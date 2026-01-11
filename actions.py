@@ -217,7 +217,7 @@ class Actions:
             for item in game.player.inventory.values():
                 print (f"        -{item}   \n")
                 print("""\n rappel des commandes : "read <item>" : lire le contenu d'un objet s'il est lisible.
-                                                   "carry <item>" : equiper un objet
+                                                   "use <item>" : equiper un objet.
                                                    "drop <item>" :  déposer un objet sur le sol.\n
                       """)
                                                 
