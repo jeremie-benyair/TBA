@@ -126,7 +126,7 @@ class Game:
         son accueil chaleureux.
 
         À NE PAS MANQUER :
-        - Le cinéma de Senders Street, un bâtiment historique récemment 
+        - Le cinéma de Sanders Street, un bâtiment historique récemment 
           restauré, apprécié pour son ambiance retro et ses projections format pellicule !
           
         - Le Grand Parc Municipal, vaste espace vert familial, idéal pour 
