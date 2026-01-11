@@ -114,7 +114,7 @@ class Game:
                  
                                     
         
-                """)
+                """,type="text")
         chambre_2.inventory["map"]=map
         flyer=Item("flyer", "tract promotionnel de la ville de Silent Hill provenant de l'office de tourisme",0,
                    """
