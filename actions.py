@@ -160,12 +160,12 @@ class Actions:
             command_word=list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
-        if game.player.current_room.items==[]:
+        if game.player.current_room.inventory=={}:
             print("\n Aucun objet n'est disponible ici.\n")
         else:
             print("\n voici les objets disponibles dans cette pièce : \n")
             
-            for item in game.player.current_room.items:
+            for item in game.player.current_room.inventory:
                 print(f"      -{item.name} \n")
         return True 
 
