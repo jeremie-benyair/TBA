@@ -40,7 +40,8 @@ class Game:
         self.commands["drop"]=drop
         check=Command("check"," : jeter un oeil à son inventaire",Actions.check,0)
         self.commands["check"] = check 
-        use=Command["use","utiliser l'objet équipé.",Actions.use,0)
+        use=Command("use","utiliser l'objet équipé.",Actions.use,0)
+        self.commands["use"]=use
 
 
         
