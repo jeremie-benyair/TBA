@@ -165,7 +165,7 @@ class Actions:
         else:
             print("\n voici les objets disponibles dans cette pièce : \n")
             
-            for item in game.player.current_room.inventory:
+            for item in game.player.current_room.inventory.values():
                 print(f"      -{item.name} \n")
         return True 
 
