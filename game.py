@@ -42,6 +42,7 @@ class Game:
         self.commands["check"] = check 
         use=Command("use","utiliser l'objet équipé.",Actions.use,0)
         self.commands["use"]=use
+        
 
 
         
@@ -73,9 +74,11 @@ class Game:
         self.rooms.append(eglise)
         etage=Room("1er étage", " ") 
         self.rooms.append(etage)
-        chambre_1=Room("chambre 1", " ")
+        chambre_1=Room("chambre_1", " ")
         self.rooms.append(chambre_1)
-        chambre_2=Room(" chambre 2", " ")
+        chambre_2=Room(" chambre_2", " ")
+        self.rooms.append("chambre_2"," ")
+        
         cave=Room("cave", " ")
         self.rooms.append(cave)
 
@@ -172,7 +175,7 @@ class Game:
         Lindsey_street.exits={"N": None,"E":biblio,"O":pharma,"S":croisement,"Est": biblio, "Ouest": pharma,"Nord": None,"Sud": croisement,"est": biblio, "ouest": pharma,"nord": None,"sud": croisement}
         cave.exits={"sortie":hotel, "N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         hotel.exits={"sortie":Neely_street,"cave":cave, "étage": etage,"N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
-        etage.exits={"chambre 1": chambre_1, "chambre 2": chambre_2,"hotel":hotel}
+        etage.exits={"chambre_1": chambre_1, "chambre_2": chambre_2,"hotel":hotel}
         chambre_1.exits={"étage":etage}
         chambre_2.exits={"étage":etage}
 
