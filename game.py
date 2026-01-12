@@ -173,6 +173,8 @@ class Game:
         cave.exits={"sortie":hotel, "N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         hotel.exits={"sortie":Neely_street,"cave":cave, "étage": etage,"N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         etage.exits={"chambre 1": chambre_1, "chambre 2": chambre_2,"hotel":hotel}
+        chambre_1.exits={"étage":etage}
+        chambre_2.exits={"étage":etage}
 
         # Setup player and starting room
 
