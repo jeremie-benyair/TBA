@@ -6,5 +6,5 @@ class Item():
         self.text=text 
         self.damage=damage
         self.type=type
-def __str__(self):
-    return f"{self.name} : {self.description} ({self.weight}) kg)\n"
+    def __str__(self):
+        return f"{self.name} : {self.description} ({self.weight}) kg)\n"
