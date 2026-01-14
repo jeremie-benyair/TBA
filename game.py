@@ -7,6 +7,7 @@ from player import Player
 from command import Command
 from actions import Actions
 from item import Item
+from item import Flashlight
 
 class Game:
 
@@ -40,7 +41,9 @@ class Game:
         self.commands["drop"]=drop
         check=Command("check"," : jeter un oeil à son inventaire",Actions.check,0)
         self.commands["check"] = check 
-        use=Command("use","utiliser l'objet équipé.",Actions.use,0)
+        carry=Command("carry"," : équiper un objet présent dans votre inventaire.",Actions.carry,1 )
+        self.commands["carry"]=carry
+        use=Command("use"," : utiliser l'objet équipé.",Actions.use,0)
         self.commands["use"]=use
         
 
