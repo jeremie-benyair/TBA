@@ -26,6 +26,13 @@ class Flashlight(Item):
                 
         else:
             print("lampe éteinte.\n")
+class Beamer(Item):
+    def __init__(self,name,description,weight):
+        super().__init__(name,description,weight)
+        which_room=input("choisissez un lieu parmi ceux déjà visité.\n")
+        if which_room not in 
+        
+    
             
             
         
