@@ -6,7 +6,7 @@ class Player():
         self.current_room = None
         self.historique = []
         self.inventory={"beamer":beamer}
-        self.arme_equipé= None
+        self.equipped_item= None
         self.max_weight=2
 
     def get_history(self):
