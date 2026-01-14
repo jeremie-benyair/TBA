@@ -12,4 +12,10 @@ class Flashlight(Item):
     def ___init___(self,name,description,weight):
         super().___init___(name,description,weight)
     def state(self,game):
+        self.on= not self.on
+        if self.on:
+            print("lampe allumé. \n")
+        else:
+            print("lampe éteinte.\n")
+            
         
