@@ -8,6 +8,8 @@ class Item():
         self.type=type
     def __str__(self):
         return f"{self.name} : {self.description} ({self.weight}) kg)\n"
+    def use_item(self,game):
+        print(f"vous ne pouvez pas utiliser l'objet {self.name} \n")
 class Flashlight(Item):
     def __init__(self,name,description,weight):
         super().__init__(name,description,weight)
@@ -19,7 +21,7 @@ class Flashlight(Item):
             if game.player.current_room.darked:
                 game.player.current_room.darked=False
                 print(f"{game.player.current_room} est désormais éclairé !")
-                print(f"{game.player.current_room.get_long_description}\n")
+               
                 print(game.player.current_room.get_long_description)
                 
         else:
