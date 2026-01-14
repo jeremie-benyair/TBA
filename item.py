@@ -14,7 +14,7 @@ class Flashlight(Item):
     def __init__(self,name,description,weight):
         super().__init__(name,description,weight)
         self.on=False
-    def state(self,game):
+    def use_item(self,game):
         self.on= not self.on
         if self.on:
             print("lampe allumé. \n")
