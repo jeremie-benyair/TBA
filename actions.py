@@ -238,7 +238,8 @@ class Actions:
             else:
                 item=game.player.inventory[item_name]
                 game.player.equipped_item=item
-                print(f"{item_name.name} est désormais équipé.\n")
+                print(f"{item.name} est désormais équipé.\n")
+                return True
                 
             
             
@@ -255,6 +256,13 @@ class Actions:
             command_word = list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
+
+        else:
+            if equipped_item=None:
+                print("Aucun objet n'est actuellement équipé.Veuillez d'abord équiper l'arme de votre choix avec la commande carry <item> \n")
+            else:
+                
+            
 
         objet = list_of_words[1]
         if objet not in game.player.inventory:
