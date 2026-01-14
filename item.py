@@ -9,14 +9,18 @@ class Item():
     def __str__(self):
         return f"{self.name} : {self.description} ({self.weight}) kg)\n"
 class Flashlight(Item):
-    def __init__(self,name,description,weight,on):
+    def __init__(self,name,description,weight):
         super().__init__(name,description,weight)
         self.on=False
     def state(self,game):
         self.on= not self.on
         if self.on:
             print("lampe allumé. \n")
+            if game.player.current_room.darked:
+                game.player.current_room.darked=False
+                print(f"{game.player.current_room} est désormais éclairé !\n")
         else:
             print("lampe éteinte.\n")
+            
             
         
