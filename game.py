@@ -80,7 +80,7 @@ class Game:
         chambre_1=Room("chambre_1", " ",darked=True)
         self.rooms.append(chambre_1)
         chambre_2=Room(" chambre_2", " ")
-        self.rooms.append("chambre_2"," ")
+        self.rooms.append(chambre_2)
         
         cave=Room("cave", " ")
         self.rooms.append(cave)
