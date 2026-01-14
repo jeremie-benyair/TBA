@@ -215,8 +215,8 @@ class Actions:
         else:
             print("Vous avez actuellement dans votre inventaire : \n")
             for item in game.player.inventory.values():
-                print (f"        -{item}   \n")
-                print("""\n rappel des commandes : "read <item>" : lire le contenu d'un objet s'il est lisible.
+                print (f"        -{item}   ")
+             print("""\n rappel des commandes : "read <item>" : lire le contenu d'un objet s'il est lisible.
                                                    "use <item>" : equiper un objet.
                                                    "drop <item>" :  déposer un objet sur le sol.\n
                       """)
@@ -229,7 +229,7 @@ class Actions:
         l = len(list_of_words)
         if l != number_of_parameters + 1:
             command_word = list_of_words[0]
-            print(MSG1.format(command_word=command_word))
+            print(MSG0.format(command_word=command_word))
             return False
         else:
             item_name=list_of_words[1]
@@ -257,17 +257,26 @@ class Actions:
             print(MSG0.format(command_word=command_word))
             return False
 
-        else:
-            if equipped_item=None:
-                print("Aucun objet n'est actuellement équipé.Veuillez d'abord équiper l'arme de votre choix avec la commande carry <item> \n")
-            else:
+        
+        if game.player.equipped_item==None:
+             print("Aucun objet n'est actuellement équipé.Veuillez d'abord équiper l'arme de votre choix avec la commande carry <item> \n")
+             return False
+         
+        
+        item = game.player.equipped_item
+                
+                
+        item.use_item(game)
+
+        
+                
+
+            
                 
             
 
-        objet = list_of_words[1]
-        if objet not in game.player.inventory:
-            print("Vous ne possédez pas cet objet.")
-            return False
+        o
+        
         
         
             
