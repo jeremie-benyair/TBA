@@ -18,7 +18,9 @@ class Flashlight(Item):
             print("lampe allumé. \n")
             if game.player.current_room.darked:
                 game.player.current_room.darked=False
-                print(f"{game.player.current_room} est désormais éclairé !\n")
+                print(f"{game.player.current_room} est désormais éclairé !")
+                print(f"{game.player.current_room.get_description}\n")
+                
         else:
             print("lampe éteinte.\n")
             
