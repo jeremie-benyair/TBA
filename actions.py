@@ -236,6 +236,10 @@ class Actions:
             if item_name not in game.player.inventory:
                 print("cet objet n'est pas dans votre inventaire.\n")
             else:
+                item=game.player.inventory[item_name]
+                game.player.equipped_item=item
+                print(f"{item_name.name} est désormais équipé.\n")
+                
             
             
         
@@ -245,7 +249,7 @@ class Actions:
         
     
 
-      def use(game, list_of_words, number_of_parameters):
+    def use(game, list_of_words, number_of_parameters):
         l = len(list_of_words)
         if l != number_of_parameters + 1:
             command_word = list_of_words[0]
