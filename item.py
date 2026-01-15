@@ -31,6 +31,9 @@ class Beamer(Item):
         super().__init__(name,description,weight)
         which_room=input("choisissez un lieu parmi ceux déjà visité.\n")
         if which_room not in game.player.historique:
+            print("vous n'avez pas encore visité ce lieu, vous ne pouvez donc pas vous y déplacer.\n")
+        current_room=which_room
+        print(game.player.current_room.get_long_description)
         
     
             
