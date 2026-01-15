@@ -49,6 +49,16 @@ class Weapon(Item):
         else:
             
             print(f" tu attaques le {room.enemy.name} avec {self.name} et infliges {self.damage} points de dégâts !")
+
+class Bible(Item):
+     def __init__(self,name,description,weight):
+        super().__init__(name,description,weight)
+        self.pages=["page vide" for page in range(0,1908),"2807","page vide" for page in range(0,91)]
+     def use_item(self,game):
+         which_page=input("à quelle page voulez-vous aller ?")
+         number_of_page=int(which_page)
+    
+     
             
 
     
