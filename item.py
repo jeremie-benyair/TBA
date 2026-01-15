@@ -29,6 +29,7 @@ class Flashlight(Item):
 class Beamer(Item):
     def __init__(self,name,description,weight):
         super().__init__(name,description,weight)
+    def use_item(self,game):  
         which_room=input("choisissez un lieu parmi ceux déjà visité.\n")
         if which_room not in game.player.historique:
             print("vous n'avez pas encore visité ce lieu, vous ne pouvez donc pas vous y déplacer.\n")
