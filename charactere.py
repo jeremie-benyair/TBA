@@ -1,4 +1,4 @@
-class charactere:
+class Charactere:
     def __init__(self, name, description, current_room, msgs):
         self.name = name
         self.description = description
