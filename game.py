@@ -84,6 +84,14 @@ class Game:
         
         cave=Room("cave", " ")
         self.rooms.append(cave)
+        #setup pnj
+        pnj_1 = Charactere( "pnj_1","description",Neely_street,["phrase 1", "phrase 2"])
+        Neely_street.characters.append(pnj_1)
+        pnj_2 = Charactere( "pnj_1","description",cinema,["phrase 1", "phrase 2"])
+        cinema.characters.append(pnj_2)
+        pnj_3 = Charactere( "pnj_1","description",hotel,["phrase 1", "phrase 2"])
+        hotel.characters.append(pnj_1)
+
 
         #setup items
         map=Item("map","carte officielle du centre-ville de Silent Hill" ,0 ,
@@ -201,6 +209,11 @@ class Game:
             # Get the command from the player
             self.process_command(input("> "))
         return None
+        while not self.finished:
+            for room in self.rooms:
+                for pnj in room.characters:
+                    pnj.move()
+            self.process_command(input("> "))
 
    
     def process_command(self, command_string) -> None:
