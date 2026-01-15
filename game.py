@@ -154,7 +154,11 @@ class Game:
         hotel.inventory["flyer"]=flyer
         flashlight=Flashlight("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
         chambre_2.inventory["flashlight"]=flashlight
+        batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=10)
+        chambre_1.inventory["batte"] = batte
 
+
+        
   
     
     
