@@ -90,7 +90,7 @@ class Game:
         pnj_2 = Charactere( "pnj_1","description",cinema,["phrase 1", "phrase 2"])
         cinema.characters.append(pnj_2)
         pnj_3 = Charactere( "pnj_1","description",hotel,["phrase 1", "phrase 2"])
-        hotel.characters.append(pnj_1)
+        hotel.characters.append(pnj_3)
 
 
         #setup items
