@@ -206,14 +206,14 @@ class Game:
         self.print_welcome()
         # Loop until the game is finished
         while not self.finished:
-            # Get the command from the player
-            self.process_command(input("> "))
-        return None
-        while not self.finished:
+
+    # Déplacement des PNJ
             for room in self.rooms:
                 for pnj in room.characters:
                     pnj.move()
+            # Commande du joueur 
             self.process_command(input("> "))
+
 
    
     def process_command(self, command_string) -> None:
