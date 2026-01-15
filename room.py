@@ -35,6 +35,11 @@ class Room:
         if self.darked:
             return "\nIl fait trop sombre ici... Trouvez un moyen d'éclairer la pièce pour pouvoir la découvrir.\n"
         return f"\nVous êtes {self.description}\n\n{self.get_exit_string()}\n"
+        if self.characters:
+            description += "\nPersonnages présents :\n"
+            for c in self.characters:
+                description += f" - {c.name} : {c.description}\n"
+
 
        
     
