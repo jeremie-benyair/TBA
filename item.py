@@ -1,10 +1,10 @@
 class Item():
-    def __init__(self,name,description,weight,text=None,damage=None,type=None):
+    def __init__(self,name,description,weight,text=None,type=None):
         self.name=name
         self.description=description
         self.weight=weight
         self.text=text 
-        self.damage=damage
+        
         self.type=type
     def __str__(self):
         return f"{self.name} : {self.description} ({self.weight}) kg)\n"
@@ -35,7 +35,22 @@ class Beamer(Item):
             print("vous n'avez pas encore visité ce lieu, vous ne pouvez donc pas vous y déplacer.\n")
         current_room=which_room
         print(game.player.current_room.get_long_description)
-        
+
+class Weapon(Item):
+    def __init__(self, name, description, weight, damage):
+        super().__init__(name, description, weight)
+        self.damage = damage
+        self.type = "weapon"
+
+    def use_item(self, game):
+        room = game.player.current_room
+        if room.enemy is None:
+            print(" il n'y a rien à attaquer ici.")
+        else:
+            
+            print(f" tu attaques le {room.enemy.name} avec {self.name} et infliges {self.damage} points de dégâts !")
+            
+
     
             
             
