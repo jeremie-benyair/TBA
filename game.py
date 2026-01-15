@@ -8,7 +8,7 @@ from command import Command
 from actions import Actions
 from item import Item
 from item import Flashlight
-from Charactere import Charactere
+from Charactere import charactere
 class Game:
 
     # Constructor
