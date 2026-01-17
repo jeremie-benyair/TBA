@@ -53,4 +53,19 @@ class Room:
             texte="la pièce contient : \n"
             for item in self.inventory.values():
                 texte+=f"    -{item}"
+
+
+    def class Cinema(Room): 
+         def on_locked_attempt(self, player): 
+             print("il semblerait que la porte du cinéma est verrouillée.") 
+             print("Trouvez la clé,équipez-la puis utilisez-la.")
+    class Cave(Room): 
+         def on_locked_attempt(self, player): 
+             print("La porte de la cave est verrouillée par un digicode.") 
+             code = input("Entrez le code : ") 
+             if code == "2807": 
+                 print("La porte s'ouvre !") 
+                 self.locked = False 
+             else: print("Code incorrect.")
+  
            
