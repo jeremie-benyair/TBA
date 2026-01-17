@@ -54,7 +54,7 @@ class Game:
 
         Neely_street= Room("Neely Street"," au niveau de Neely Street ")
         self.rooms.append(Neely_street)
-        cinema = Room("Cinéma abandonné", " ",darked=True)
+        cinema = Room("Cinéma abandonné", " ",darked=True,blocked=True)
         self.rooms.append(cinema)
         hotel = Room("Hotel abandonné", " ")
         self.rooms.append(hotel)
@@ -83,7 +83,7 @@ class Game:
         chambre_2=Room(" chambre_2", " ")
         self.rooms.append(chambre_2)
         
-        cave=Room("cave", " ")
+        cave=Room("cave", " ",blocked=True)
         self.rooms.append(cave)
         #setup pnj
         pnj_1 = Charactere( "pnj_1","description",Neely_street,["phrase 1", "phrase 2"])
