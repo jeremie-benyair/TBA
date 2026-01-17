@@ -8,6 +8,7 @@ from command import Command
 from actions import Actions
 from item import Item
 from item import Flashlight
+from item import Bible
 from charactere import Charactere
 class Game:
 
@@ -164,6 +165,8 @@ class Game:
         chambre_2.inventory["flashlight"]=flashlight
         batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=10)
         chambre_1.inventory["batte"] = batte
+        bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
+        église.inventory["bible"]=bible
 
 
         
