@@ -11,6 +11,7 @@ class Room:
         self.darked=darked
         self.characters=[]
         self.blocked
+        self.blocked
     
     # Define the get_exit method.
     def get_exit(self, direction):
