@@ -55,13 +55,11 @@ class Actions:
 
         # Get the direction from the list of words.
         direction = list_of_words[1]
-        if game.player.current_room.exits[direction].locked==True:
-            print(" il semblerait que la porte fermée.\n")
-            if game.player.current_room==cinéma:
-                print("veuillez d'abord trouvez la clé qui mène au cinéma puis l'équiper en main et l'utiliser avec les commandes correspondantes.\n")
-            elif game.player.current_room==cave:
-                print("veuillez taper le code à 4 chiffres correct pour ouvrir la porte\n")
-                digicode=input(" code  :    \n")
+        next_room=game.player.current_room.exits[direction]
+        if next_room.locked: 
+            next_room.on_locked_attempt(player) r
+        return False
+        
             
         # Move the player in the direction specified by the parameter.
         player.move(direction)
