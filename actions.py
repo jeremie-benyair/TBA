@@ -55,6 +55,8 @@ class Actions:
 
         # Get the direction from the list of words.
         direction = list_of_words[1]
+        if get_exits[direction]
+            print
         # Move the player in the direction specified by the parameter.
         player.move(direction)
         return True
