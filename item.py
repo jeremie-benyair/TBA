@@ -51,13 +51,26 @@ class Weapon(Item):
             print(f" tu attaques le {room.enemy.name} avec {self.name} et infliges {self.damage} points de dégâts !")
 
 class Bible(Item):
-     def __init__(self,name,description,weight):
-        super().__init__(name,description,weight)
-        self.pages=["page vide" for page in range(0,1908),"2807","page vide" for page in range(0,91)]
-     def use_item(self,game):
-         which_page=input("à quelle page voulez-vous aller ?")
-         number_of_page=int(which_page)
-    
+    def __init__(self, name, description, weight):
+        super().__init__(name, description, weight)
+        pages_avant = ["page vide" for i in range(1908)]
+        
+        page_speciale = ["2807"]
+
+        pages_apres = ["page vide" for i in range(91)]
+
+        self.pages = pages_avant + page_speciale + pages_apres
+
+    def use_item(self, game):
+        which_page = input("À quelle page voulez-vous aller ? ")
+        number_of_page = int(which_page)
+
+        # Exemple d'utilisation :
+        if 0 <= number_of_page < len(self.pages):
+            print(f"Contenu de la page {number_of_page} : {self.pages[number_of_page]}")
+        else:
+            print("Cette page n'existe pas.")
+     
      
             
 
