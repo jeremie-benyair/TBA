@@ -10,6 +10,8 @@ from item import Item
 from item import Flashlight
 from item import Bible
 from charactere import Charactere
+
+DEBUG = True
 class Game:
 
     # Constructor
@@ -47,6 +49,8 @@ class Game:
         use=Command("use"," : utiliser l'objet équipé.",Actions.use,0)
         self.commands["use"]=use
         
+        talk = Command("talk", " <someone> : parler à un personnage non joueur", Actions.talk, 1)
+        self.commands["talk"] = talk
 
 
         
