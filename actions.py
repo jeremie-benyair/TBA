@@ -160,20 +160,33 @@ class Actions:
             return False
 
         return game.player.back()
-    def look(game,list_of_words,number_of_parameters):
-        l=len(list_of_words)
-        if l!=number_of_parameters + 1:
-            command_word=list_of_words[0]
+    def look(game, list_of_words, number_of_parameters):
+        l = len(list_of_words)
+        if l != number_of_parameters + 1:
+            command_word = list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
-        if game.player.current_room.inventory=={}:
-            print("\n Aucun objet n'est disponible ici.\n")
+
+        room = game.player.current_room
+
+        # Objets
+        if not room.inventory:
+            print("\nAucun objet n'est disponible ici.\n")
         else:
-            print("\n voici les objets disponibles dans cette pièce : \n")
-            
-            for item in game.player.current_room.inventory.values():
-                print(f"      -{item.name} \n")
-        return True 
+            print("\nVoici les objets disponibles dans cette pièce :\n")
+            for item in room.inventory.values():
+                print(f"      - {item.name}")
+
+        # PNJ
+        if room.characters:
+            print("\nPersonnages présents :\n")
+            for c in room.characters:
+                print(f"      - {c.name} : {c.description}")
+        else:
+            print("\nAucun personnage ici.\n")
+    
+        return True
+
 
 
 
@@ -246,16 +259,30 @@ class Actions:
                 game.player.equipped_item=item
                 print(f"{item.name} est désormais équipé.\n")
                 return True
-                
+    def talk(game, list_of_words, number_of_parameters):
+        l = len(list_of_words)
+        if l != number_of_parameters + 1:
+            command_word = list_of_words[0]
+            print(MSG1.format(command_word=command_word))
+            return False
+
+        target_name = list_of_words[1]
+        room = game.player.current_room
+
+        if not room.characters:
+            print("\nIl n'y a personne à qui parler ici.\n")
+            return False
+
+        for pnj in room.characters:
+            if pnj.name.lower() == target_name.lower():
+                print(f"\n{pnj.name} dit : {pnj.get_msg()}\n")
+                return True
+
+        print(f"\nIl n’y a personne nommé '{target_name}' ici.\n")
+        return False
+
             
             
-        
-
-
-    
-        
-    
-
     def use(game, list_of_words, number_of_parameters):
         l = len(list_of_words)
         if l != number_of_parameters + 1:
@@ -273,6 +300,7 @@ class Actions:
                 
                 
         item.use_item(game)
+        
 
         
                 
