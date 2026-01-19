@@ -94,8 +94,9 @@ class Game:
         cave=Cave("cave", " ",locked=True)
         self.rooms.append(cave)
         #setup pnj
-        pnj_1 = Charactere( "pnj_1","description",Neely_street,["phrase 1", "phrase 2"])
-        Neely_street.characters.append(pnj_1)
+        quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=["Trouver le doudou", "Donner le doudou à la fillette"], reward="Clé du cinéma" )
+        fillette = Charactere( "fillette","description",parc,["phrase 1", "phrase 2"])
+        parc.characters.append(pnj_1)
         pnj_2 = Charactere( "pnj_2","description",cinema,["phrase 1", "phrase 2"])
         cinema.characters.append(pnj_2)
         pnj_3 = Charactere( "pnj_3","description",hotel,["phrase 1", "phrase 2"])
