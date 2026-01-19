@@ -269,6 +269,25 @@ class Actions:
             command_word = list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
+        room = game.player.current_room
+
+        # Objets
+        if not room.inventory:
+            print("\nAucun objet n'est disponible ici.\n")
+        else:
+            print("\nVoici les objets disponibles dans cette pièce :\n")
+            for item in room.inventory.values():
+                print(f"      - {item.name}")
+
+        # PNJ
+        if room.characters:
+            print("\nPersonnages présents :\n")
+            for c in room.characters:
+                print(f"      - {c.name} : {c.description}")
+        else:
+            print("\nAucun personnage ici.\n")
+    
+        return True
 
         room = game.player.current_room
 
