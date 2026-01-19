@@ -65,7 +65,7 @@ class Bible(Item):
         which_page = input("À quelle page voulez-vous aller ? ")
         number_of_page = int(which_page)
 
-        # Exemple d'utilisation :
+        
         if 0 <= number_of_page < len(self.pages):
             print(f"Contenu de la page {number_of_page} : {self.pages[number_of_page]}")
         else:
