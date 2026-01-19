@@ -57,7 +57,7 @@ class Actions:
         direction = list_of_words[1]
         next_room=game.player.current_room.exits[direction]
         if next_room.locked: 
-            next_room.on_locked_attempt(player) r
+            next_room.on_locked_attempt(player) 
         return False
         
             
