@@ -58,7 +58,7 @@ class Room:
      class Cinema(Room): 
          def on_locked_attempt(self, player): 
              print("il semblerait que la porte du cinéma soit verrouillée.") 
-             print("Trouvez la clé,équipez-la puis utilisez-la.")
+             print("Trouvez la clé, équipez-la puis utilisez-la.")
      class Cave(Room): 
          def on_locked_attempt(self, player): 
              print("La porte de la cave est verrouillée par un digicode.") 
@@ -67,7 +67,7 @@ class Room:
                  print("La porte s'ouvre !") 
                  self.locked = False 
                  game.player.current_room=cave
-                 print(self.get_long_description
+                 print(self.get_long_description)
              else: print("Code incorrect.")
   
            
