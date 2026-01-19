@@ -228,6 +228,67 @@ class Actions:
             print("\nAucun personnage ici.\n")
     
         return True
+    def quest(game, list_of_words, number_of_parameters):
+        """
+        Show details about a specific quest.
+        
+        Args:
+            game (Game): The game object.
+            list_of_words (list): The list of words in the command.
+            number_of_parameters (int): The number of parameters expected by the command.
+
+        Returns:
+            bool: True if the command was executed successfully, False otherwise.
+
+        Examples:
+
+        >>> from game import Game
+        >>> game = Game()
+        >>> game.setup("TestPlayer")
+        >>> Actions.quest(game, ["quest", "Grand", "Voyageur"], 1)
+        <BLANKLINE>
+        📋 Quête: Grand Voyageur
+        📖 Déplacez-vous 10 fois entre les lieux.
+        <BLANKLINE>
+        Objectifs:
+          ⬜ Se déplacer 10 fois (Progression: 0/10)
+        <BLANKLINE>
+        🎁 Récompense: Bottes de voyageur
+        <BLANKLINE>
+                True
+        >>> Actions.quest(game, ["quest"], 1)
+        <BLANKLINE>
+        La commande 'quest' prend 1 seul paramètre.
+        <BLANKLINE>
+        False
+
+        """
+        # If the number of parameters is incorrect, print an error message and return False.
+        n = len(list_of_words)
+        if n < number_of_parameters + 1:
+            command_word = list_of_words[0]
+            print(MSG0.format(command_word=command_word))
+            return False
+
+        room = game.player.current_room
+
+        # Objets
+        if not room.inventory:
+            print("\nAucun objet n'est disponible ici.\n")
+        else:
+            print("\nVoici les objets disponibles dans cette pièce :\n")
+            for item in room.inventory.values():
+                print(f"      - {item.name}")
+
+        # PNJ
+        if room.characters:
+            print("\nPersonnages présents :\n")
+            for c in room.characters:
+                print(f"      - {c.name} : {c.description}")
+        else:
+            print("\nAucun personnage ici.\n")
+    
+        return True
 
 
 
