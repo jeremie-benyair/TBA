@@ -3,7 +3,7 @@
 class Room:
 
     # Define the constructor. 
-    def __init__(self, name, description,darked=False, blocked=False):
+    def __init__(self, name, description,darked=False, locked=False):
         self.name = name
         self.description = description
         self.exits = {}
