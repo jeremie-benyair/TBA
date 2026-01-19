@@ -8,6 +8,8 @@ from command import Command
 from actions import Actions
 from item import Item
 from item import Flashlight
+from item import Weapon
+from item import Beamer
 from item import Bible
 from charactere import Charactere
 
