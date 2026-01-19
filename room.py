@@ -65,12 +65,12 @@ class Cave(Room):
              
              
              while True:
-                 code = input("Entrez le code : ") 
-                 if code==("quit"):
+                code = input("Entrez le code : ") 
+                if code==("quit"):
                      print("Vous abandonnez pour le moment.")
                      return 
                 
-                 if code==("2807"):
+                if code==("2807"):
                      print("La porte s'ouvre ! Vous pouvez maintenant rentrer dans ce lieu.") 
                      self.locked = False 
                      return 
