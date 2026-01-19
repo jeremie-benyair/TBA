@@ -1,3 +1,4 @@
+from quest import QuestManager
 # Define the Player class.
 class Player():
     # Define the constructor.
@@ -8,7 +9,7 @@ class Player():
         self.inventory={}
         self.equipped_item= None
         self.max_weight=2
-
+        self.quest_manager = QuestManager(self)
     def get_history(self):
         if not self.historique:
             return "Aucun lieu visité pour le moment."
