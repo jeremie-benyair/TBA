@@ -300,8 +300,6 @@ class Actions:
                 
         item.use_item(game)
 
-    class Actions:
-
     def read(game, list_of_words, number_of_parameters):
         
         player = game.player
