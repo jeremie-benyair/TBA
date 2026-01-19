@@ -55,17 +55,17 @@ class Room:
                 texte+=f"    -{item}"
     
     def on_locked_attempt(self, player): 
-        print("Cette porte est verrouillée." 
+        print("Cette porte est verrouillée... ")
 
 
 class Cinema(Room): 
          def on_locked_attempt(self, player): 
-             print("il semblerait que la porte du cinéma soit verrouillée.") 
-             print("Trouvez la clé, équipez-la puis utilisez-la.")
+             #print("il semblerait que la porte du cinéma soit verrouillée.")#
+             print("par une serrure.Trouvez la clé, équipez-la puis utilisez-la.")
 class Cave(Room): 
          def on_locked_attempt(self, player): 
-             print("La porte de la cave est verrouillée par un digicode : tapez le code directement si vous pensez avoir la réponse ou tapez <quit> si vous ne voulez plus interragir avec le digicode \n ") 
-             
+             #print("La porte de la cave est verrouillée par un digicode : tapez le code directement si vous pensez avoir la réponse ou tapez <quit> si vous ne voulez plus interragir avec le digicode \n ") 
+             print("par un digicode : tapez le code directement si vous pensez avoir la réponse ou tapez <quit> si vous ne voulez plus interragir avec le digicode \n ")
              
              while True:
                 code = input("Entrez le code : ") 
