@@ -10,8 +10,8 @@ class Room:
         self.inventory={}
         self.darked=darked
         self.characters=[]
-        self.blocked
-        self.blocked
+        self.blocked=blocked
+        
     
     # Define the get_exit method.
     def get_exit(self, direction):
@@ -66,6 +66,8 @@ class Room:
              if code == "2807": 
                  print("La porte s'ouvre !") 
                  self.locked = False 
+                 game.player.current_room=cave
+                 print(self.get_long_description
              else: print("Code incorrect.")
   
            
