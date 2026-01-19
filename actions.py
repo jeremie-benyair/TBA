@@ -308,9 +308,18 @@ class Actions:
             print("\nAucun personnage ici.\n")
     
         return True
+    
+        # Get the quest title from the list of words (join all words after command)
+        quest_title = " ".join(list_of_words[1:])
 
+        # Prepare current counter values to show progress
+        current_counts = {
+            "Se déplacer": game.player.move_count
+        }
 
-
+        # Show quest details
+        game.player.quest_manager.show_quest_details(quest_title, current_counts)
+        return True
 
     def take(game,list_of_words,number_of_parameters):
         l=len(list_of_words)
