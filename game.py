@@ -12,6 +12,7 @@ from item import Weapon
 from item import Beamer
 from item import Bible
 from charactere import Charactere
+from quest import Quest
 
 DEBUG = True
 class Game:
