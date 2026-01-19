@@ -10,7 +10,7 @@ class Room:
         self.inventory={}
         self.darked=darked
         self.characters=[]
-        self.blocked=blocked
+        self.locked=locked
         
     
     # Define the get_exit method.
