@@ -190,7 +190,7 @@ class Actions:
             command_word = list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
-
+        print("\n" + game.player.get_history())
         # Show all quests
         game.player.quest_manager.show_quests()
         return True
