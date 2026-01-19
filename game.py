@@ -172,7 +172,7 @@ class Game:
         batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=10)
         chambre_1.inventory["batte"] = batte
         bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
-        église.inventory["bible"]=bible
+        eglise.inventory["bible"]=bible
 
 
         
