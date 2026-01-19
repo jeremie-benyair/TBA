@@ -46,13 +46,15 @@ class Game:
         self.commands["drop"]=drop
         check=Command("check"," : jeter un oeil à son inventaire",Actions.check,0)
         self.commands["check"] = check 
-        carry=Command("carry"," : équiper un objet présent dans votre inventaire.",Actions.carry,1 )
+        carry=Command("carry"," <objet>  équiper un objet présent dans votre inventaire.",Actions.carry,1 )
         self.commands["carry"]=carry
         use=Command("use"," : utiliser l'objet équipé.",Actions.use,0)
         self.commands["use"]=use
         
         talk = Command("talk", " <someone> : parler à un personnage non joueur", Actions.talk, 1)
         self.commands["talk"] = talk
+        read=Command("read"," <objet> : lire un objet lisible présent dans votre inventaire",Actions.read,1)
+        self.commands["read"]=read
 
 
         
