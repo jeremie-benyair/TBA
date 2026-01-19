@@ -55,11 +55,11 @@ class Room:
                 texte+=f"    -{item}"
 
 
-     class Cinema(Room): 
+class Cinema(Room): 
          def on_locked_attempt(self, player): 
              print("il semblerait que la porte du cinéma soit verrouillée.") 
              print("Trouvez la clé, équipez-la puis utilisez-la.")
-     class Cave(Room): 
+class Cave(Room): 
          def on_locked_attempt(self, player): 
              print("La porte de la cave est verrouillée par un digicode : tapez le code directement si vous pensez avoir la réponse ou tapez <quit> si vous ne voulez plus interragir avec le digicode \n ") 
              
