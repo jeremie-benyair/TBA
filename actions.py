@@ -403,7 +403,35 @@ class Actions:
                 
                 
         item.use_item(game)
+
+    class Actions:
+
+    def read(game, list_of_words, number_of_parameters):
         
+        player = game.player
+        if len(list_of_words) != number_of_parameters + 1:
+            command_word = list_of_words[0]
+            print(MSG1.format(command_word=command_word))
+            return False
+
+        item_name = list_of_words[1]
+
+        if item_name not in player.inventory:
+            print(f"Vous n'avez pas {item_name} dans votre inventaire.")
+            return False
+
+        item = player.inventory[item_name]
+
+        if item.text is None:
+            print(f"Vous ne pouvez pas lire {item_name}.")
+            return False
+
+       
+       print(item.text)
+       
+
+       return True
+
 
         
                 
