@@ -61,17 +61,31 @@ class Room:
              print("Trouvez la clé, équipez-la puis utilisez-la.")
      class Cave(Room): 
          def on_locked_attempt(self, player): 
-             print("La porte de la cave est verrouillée par un digicode.") 
+             print("La porte de la cave est verrouillée par un digicode : tapez le code directement si vous pensez avoir la réponse ou tapez <quit> si vous ne voulez plus interragir avec le digicode \n ") 
              
-             code = input("Entrez le code : ") 
-             while code!="2807":
+             
+             while True:
+                 code = input("Entrez le code : ") 
+                 if code==("quit"):
+                     print("Vous abandonnez pour le moment.")
+                     return 
+                
+                 if code==("2807"):
+                     print("La porte s'ouvre ! Vous pouvez maintenant rentrer dans ce lieu.") 
+                     self.locked = False 
+                     return 
+                print("code incorrect : réessayez ou taper <quit> pour arrêter vos tentatives.")
+
+                     
+                     
+                    
+                     
+                 
+             
              
             
-                else: print("Code incorrect.")
-            if code == "2807": 
-                print("La porte s'ouvre !, vous pouvez maintenant rentrer dans ce lieu.") 
-                self.locked = False 
+              
                      
-                print(self.get_long_description())
+               
       
            
