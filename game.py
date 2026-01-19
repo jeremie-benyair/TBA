@@ -94,9 +94,9 @@ class Game:
         #setup pnj
         pnj_1 = Charactere( "pnj_1","description",Neely_street,["phrase 1", "phrase 2"])
         Neely_street.characters.append(pnj_1)
-        pnj_2 = Charactere( "pnj_1","description",cinema,["phrase 1", "phrase 2"])
+        pnj_2 = Charactere( "pnj_2","description",cinema,["phrase 1", "phrase 2"])
         cinema.characters.append(pnj_2)
-        pnj_3 = Charactere( "pnj_1","description",hotel,["phrase 1", "phrase 2"])
+        pnj_3 = Charactere( "pnj_3","description",hotel,["phrase 1", "phrase 2"])
         hotel.characters.append(pnj_3)
 
 
