@@ -99,8 +99,8 @@ class Game:
         #setup pnj
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=["Trouver le doudou", "Donner le doudou à la fillette"], reward="Clé du cinéma" )
         fillette = Charactere( "fillette","description",parc,["tu n'aurais pas vu mon doudou ?", "merci beaucoup ! Tiens j'ai trouvé ça."])
-        parc.characters.append(pnj_1)
-        parc.characters.append(pnj_1)
+        parc.characters.append(fillette)
+        
         pnj_2 = Charactere( "pnj_2","description",cinema,["phrase 1", "phrase 2"])
         cinema.characters.append(pnj_2)
         pnj_3 = Charactere( "pnj_3","description",hotel,["phrase 1", "phrase 2"])
