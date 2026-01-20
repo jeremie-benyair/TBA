@@ -75,7 +75,7 @@ class Key(Item):
         super().__init__(name, description, weight)
         
     def use_item(self,game):
-        if game.player.current_room.name!="Sanders_street":
+        if game.player.current_room.name!="Sanders Street":
             print("""Vous ne pouvez pas utiliser la clé menant au cinéma à cet endroit là.
                      Veuillez vous rendre au niveau de Sanders street pour ouvrir la porte du cinéma.""")
             return False
