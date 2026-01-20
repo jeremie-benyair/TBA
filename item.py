@@ -73,10 +73,17 @@ class Bible(Item):
 class Key(Item):
     def __init__(self, name, description, weight):
         super().__init__(name, description, weight)
+        
     def use_item(self,game):
-        if game.player.current_room!="Sanders_street":
+        if game.player.current_room.name!="Sanders_street":
             print("""Vous ne pouvez pas utiliser la clé menant au cinéma à cet endroit là.
                      Veuillez vous rendre au niveau de Sanders street pour ouvrir la porte du cinéma.""")
+            return False
+        
+        if game.player.cinema.locked:
+            game.player.cinema.locked==False
+            print("la porte du cinéma est maintenant ouverte !\n")
+        return True
         
                      
                   
