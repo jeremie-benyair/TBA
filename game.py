@@ -181,7 +181,7 @@ class Game:
         bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
         eglise.inventory["bible"]=bible
         key_cinema=Key("clé"," ",0.1)
-        hotel.inventroy["clé"]=key_cinema
+        hotel.inventory["clé"]=key_cinema
 
 
         
