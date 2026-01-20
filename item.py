@@ -81,7 +81,7 @@ class Key(Item):
             return False
         
         
-        game.player.cinema.locked=False
+        cinema.locked=False
         print("la porte du cinéma est maintenant ouverte !\n")
         return True
         
