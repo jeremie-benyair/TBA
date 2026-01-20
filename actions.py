@@ -54,7 +54,11 @@ class Actions:
             return False
 
         # Get the direction from the list of words.
-        direction = list_of_words[1]
+        direction = list_of_words[1].lower()
+        direction_alternatives={ "o": "O", "ouest": "O", "est": "E", "e": "E", "n": "N", "nord": "N", "s": "S", "sud": "S" }
+        if direction in direction_aliases: 
+            direction = direction_aliases[direction]:
+            
         next_room=game.player.current_room.exits[direction]
         if next_room.locked: 
             next_room.on_locked_attempt(player) 
