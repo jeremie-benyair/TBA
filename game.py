@@ -13,6 +13,7 @@ from item import Flashlight
 from item import Weapon
 from item import Beamer
 from item import Bible
+from item import Key
 from charactere import Charactere
 from quest import Quest
 
