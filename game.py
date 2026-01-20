@@ -180,7 +180,8 @@ class Game:
         chambre_1.inventory["batte"] = batte
         bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
         eglise.inventory["bible"]=bible
-        key_cinema=Key("clé du cinéma"," ",0.1)
+        key_cinema=Key("clé"," ",0.1)
+        hotel.inventroy["clé"]=key_cinema
 
 
         
