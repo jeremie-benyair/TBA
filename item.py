@@ -70,6 +70,17 @@ class Bible(Item):
             print(f"Contenu de la page {number_of_page} : {self.pages[number_of_page]}")
         else:
             print("Cette page n'existe pas.")
+class Key(Item):
+    def __init__(self, name, description, weight):
+        super().__init__(name, description, weight)
+    def use_item(self,game):
+        if game.player.current_room!="Sanders_street":
+            print("""Vous ne pouvez pas utiliser la clé menant au cinéma à cet endroit là.
+                     Veuillez vous rendre au niveau de Sanders street pour ouvrir la porte du cinéma.""")
+        
+                     
+                  
+    
      
      
             
