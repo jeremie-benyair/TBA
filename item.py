@@ -80,9 +80,9 @@ class Key(Item):
                      Veuillez vous rendre au niveau de Sanders street pour ouvrir la porte du cinéma.""")
             return False
         
-        if game.player.cinema.locked:
-            game.player.cinema.locked==False
-            print("la porte du cinéma est maintenant ouverte !\n")
+        
+        game.player.cinema.locked=False
+        print("la porte du cinéma est maintenant ouverte !\n")
         return True
         
                      
