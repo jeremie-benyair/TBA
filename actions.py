@@ -325,10 +325,10 @@ class Actions:
             return False
 
        
-       print(item.text)
+        print(item.text)
        
 
-       return True
+        return True
     def quests(game, list_of_words, number_of_parameters):
         """
         Show all quests and their status.
