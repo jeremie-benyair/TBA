@@ -79,9 +79,13 @@ class Key(Item):
             print("""Vous ne pouvez pas utiliser la clé menant au cinéma à cet endroit là.
                      Veuillez vous rendre au niveau de Sanders street pour ouvrir la porte du cinéma.""")
             return False
+        for room in game.rooms:
+            if room.name == "Cinéma abandonné":
+            cinema_room = room
+
         
         
-        game.cinema.locked=False
+        cinema_room.locked=False
         print("la porte du cinéma est maintenant ouverte !\n")
         return True
         
