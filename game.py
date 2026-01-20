@@ -3,6 +3,8 @@
 # Import modules
 
 from room import Room
+from room import Cinema
+from room import Cave
 from player import Player
 from command import Command
 from actions import Actions
