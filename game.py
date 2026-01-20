@@ -67,7 +67,7 @@ class Game:
         Neely_street= Room("Neely Street"," au niveau de Neely Street ")
         self.rooms.append(Neely_street)
         cinema = Cinema("Cinéma abandonné", " ",darked=True,locked=True)
-        self.rooms.append(cinema)
+        self.rooms.append(self.cinema)
         hotel = Room("Hotel abandonné", " ")
         self.rooms.append(hotel)
         parc = Room("Parc pour enfants abandonné", " ")
