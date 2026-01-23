@@ -350,7 +350,9 @@ class Actions:
 
             del player.inventory["doudou"]
             player.add_reward("Clé du cinéma")
-            player.quest_manager.complete_quest("Retrouver le doudou")
+            #player.quest_manager.complete_quest("Retrouver le doudou")#
+            player.quest_manager.complete_objective("Retrouver le doudou", "Donner le doudou à la fillette")
+
 
             # Optionnel : retirer la fillette si tu veux qu’elle disparaisse
             room.characters = [pnj for pnj in room.characters if "fillette" not in pnj.name.lower()]
