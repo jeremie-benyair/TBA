@@ -76,6 +76,34 @@ class Player():
         print(self.get_history())
 
         return True
+    def show_rewards(self):
+        """
+        Display all rewards earned by the player.
+        
+        Examples:
+        
+        >>> player = Player("Charlie")
+        >>> player.show_rewards() # doctest: +NORMALIZE_WHITESPACE
+        <BLANKLINE>
+        🎁 Aucune récompense obtenue pour le moment.
+        <BLANKLINE>
+        >>> player.add_reward("Bouclier d'or") # doctest: +NORMALIZE_WHITESPACE
+        <BLANKLINE>
+        🎁 Vous avez obtenu: Bouclier d'or
+        <BLANKLINE>
+        >>> player.show_rewards() # doctest: +NORMALIZE_WHITESPACE
+        <BLANKLINE>
+        🎁 Vos récompenses:
+        • Bouclier d'or
+        <BLANKLINE>
+        """
+        if not self.rewards:
+            print("\n🎁 Aucune récompense obtenue pour le moment.\n")
+        else:
+            print("\n🎁 Vos récompenses:")
+            for reward in self.rewards:
+                print(f"  • {reward}")
+            print()
 
 
 
