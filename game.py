@@ -59,6 +59,8 @@ class Game:
         self.commands["talk"] = talk
         read=Command("read"," <objet> : lire un objet lisible présent dans votre inventaire",Actions.read,1)
         self.commands["read"]=read
+        give=Command("give"," <objet> : donner un objet à un pnj",Actions.give,1)
+        self.commands["give"]=give
 
 
         
@@ -227,20 +229,7 @@ class Game:
         self.player.current_room = Neely_street
         self._setup_quests()
 
-    def _setup_commands(self):
-        """Initialize all game commands."""
-        self.commands["help"] = Command("help"
-                                        , " : afficher cette aide"
-                                        , Actions.help
-                                        , 0)
-        self.commands["quit"] = Command("quit"
-                                        , " : quitter le jeu"
-                                        , Actions.quit
-                                        , 0)
-        self.commands["go"] = Command("go"
-                                      , "<N|E|S|O> : se déplacer dans une direction cardinale"
-                                      , Actions.go
-                                      , 1)
+   
         self.commands["quests"] = Command("quests"
                                           , " : afficher la liste des quêtes"
                                           , Actions.quests
