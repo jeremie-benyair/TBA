@@ -363,11 +363,8 @@ class Actions:
             
             del player.inventory["doudou"]
     
-           
-            key = game.key_cinema
-            player.inventory["clé_cinema"] = key
-
-            
+            player.add_reward("Clé du cinéma")
+        
             player.quest_manager.complete_quest("Retrouver le doudou")
             room.characters.remove(fillette)
     
