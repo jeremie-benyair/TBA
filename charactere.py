@@ -12,6 +12,7 @@ class Charactere:
         self.msgs = msgs
         self.role = role
         self.msg_index = 0
+        self.has_spoken=False
 
     def __str__(self):
         return f"{self.name} : {self.description} (Salle : {self.current_room.name})"
