@@ -227,6 +227,7 @@ class Game:
 
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
+        self.player.quest_manager.add_quest(quete_doudou)
 
     # Play the game
     def play(self):
