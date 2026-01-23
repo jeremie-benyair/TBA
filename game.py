@@ -225,7 +225,8 @@ class Game:
 
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
-    
+        self._setup_quests()
+
     def _setup_commands(self):
         """Initialize all game commands."""
         self.commands["help"] = Command("help"
@@ -327,6 +328,14 @@ class Game:
         print("Entrez 'help' si vous avez besoin d'aide.")
         
         print(self.player.current_room.get_long_description())
+    def win(self):
+    print("\n🏆 Félicitations ! Vous avez gagné le jeu !\n")
+    self.finished = True
+
+def loose(self):
+    print("\n💀 Vous avez perdu... Le brouillard vous engloutit.\n")
+    self.finished = True
+
     
 
 def main():
@@ -336,4 +345,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
 
