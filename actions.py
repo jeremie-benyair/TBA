@@ -279,8 +279,14 @@ class Actions:
 
         for pnj in room.characters:
             if pnj.name.lower() == target_name.lower():
-                print(f"\n{pnj.name} dit : {pnj.get_msg()}\n")
+                print(pnj.get_msg())
                 return True
+            if not.has_spoken:
+                pnj.has_spoken = True 
+                game.player.quest_manager.activate_quest("Retrouver le doudou")
+                return True
+                
+                
 
         print(f"\nIl n’y a personne nommé '{target_name}' ici.\n")
         return False
