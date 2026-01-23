@@ -26,11 +26,11 @@ class Game:
         self.rooms = []
         self.commands = {}
         self.player = None
-    
+
     # Setup the game
     def setup(self):
 
-   
+
         help = Command("help", " : afficher cette aide", Actions.help, 0)
         self.commands["help"] = help
         quit = Command("quit", " : quitter le jeu", Actions.quit, 0)
@@ -54,16 +54,14 @@ class Game:
         self.commands["carry"]=carry
         use=Command("use"," : utiliser l'objet équipé.",Actions.use,0)
         self.commands["use"]=use
-        
+
         talk = Command("talk", " <someone> : parler à un personnage non joueur", Actions.talk, 1)
         self.commands["talk"] = talk
         read=Command("read"," <objet> : lire un objet lisible présent dans votre inventaire",Actions.read,1)
         self.commands["read"]=read
-        give=Command("give"," <objet> : donner un objet à un pnj",Actions.give,1)
-        self.commands["give"]=give
 
 
-        
+
         # Setup rooms
 
         Neely_street= Room("Neely Street"," au niveau de Neely Street ")
@@ -96,19 +94,19 @@ class Game:
         self.rooms.append(chambre_1)
         chambre_2=Room(" chambre_2", " ")
         self.rooms.append(chambre_2)
-        
+
         cave=Cave("cave", " ",locked=True)
         self.rooms.append(cave)
         #setup pnj
-        
+
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=["Trouver le doudou", "Donner le doudou à la fillette"], reward="Clé du cinéma" )
         fillette = Charactere("fillette","Une petite fille apeurée.",parc,["Tu n'aurais pas vu mon doudou ?","Depuis que la brume est arrivée, tout le monde a disparu… même maman. Et puis… des monstres ont commencé à sortir de l’ombre."],role="static")
         self.player.quest_manager.add_quest(quete_doudou)
 
-        
 
-        
-        
+
+
+
         pnj_2 = Charactere( "pnj_2","description",cinema,["phrase 1", "phrase 2"])
         cinema.characters.append(pnj_2)
         pnj_3 = Charactere( "pnj_3","description",hotel,["phrase 1", "phrase 2"])
@@ -194,18 +192,18 @@ class Game:
 
 
 
-        
-  
-    
-    
-        
-        
-                 
-                 
-                 
-                 
+
+
+
+
+
+
+
+
+
+
          # Create exits for rooms
-        
+
         biblio.exits={"sortie":Lindsey_street,"N": None,"E": None,"O":None,"S": None, "Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         bar.exits = {"sortie" :Sanders_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         cinema.exits = {"sortie" : Sanders_street,"N": None,  "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
@@ -227,58 +225,6 @@ class Game:
 
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
-        self._setup_quests()
-
-   
-        self.commands["quests"] = Command("quests"
-                                          , " : afficher la liste des quêtes"
-                                          , Actions.quests
-                                          , 0)
-        self.commands["quest"] = Command("quest"
-                                         , " <titre> : afficher les détails d'une quête"
-                                         , Actions.quest
-                                         , 1)
-        self.commands["activate"] = Command("activate"
-                                            , " <titre> : activer une quête"
-                                            , Actions.activate
-                                            , 1)
-        self.commands["rewards"] = Command("rewards"
-                                           , " : afficher vos récompenses"
-                                           , Actions.rewards
-                                           , 0)
-    def _setup_quests(self):
-        """Initialize all quests."""
-        exploration_quest = Quest(
-            title="Grand Explorateur",
-            description="Explorez tous les lieux de ce monde mystérieux.",
-            objectives=["Visiter Forest"
-                        , "Visiter Tower"
-                        , "Visiter Cave"
-                        , "Visiter Cottage"
-                        , "Visiter Castle"],
-            reward="Titre de Grand Explorateur"
-        )
-
-        travel_quest = Quest(
-            title="Grand Voyageur",
-            description="Déplacez-vous 10 fois entre les lieux.",
-            objectives=["Se déplacer 10 fois"],
-            reward="Bottes de voyageur"
-        )
-
-        discovery_quest = Quest(
-            title="Découvreur de Secrets",
-            description="Découvrez les trois lieux les plus mystérieux.",
-            objectives=["Visiter Cave"
-                        , "Visiter Tower"
-                        , "Visiter Castle"],
-            reward="Clé dorée"
-        )
-
-        # Add quests to player's quest manager
-        self.player.quest_manager.add_quest(exploration_quest)
-        self.player.quest_manager.add_quest(travel_quest)
-        self.player.quest_manager.add_quest(discovery_quest)
 
     # Play the game
     def play(self):
@@ -295,56 +241,34 @@ class Game:
             self.process_command(input("> "))
 
 
-   
+
     def process_command(self, command_string) -> None:
 
-       
+
         list_of_words = command_string.split(" ")
 
         command_word = list_of_words[0]
 
-       
+
         if command_word not in self.commands.keys():
             print(f"\nCommande '{command_word}' non reconnue. Entrez 'help' pour voir la liste des commandes disponibles.\n")
-        
+
         else:
             command = self.commands[command_word]
             command.action(self, list_of_words, command.number_of_parameters)
-        cinema = None
-        for room in self.rooms:
-            if room.name.lower() == "cinéma abandonné":
-                cinema = room
-                break
 
-        if self.player.current_room == cinema and cinema and not cinema.locked:
-            self.win()
-        current_room = self.player.current_room
-        if current_room.darked and not (
-            self.player.equipped_item and hasattr(self.player.equipped_item, "on") and self.player.equipped_item.on
-        ):
-            self.loose()
 
-   def print_welcome(self):
+    def print_welcome(self):
         print(f"\nBienvenue {self.player.name} dans ce jeu d'aventure !")
         print("Entrez 'help' si vous avez besoin d'aide.")
-        
+
         print(self.player.current_room.get_long_description())
-    def win(self):
-        print("\n🏆 Félicitations ! Vous avez gagné le jeu !\n")
-        self.finished = True
 
-    def loose(self):
-        print("\n💀 Vous avez perdu... Le brouillard vous engloutit.\n")
-        self.finished = True
-
-    
 
 def main():
     # Create a game object and play the game
     Game().play()
-    
+
 
 if __name__ == "__main__":
     main()
-    
-
