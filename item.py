@@ -81,7 +81,7 @@ class Key(Item):
             return False
         for room in game.rooms:
             if room.name == "Cinéma abandonné":
-            cinema_room = room
+                cinema_room = room
 
         
         
