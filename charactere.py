@@ -17,7 +17,7 @@ class Charactere:
         return f"{self.name} : {self.description} (Salle : {self.current_room.name})"
 
     def move(self):
-        """Déplacement uniquement si c'est un monstre."""
+       
         if self.role != "monster":
             return False  # PNJ statique
 
