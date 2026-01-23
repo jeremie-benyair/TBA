@@ -321,6 +321,15 @@ class Game:
         else:
             command = self.commands[command_word]
             command.action(self, list_of_words, command.number_of_parameters)
+        cinema = None
+        for room in self.rooms:
+            if room.name == "Cinéma abandonné":
+                cinema = room
+                break
+
+            if self.player.current_room == cinema and cinema.locked == False:
+                self.win()
+
 
   
     def print_welcome(self):
