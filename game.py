@@ -323,27 +323,30 @@ class Game:
             command.action(self, list_of_words, command.number_of_parameters)
         cinema = None
         for room in self.rooms:
-            if room.name == "Cinéma abandonné":
+            if room.name.lower() == "cinéma abandonné":
                 cinema = room
                 break
 
-            if self.player.current_room == cinema and cinema.locked == False:
-                self.win()
+        if self.player.current_room == cinema and cinema and not cinema.locked:
+            self.win()
+        current_room = self.player.current_room
+        if current_room.darked and not (
+            self.player.equipped_item and hasattr(self.player.equipped_item, "on") and self.player.equipped_item.on
+        ):
+            self.loose()
 
-
-  
-    def print_welcome(self):
+   def print_welcome(self):
         print(f"\nBienvenue {self.player.name} dans ce jeu d'aventure !")
         print("Entrez 'help' si vous avez besoin d'aide.")
         
         print(self.player.current_room.get_long_description())
     def win(self):
-    print("\n🏆 Félicitations ! Vous avez gagné le jeu !\n")
-    self.finished = True
+        print("\n🏆 Félicitations ! Vous avez gagné le jeu !\n")
+        self.finished = True
 
-def loose(self):
-    print("\n💀 Vous avez perdu... Le brouillard vous engloutit.\n")
-    self.finished = True
+    def loose(self):
+        print("\n💀 Vous avez perdu... Le brouillard vous engloutit.\n")
+        self.finished = True
 
     
 
