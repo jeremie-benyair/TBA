@@ -1,4 +1,4 @@
-from items import key_cinema
+from item import key_cinema
 
 # Description: The actions module.
 
