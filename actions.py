@@ -281,7 +281,7 @@ class Actions:
             if pnj.name.lower() == target_name.lower():
                 print(pnj.get_msg())
                 return True
-            if not.has_spoken:
+            if not pnj.has_spoken:
                 pnj.has_spoken = True 
                 game.player.quest_manager.activate_quest("Retrouver le doudou")
                 return True
