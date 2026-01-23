@@ -25,7 +25,13 @@ class Player():
         if next_room is None:
             print("\nAucune porte dans cette direction !\n")
             return False
-
+        if next_room.darked and not (
+            self.equipped_item and hasattr(self.equipped_item, "on") and self.equipped_item.on
+        ):
+            print("\n💀 Vous avancez dans l'obscurité... quelque chose vous attrape.\n")
+            if game:   # on appelle loose() seulement si l'objet Game est passé
+                game.loose()
+            return False
         self.current_room = next_room
         self.historique.append(next_room)
 
