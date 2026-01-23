@@ -225,6 +225,37 @@ class Game:
 
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
+    
+    def _setup_commands(self):
+        """Initialize all game commands."""
+        self.commands["help"] = Command("help"
+                                        , " : afficher cette aide"
+                                        , Actions.help
+                                        , 0)
+        self.commands["quit"] = Command("quit"
+                                        , " : quitter le jeu"
+                                        , Actions.quit
+                                        , 0)
+        self.commands["go"] = Command("go"
+                                      , "<N|E|S|O> : se déplacer dans une direction cardinale"
+                                      , Actions.go
+                                      , 1)
+        self.commands["quests"] = Command("quests"
+                                          , " : afficher la liste des quêtes"
+                                          , Actions.quests
+                                          , 0)
+        self.commands["quest"] = Command("quest"
+                                         , " <titre> : afficher les détails d'une quête"
+                                         , Actions.quest
+                                         , 1)
+        self.commands["activate"] = Command("activate"
+                                            , " <titre> : activer une quête"
+                                            , Actions.activate
+                                            , 1)
+        self.commands["rewards"] = Command("rewards"
+                                           , " : afficher vos récompenses"
+                                           , Actions.rewards
+                                           , 0)
 
     # Play the game
     def play(self):
