@@ -190,7 +190,7 @@ class Game:
         eglise.inventory["bible"]=bible
         key_cinema=Key("clé"," la clé menant au cinéma trouvé par une fillette mystérieuse. ",0.1)
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
-        pharmacie.inventory["doudou"] = doudou
+        pharma.inventory["doudou"] = doudou
 
 
 
