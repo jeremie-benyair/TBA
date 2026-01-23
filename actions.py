@@ -331,53 +331,40 @@ class Actions:
     def give(game, list_of_words, number_of_parameters):
         player = game.player
         room = player.current_room
- 
+
         if len(list_of_words) != number_of_parameters + 1:
             command_word = list_of_words[0]
             print(MSG1.format(command_word=command_word))
             return False
-    
 
         item_name = list_of_words[1].lower()
-    
-        
+
         if item_name not in player.inventory:
             print("Tu n'as pas cet objet.")
             return False
-    
-        #  CAS SPÉCIAL : DONNER LE DOUDOU À LA FILLETTE 
-        if item_name == "doudou" and room.name.lower() == "parc":
-    
-            
-            fillette = None
-            for pnj in room.characters:
-                if pnj.name.lower() == "fillette":
-                    fillette = True
-                    break
-    
-            if fillette is None:
-                print("Il n'y a personne ici à qui donner ça.")
-                return False
-    
-           
-            print("\nLa fillette dit : 'Merci beaucoup ! Tiens, j'ai trouvé ça, ça pourrait te servir.'")
-            
-            del player.inventory["doudou"]
-    
-            player.add_reward("Clé du cinéma")
+
         
+        if item_name == "doudou" and "parc" in room.name.lower():
+            print("\n'Merci beaucoup ! Tiens, j'ai trouvé ça, ça pourrait te servir.'")
+            print("la fillette est partie.\n")
+
+            del player.inventory["doudou"]
+            player.add_reward("Clé du cinéma")
             player.quest_manager.complete_quest("Retrouver le doudou")
-            room.characters.remove(fillette)
-    
+
+            # Optionnel : retirer la fillette si tu veux qu’elle disparaisse
+            room.characters = [pnj for pnj in room.characters if "fillette" not in pnj.name.lower()]
+
             return True
 
-   
         print("Il n'y a personne ici à qui donner ça.")
         return False
 
+   
+        
+
        
 
-        return True
     def quests(game, list_of_words, number_of_parameters):
         """
         Show all quests and their status.
