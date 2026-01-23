@@ -1,4 +1,4 @@
-
+from item import Key
 
 # Description: The actions module.
 
