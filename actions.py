@@ -352,7 +352,7 @@ class Actions:
             fillette = None
             for pnj in room.characters:
                 if pnj.name.lower() == "fillette":
-                    fillette = pnj
+                    fillette = True
                     break
     
             if fillette is None:
