@@ -41,6 +41,7 @@ class Room:
             description += "\nPersonnages présents :\n"
             for c in self.characters:
                 description += f" - {c.name} : {c.description}\n"
+        return description
 
 
        
