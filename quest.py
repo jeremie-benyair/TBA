@@ -462,7 +462,7 @@ class QuestManager:
         return False
 
 
-    def complete_objective(self, objective_text):
+    def complete_objective(self,quest_name,objective_name):
         """
         Complete an objective in any active quest.
         
@@ -492,11 +492,10 @@ class QuestManager:
         >>> manager.complete_objective("Do nothing")
         False
         """
-        for quest in self.active_quests:
-            if quest.complete_objective(objective_text):
-                # Remove completed quests from active list
-                if quest.is_completed:
-                    self.active_quests.remove(quest)
+         
+        for quest in self.quests: 
+            if quest.title == quest_name: 
+                quest.complete_objective(objective_name)
                 return True
         return False
 
