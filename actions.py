@@ -356,12 +356,13 @@ class Actions:
             print("\n'Merci beaucoup ! Tiens, j'ai trouvé ça, ça pourrait te servir.'")
             print("la fillette est partie.\n")
             game.player.inventory["clé"]=key_cinema
-            print("la clé a été ajouté à votre inventaire.\n")
+            
 
             del player.inventory["doudou"]
             player.add_reward("Clé du cinéma")
             #player.quest_manager.complete_quest("Retrouver le doudou")#
             player.quest_manager.complete_objective("Retrouver le doudou", "Donner le doudou à la fillette")
+            print("la clé a été ajouté à votre inventaire.\n")
 
 
             # Optionnel : retirer la fillette si tu veux qu’elle disparaisse
