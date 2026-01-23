@@ -353,6 +353,8 @@ class Actions:
         if item_name == "doudou" and "parc" in room.name.lower():
             print("\n'Merci beaucoup ! Tiens, j'ai trouvé ça, ça pourrait te servir.'")
             print("la fillette est partie.\n")
+            game.player.inventory["clé"]=key_cinema
+            print("la clé a été ajouté à votre inventaire.\n")
 
             del player.inventory["doudou"]
             player.add_reward("Clé du cinéma")
