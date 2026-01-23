@@ -1,19 +1,30 @@
 class Charactere:
-    def __init__(self, name, description, current_room, msgs):
+    def __init__(self, name, description, current_room, msgs, role="static"):
+        """
+        role peut être :
+        - "static"  : ne bouge pas (fillette, barman, boss)
+        - "monster" : PNJ mobile hostile
+        - "talker"  : PNJ qui parle mais ne donne pas de quête
+        """
         self.name = name
         self.description = description
         self.current_room = current_room
         self.msgs = msgs
+        self.role = role
         self.msg_index = 0
 
-
     def __str__(self):
-        return f"{self.name} : {self.description} (Salle : {self.current_room.name}) (Messages : {self.msgs})\n"
+        return f"{self.name} : {self.description} (Salle : {self.current_room.name})"
 
     def move(self):
+        """Déplacement uniquement si c'est un monstre."""
+        if self.role != "monster":
+            return False  # PNJ statique
+
         import random
 
-        if random.random() < 0.5:
+        # 50% de chance de bouger
+        if random.random() < 0.2:
             return False
 
         exits = [room for room in self.current_room.exits.values() if room is not None]
@@ -22,20 +33,21 @@ class Charactere:
 
         next_room = random.choice(exits)
 
+        # Déplacement
         self.current_room.characters.remove(self)
         next_room.characters.append(self)
         self.current_room = next_room
 
         return True
+
     def get_msg(self):
+        """Retourne un message cyclique."""
         if not self.msgs:
             return f"{self.name} n'a rien à dire."
 
-        # Retire et récupère le premier message
         msg = self.msgs.pop(0)
-
-        # Le remet à la fin pour créer un cycle
         self.msgs.append(msg)
-
         return msg
+
+    
 
