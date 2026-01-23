@@ -59,7 +59,8 @@ class Game:
         self.commands["talk"] = talk
         read=Command("read"," <objet> : lire un objet lisible présent dans votre inventaire",Actions.read,1)
         self.commands["read"]=read
-
+        give= Command("give","<objet> : donner un objet à un pnj.",Actions.give,1)
+        self.commmands["give"]=give
 
 
         # Setup rooms
