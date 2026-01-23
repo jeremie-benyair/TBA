@@ -60,7 +60,7 @@ class Game:
         read=Command("read"," <objet> : lire un objet lisible présent dans votre inventaire",Actions.read,1)
         self.commands["read"]=read
         give= Command("give","<objet> : donner un objet à un pnj.",Actions.give,1)
-        self.commmands["give"]=give
+        self.commands["give"]=give
 
 
         # Setup rooms
@@ -68,7 +68,7 @@ class Game:
         Neely_street= Room("Neely Street"," au niveau de Neely Street ")
         self.rooms.append(Neely_street)
         cinema = Cinema("Cinéma abandonné", " ",darked=True,locked=True)
-        self.rooms.append(self.cinema)
+        self.rooms.append(cinema)
         hotel = Room("Hotel abandonné", " ")
         self.rooms.append(hotel)
         parc = Room("Parc pour enfants abandonné", " ")
@@ -102,6 +102,7 @@ class Game:
 
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=["Trouver le doudou", "Donner le doudou à la fillette"], reward="Clé du cinéma" )
         fillette = Charactere("fillette","Une petite fille apeurée.",parc,["Tu n'aurais pas vu mon doudou ?","Depuis que la brume est arrivée, tout le monde a disparu… même maman. Et puis… des monstres ont commencé à sortir de l’ombre."],role="static")
+        parc.characters.append(fillette)
         self.player.quest_manager.add_quest(quete_doudou)
 
 
