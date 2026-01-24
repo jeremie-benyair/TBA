@@ -158,7 +158,7 @@ class Game:
         
                 """,type="text")
         chambre_2.inventory["map"]=map
-        flyer=Item("flyer", "tract promotionnel de la ville de Silent Hill provenant de l'office de tourisme\nune fois dans l'inventaire,tapez 'read flyer' pour le lire.",0,
+        flyer=Item("flyer", "tract promotionnel de la ville de Silent Hill provenant de l'office de tourisme\nUne fois dans l'inventaire,utilisez la commande read <objet>.",0,
                    """
         ----------------------------------------------------------
                         BIENVENUE À SILENT HILL !
@@ -186,12 +186,14 @@ class Game:
         Office de Tourisme — 12 Jefferson Ave, SIlent Hill
                     """,type="text")
         hotel.inventory["flyer"]=flyer
+        lettre_fille = Item( "lettre","Une lettre tachée de larmes, trouvée sur un lit défait.\nUne fois dans l'inventaire,utilisez la commande read <objet>.",0, "Maman,\n\n" "Je ne sais pas si tu liras un jour ces mots. Silent Hill n’est plus la ville que tu as connue. " "La brume est partout, les rues sont désertes, et des choses... des choses horribles rôdent la nuit. " "Les gens disparaissent ou deviennent fous. Même le temps semble figé.\n\n" "Je t’en supplie, ne viens pas ici. Si tu reçois cette lettre, oublie-moi. Sauve-toi.\n\n" "Je t’aime.\n\n" "— Élodie" ), type="text" )
+        chambre_1.inventory["lettre"]=lettre
         flashlight=Flashlight("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
         chambre_2.inventory["flashlight"]=flashlight
         batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=12)
-        Martin_Street.inventory["batte"]=batte
+        Martin_Street.inventory["batte"]=batte_2
     
-        chambre_1.inventory["batte"] = batte
+        chambre_1.inventory["batte"] = batte_1
         bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
         eglise.inventory["bible"]=bible
         couteau=Weapon("couteau","Un gros couteau rouillé posé sur le comptoir du bar",0.6,damage=5)
@@ -207,7 +209,7 @@ class Game:
         medkit_hotel = MedKit("medkit", "une trousse de soins utile en cas de blessure", 0.35)
         hotel.inventory["medkit"] = medkit_hotel
         medkit_pharmacie=MedKit("medkit","une trousse de soins utile en cas de blessure",0.35)
-        pharma.inventory[
+        pharma.inventory["medkit"]=medkit_pharma
         medkit_croisement=MedKit("medkit","une troisse de soin utile en cas de blessure",0.35)
 
         
