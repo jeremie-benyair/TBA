@@ -114,8 +114,9 @@ class Game:
         parc.characters.append(fillette)
         barman = Charactere( "barman", "Un homme au regard fatigué, essuyant un verre sale derrière le comptoir.", bar, ["Tu veux un défi ? "," S tu y arrives, je te file une récompense."] ) 
         bar.characters.append(barman)
-        pnj_3 = Charactere( "pnj_3","description",hotel,["phrase 1", "phrase 2"])
-        hotel.characters.append(pnj_3)
+        quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête comprit entre 1 et 100 en 9 essais maximum.", objectives=["Trouver le juste prix"], reward="Indice : 28" ) 
+        self.player.quest_manager.add_quest(quete_barman)
+        
 
 
         #setup items
