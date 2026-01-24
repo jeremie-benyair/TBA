@@ -61,6 +61,7 @@ class Monster(Charactere):
         self.health -= amount 
         if self.health <= 0: 
             self.health = 0 
+            room.characters.remove(self)
             return f"{self.name} est vaincu !" 
         return f"{self.name} a encore {self.health} PV." 
     def move(self): 
