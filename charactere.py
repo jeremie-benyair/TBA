@@ -51,46 +51,46 @@ class Charactere:
         return msg
 
 class Monstre(Charactere): 
-def __init__(self, name, description, current_room, health=100): 
-    super().__init__(name, description, current_room, msgs=[], role="monster") 
-    self.health = health 
-def is_alive(self): 
-    return self.health > 0 
-def take_damage(self, amount): 
-    self.health -= amount 
-    if self.health <= 0: 
-        self.health = 0 
-        return f"{self.name} est vaincu !" 
-    return f"{self.name} a encore {self.health} PV." 
-def move(self): 
-    if not self.is_alive(): 
-        return False 
-    if random.random() >= 0.3: 
-        return False 
-    exits = [room for room in self.current_room.exits.values() if room is not None] 
-    if not exits: 
-        return False 
-    next_room = random.choice(exits) 
-    self.current_room.characters.remove(self) 
-    next_room.characters.append(self) 
-    self.current_room = next_room 
-    return True
-
-def attack_player(self, player):
-    if not self.is_alive():
-        return
-
-    import random
-    damage = random.randint(10,25) 
-    player.health -= damage
-    print(f"{self.name} t’attaque et inflige {damage} points de dégâts !")
-
-    if player.health <= 0:
-        player.health = 0
-        print("Tu t’effondres… Le monstre t’a vaincu.")
-        player.game.finished = True 
-    else:
-        print(f"Il te reste {player.health} points de vie.")
+    def __init__(self, name, description, current_room, health=100): 
+        super().__init__(name, description, current_room, msgs=[], role="monster") 
+        self.health = health 
+    def is_alive(self): 
+        return self.health > 0 
+    def take_damage(self, amount): 
+        self.health -= amount 
+        if self.health <= 0: 
+            self.health = 0 
+            return f"{self.name} est vaincu !" 
+        return f"{self.name} a encore {self.health} PV." 
+    def move(self): 
+        if not self.is_alive() or self.health!=100: 
+            return False 
+        if random.random() >= 0.3: 
+            return False 
+        exits = [room for room in self.current_room.exits.values() if room is not None] 
+        if not exits: 
+            return False 
+        next_room = random.choice(exits) 
+        self.current_room.characters.remove(self) 
+        next_room.characters.append(self) 
+        self.current_room = next_room 
+        return True
+    
+    def attack_player(self, player):
+        if not self.is_alive():
+            return
+    
+        import random
+        damage = random.randint(10,25) 
+        player.health -= damage
+        print(f"{self.name} t’attaque et inflige {damage} points de dégâts !")
+    
+        if player.health <= 0:
+            player.health = 0
+            print("Tu t’effondres… Le monstre t’a vaincu.")
+            player.game.finished = True 
+        else:
+            print(f"Il te reste {player.health} points de vie.")
 
     
 
