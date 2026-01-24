@@ -368,6 +368,7 @@ class Actions:
                 
                 
         item.use_item(game)
+        return True
 
     def read(game, list_of_words, number_of_parameters):
         
