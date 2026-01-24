@@ -16,6 +16,7 @@ from item import Bible
 from item import Key
 from item import MedKit
 from charactere import Charactere
+from charactere import Monster
 from quest import Quest
 
 DEBUG = True
