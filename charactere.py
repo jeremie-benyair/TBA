@@ -1,3 +1,4 @@
+import random
 class Charactere:
     def __init__(self, name, description, current_room, msgs, role="static"):
         """
