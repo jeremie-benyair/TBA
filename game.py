@@ -158,7 +158,7 @@ class Game:
         
                 """,type="text")
         chambre_2.inventory["map"]=map
-        flyer=Item("flyer", "tract promotionnel de la ville de Silent Hill provenant de l'office de tourisme",0,
+        flyer=Item("flyer", "tract promotionnel de la ville de Silent Hill provenant de l'office de tourisme\nune fois dans l'inventaire,tapez 'read flyer' pour le lire.",0,
                    """
         ----------------------------------------------------------
                         BIENVENUE À SILENT HILL !
@@ -188,10 +188,15 @@ class Game:
         hotel.inventory["flyer"]=flyer
         flashlight=Flashlight("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
         chambre_2.inventory["flashlight"]=flashlight
-        batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=10)
+        batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=12)
+        Martin_Street.inventory["batte"]=batte
+    
         chambre_1.inventory["batte"] = batte
         bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
         eglise.inventory["bible"]=bible
+        couteau=Weapon("couteau","Un gros couteau rouillé posé sur le comptoir du bar",0.6,damage=5)
+        bar.inventory["couteau"]=couteau
+        
         
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
         pharma.inventory["doudou"] = doudou
@@ -201,6 +206,9 @@ class Game:
         parc.inventory["medkit"] = medkit_parc
         medkit_hotel = MedKit("medkit", "une trousse de soins utile en cas de blessure", 0.35)
         hotel.inventory["medkit"] = medkit_hotel
+        medkit_pharmacie=MedKit("medkit","une trousse de soins utile en cas de blessure",0.35)
+        pharma.inventory[
+        medkit_croisement=MedKit("medkit","une troisse de soin utile en cas de blessure",0.35)
 
         
 
