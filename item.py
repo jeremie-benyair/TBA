@@ -7,7 +7,7 @@ class Item():
         
         self.type=type
     def __str__(self):
-        return f"{self.name} : {self.description} ({self.weight}) kg)\n"
+        return f"{self.name} : {self.description} ({self.weight} kg)\n"
     def use_item(self,game):
         print(f"vous ne pouvez pas utiliser l'objet {self.name} \n")
 class Flashlight(Item):
