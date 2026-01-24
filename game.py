@@ -240,7 +240,7 @@ class Game:
         parc.inventory["medkit"] = medkit_parc
         medkit_hotel = MedKit("medkit", "une trousse de soins utile en cas de blessure", 0.35)
         hotel.inventory["medkit"] = medkit_hotel
-        medkit_pharmacie=MedKit("medkit","une trousse de soins utile en cas de blessure",0.35)
+        medkit_pharma=MedKit("medkit","une trousse de soins utile en cas de blessure",0.35)
         pharma.inventory["medkit"]=medkit_pharma
         medkit_croisement=MedKit("medkit","une troisse de soin utile en cas de blessure",0.35)
 
