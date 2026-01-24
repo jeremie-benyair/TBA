@@ -115,7 +115,7 @@ class Game:
         barman = Charactere( "barman", "Un homme au regard fatigué, essuyant un verre sale derrière le comptoir.", bar, ["Tu veux un défi ? "," S tu y arrives, je te file une récompense."] ) 
         bar.characters.append(barman)
         quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête comprit entre 1 et 100 en 9 essais maximum.", objectives=["Trouver le juste prix"], reward="Indice : 28" ) 
-        self.player.quest_manager.add_quest(quete_barman)
+       
         
 
 
@@ -241,6 +241,7 @@ class Game:
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
         self.player.quest_manager.add_quest(quete_doudou)
+        self.player.quest_manager.add_quest(quete_barman)
 
     # Play the game
     def play(self):
