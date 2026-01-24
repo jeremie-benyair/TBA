@@ -108,7 +108,8 @@ class Game:
         self.rooms.append(cave) 
 
         #setup pnj
-
+        infirmiere = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.", health=100)
+        self.rooms.append(croisement)
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=[], reward="Clé du cinéma" )
         fillette = Charactere("fillette","Une petite fille apeurée.",parc,["Tu n'aurais pas vu mon doudou ?","Depuis que la brume est arrivée, tout le monde a disparu… même maman. Et puis… des monstres ont commencé à sortir de l’ombre."],role="static")
         parc.characters.append(fillette)
@@ -262,7 +263,12 @@ class Game:
         self.print_welcome()
         # Loop until the game is finished
         while not self.finished:
-
+            for c in self.characters: 
+                if c.role == "monster" and c.current_room == self.player.current_room and c.is_alive(): 
+                    import random 
+                    if random.random() < 0.33:
+                        print(f"{c.name} t’attaque soudainement !") 
+                        c.attack_player(self.player)
     # Déplacement des PNJ
             for room in self.rooms:
                 for pnj in room.characters:
