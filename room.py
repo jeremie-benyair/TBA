@@ -57,6 +57,7 @@ class Room:
             texte="la pièce contient : \n"
             for item in self.inventory.values():
                 texte+=f"    -{item}"
+            return texte
     
     def on_locked_attempt(self, player): 
         print("Cette porte est verrouillée... ")
