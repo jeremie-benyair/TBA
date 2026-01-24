@@ -23,6 +23,10 @@ class Flashlight(Item):
                 print(f"{game.player.current_room.name} est désormais éclairé !")
                
                 print(game.player.current_room.get_long_description())
+                if self.player.current_room.name.lower() == "Cinéma abandonné" and not self.player.current_room.darked: 
+                
+                    self.player.add_reward("Indice : 05")
+                    print("🎁 Récompense : Indice : 05\n") 
                 
         else:
             print("lampe éteinte.\n")
