@@ -83,14 +83,14 @@ class Bible(Item):
         super().__init__(name, description, weight)
         pages_avant = ["page vide" for i in range(1908)]
         
-        page_speciale = ["2807"]
+        page_speciale = ["07"]
 
         pages_apres = ["page vide" for i in range(91)]
 
         self.pages = pages_avant + page_speciale + pages_apres
 
     def use_item(self, game):
-        which_page = input("À quelle page voulez-vous aller ? ")
+        which_page = input("À quelle page voulez-vous aller ?\n (retapez use à chaque fois pour accéder à une nouvelle page)")
         number_of_page = int(which_page)
 
         
