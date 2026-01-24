@@ -42,7 +42,7 @@ class Player():
             texte = "Vous disposez des items suivants :\n"
             for item in self.inventory.values():
     
-                from item import Medkit
+                from item import MedKit
                 if isinstance(item, Medkit) and item.number > 1:
                     texte += f"  - {item.name} (x{item.number})\n"
                 else:
