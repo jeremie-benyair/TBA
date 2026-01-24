@@ -53,12 +53,30 @@ class Weapon(Item):
         self.type = "weapon"
 
     def use_item(self, game):
-        room = game.player.current_room
-        if room.enemy is None:
-            print(" il n'y a rien à attaquer ici.")
-        else:
-            
-            print(f" tu attaques le {room.enemy.name} avec {self.name} et infliges {self.damage} points de dégâts !")
+        player = game.player
+        room = player.current_room
+    
+        # Vérifie que l'objet est une arme
+        if self.type != "weapon":
+            print(f"{self.name} ne peut pas être utilisée comme une arme.")
+            return
+    
+        # Cherche un monstre vivant dans la pièce
+        for c in room.characters:
+            if c.role == "monster":
+                
+                print(c.take_damage(self.damage))
+    
+                
+                import random
+                if c.is_alive() and random.random() < 0.33:
+                    print(f"{c.name} contre-attaque !")
+                    c.attack_player(player)
+                    
+                return
+    
+        print("Il n’y a aucun monstre à attaquer ici.")
+
 
 class Bible(Item):
     def __init__(self, name, description, weight):
