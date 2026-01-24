@@ -8,7 +8,7 @@ class Player():
         self.historique = []
         self.inventory={}
         self.equipped_item= None
-        self.max_weight=2
+        self.max_weight=2,5
         self.health_stat=100
         self.rewards = []
         self.quest_manager = QuestManager(self)
@@ -113,6 +113,8 @@ class Player():
             for reward in self.rewards:
                 print(f"  • {reward}")
             print()
+    def total_weight(self): 
+        return sum(item.weight * getattr(item, "number", 1) for item in self.inventory.values())
 
 
 
