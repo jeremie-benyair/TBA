@@ -291,10 +291,10 @@ class Game:
         self.print_welcome()
         # Loop until the game is finished
         while not self.finished:
-            for c in self.characters: 
+            for c in self.player.current_room.characters: 
                 if c.role == "monster" and c.current_room == self.player.current_room and c.is_alive(): 
                     import random 
-                    if random.random() < 0.40:
+                    if random.random() < 0.35:
                         print(f"{c.name} t’attaque soudainement !") 
                         c.attack_player(self.player)
     # Déplacement des PNJ
