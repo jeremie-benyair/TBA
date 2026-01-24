@@ -191,6 +191,8 @@ class Game:
         
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
         pharma.inventory["doudou"] = doudou
+        beamer = Beamer("beamer", "un appareil étrange permettant de se téléporter", 0.5) 
+        Neely_street.inventory["beamer"] = beamer
 
 
 
