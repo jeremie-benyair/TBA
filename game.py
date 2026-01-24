@@ -260,19 +260,40 @@ class Game:
 
 
     def process_command(self, command_string) -> None:
-
-
+        # Bloc spécial : jeu du barman
+        if self.barman_game_active and command_string.strip().isdigit():
+            nombre = int(command_string.strip())
+            self.barman_attempts += 1
+    
+            if nombre < self.barman_secret:
+                print("C’est plus.")
+            elif nombre > self.barman_secret:
+                print("C’est moins.")
+            else:
+                print("Bravo ! C’était le bon prix.")
+                print("Le barman te glisse à l’oreille : ‘Souviens-toi de ce chiffre… 07.’")
+                print("Il ajoute en souriant : ‘Et tiens, pour ta victoire… 28. Ça pourrait t’être utile.’")
+                self.player.quest_manager.complete_objective("Trouver le juste prix")
+                self.player.quest_manager.complete_quest("Réussir le défi du barman")
+                self.barman_game_active = False
+                self.barman_found = True
+                return
+    
+            if self.barman_attempts >= 9:
+                print("Tu as épuisé tes 9 essais. Le barman secoue la tête : 'Raté.'")
+                self.barman_game_active = False
+            return
+    
+        # Traitement normal des commandes
         list_of_words = command_string.split(" ")
-
         command_word = list_of_words[0]
-
-
+    
         if command_word not in self.commands.keys():
             print(f"\nCommande '{command_word}' non reconnue. Entrez 'help' pour voir la liste des commandes disponibles.\n")
-
         else:
             command = self.commands[command_word]
             command.action(self, list_of_words, command.number_of_parameters)
+
 
 
     def print_welcome(self):
