@@ -202,15 +202,15 @@ class Actions:
             command_word = list_of_words[0]
             print(MSG1.format(command_word=command_word))
             return False
-        # Calcul du poids total si on ajoute cet objet 
+        
         poids_total = game.player.total_weight() 
         poids_objet = item.weight 
-        # Si c'est un medkit, on ajoute juste le poids d'un seul exemplaire 
+         
         from item import Medkit 
         if isinstance(item, Medkit): 
-            poids_objet = item.weight # 1 seul medkit à la fois 
+            poids_objet = item.weight  
         if poids_total + poids_objet > game.player.max_weight: 
-            print("Vous ne pouvez pas prendre cet objet : votre inventaire est plein.\n") 
+            print("Vous ne pouvez pas prendre cet objet : votre inventaire est plein.\n Pour libérer de l'espace, veuillez taper la commande drop <objet> avec l'objet que vous voulez.\n") 
             return False
     
         objet = list_of_words[1]
