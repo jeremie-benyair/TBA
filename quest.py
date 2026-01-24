@@ -465,7 +465,7 @@ class QuestManager:
     def complete_objective(self, quest_name, objective_name):
         for quest in self.quests: 
             if quest.title == quest_name: 
-                return quest.complete_objective(objective_name, self.player)  i
+                return quest.complete_objective(objective_name, self.player)  
         return False
 
 
