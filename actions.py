@@ -326,7 +326,7 @@ class Actions:
                         game.barman_game_active = True
                         game.barman_attempts = 0
                         print("Très bien. Devine le prix exact de la bouteille de whisky.")
-                        print("C’est un nombre entre 1 et 100. Tu as 9 essais.")
+                        print("C’est un nombre entre 1 et 100. Tu as 7 essais.")
                         print("Tape simplement un nombre pour jouer.")
                         game.player.quest_manager.activate_quest("Réussir le défi du barman")
                     else:
