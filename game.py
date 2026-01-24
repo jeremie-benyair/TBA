@@ -112,9 +112,9 @@ class Game:
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=["Trouver le doudou", "Donner le doudou à la fillette"], reward="Clé du cinéma" )
         fillette = Charactere("fillette","Une petite fille apeurée.",parc,["Tu n'aurais pas vu mon doudou ?","Depuis que la brume est arrivée, tout le monde a disparu… même maman. Et puis… des monstres ont commencé à sortir de l’ombre."],role="static")
         parc.characters.append(fillette)
-        barman = Charactere( "barman", "Un homme au regard fatigué, essuyant un verre sale derrière le comptoir.", bar, ["Tu veux un défi ? "," S tu y arrives, je te file une récompense."] ) 
+        barman = Charactere( "barman", "Un homme au regard fatigué, essuyant un verre sale derrière le comptoir.", bar, ["Tu veux un verre ?"] ) 
         bar.characters.append(barman)
-        quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête comprit entre 1 et 100 en 9 essais maximum.", objectives=["Trouver le juste prix"], reward="Indice : 28" ) 
+        quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête comprit entre 1 et 100 en 9 essais maximum.", objectives=["Trouver le juste prix","Ramenez au barman l'objet qu'il veut pour pouvoir rejouer au jeu."], reward="Indice : 28" ) 
        
         
 
