@@ -202,43 +202,40 @@ class Actions:
             command_word = list_of_words[0]
             print(MSG1.format(command_word=command_word))
             return False
-        
-        poids_total = game.player.total_weight() 
-        poids_objet = item.weight 
-         
-        from item import Medkit 
-        if isinstance(item, Medkit): 
-            poids_objet = item.weight  
-        if poids_total + poids_objet > game.player.max_weight: 
-            print("Vous ne pouvez pas prendre cet objet : votre inventaire est plein.\n Pour libérer de l'espace, veuillez taper la commande drop <objet> avec l'objet que vous voulez.\n") 
-            return False
     
         objet = list_of_words[1]
+        room = game.player.current_room
     
-        if objet not in game.player.current_room.inventory:
+        
+        if objet not in room.inventory:
             print("Cet objet n'est pas dans cette pièce\n")
             return False
     
-        item = game.player.current_room.inventory[objet]
+        item = room.inventory[objet]  
     
-       
+        # Vérifie le poids
+        poids_total = game.player.total_weight()
+        poids_objet = item.weight
+    
+        if poids_total + poids_objet > game.player.max_weight:
+            print("Vous ne pouvez pas prendre cet objet : votre inventaire est plein.\nPour libérer de l'espace, tapez : drop <objet>\n")
+            return False
+    
+        # Gestion spéciale pour les MedKit
         from item import MedKit
         if isinstance(item, MedKit):
-            
             if objet in game.player.inventory:
                 game.player.inventory[objet].number += 1
             else:
-                # Premier MedKit → on l'ajoute avec number = 1
                 item.number = 1
                 game.player.inventory[objet] = item
         else:
-            # Objet normal
             game.player.inventory[objet] = item
     
         print(f"L'item {item.name} a été ajouté à votre inventaire\n")
-
-        del game.player.current_room.inventory[objet]
+        del room.inventory[objet]
         return True
+
 
 
 
