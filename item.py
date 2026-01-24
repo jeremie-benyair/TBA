@@ -113,7 +113,7 @@ class MedKit(Item):
             return False 
             
         before = player.health_stat 
-        player.health_stat = min(100, player.health_stat + self.heal_point) 
+        player.health_stat = min(100, player.health_stat + self.health_point) 
         healed = player.health_stat - before 
         print(f"Vous utilisez une trousse de soins et récupérez {healed} points de vie.") 
         print(f"Votre santé est maintenant de {player.health_stat/100}%.") 
