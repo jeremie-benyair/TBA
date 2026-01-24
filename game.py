@@ -108,17 +108,17 @@ class Game:
 
         #setup pnj
         infirmiere_1 = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.",current_room=croisement, health=70)
-        croisement.rooms.append(infirmière_1)
+        croisement.characters.append(infirmière_1)
         infirmiere_2 = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.",current_room=Sanders_street, health=70)
-        Sanders_street.rooms.append(infirmière_2)
+        Sanders_street.characters.append(infirmière_2)
         chien = Monster( name="Chien infecté", description="Un molosse baveux aux yeux injectés de sang.",current_room=pharma,  health=60 )
-        pharma.rooms.append(chien)
+        pharma.characters.append(chien)
         curé=Monster(name="curé",description="Un curé sans tête qui traine au sol une redoutable faux.",current_room=eglise,health=100)
-        eglise.rooms.append(curé)
+        eglise.characters.append(curé)
         habitant_1=Monster(name="habitant infecté",description= "Il lâche des gémissements qui font froid dans le dos.",current_room=Lindsey_street,health=40)
-        Lindsey_street.rooms.append(habitant_1)
+        Lindsey_street.characters.append(habitant_1)
         monstre=Monster(name="créature", description="Un monstre à l'apparence d'une chimère qui rampe au sol.",current_room=Martin_street, health=110)
-        Martin_street.rooms.append(monstre)
+        Martin_street.characters.append(monstre)
         
         
         
@@ -199,22 +199,38 @@ class Game:
         Office de Tourisme — 12 Jefferson Ave, SIlent Hill
                     """,type="text")
         hotel.inventory["flyer"]=flyer
-        lettre_fille = Item( "lettre","Une lettre tachée de larmes, trouvée sur un lit défait.\nUne fois dans l'inventaire,utilisez la commande read <objet>.",0, "Maman,\n\n" "Je ne sais pas si tu liras un jour ces mots. Silent Hill n’est plus la ville que tu as connue. " "La brume est partout, les rues sont désertes, et des choses... des choses horribles rôdent la nuit. " "Les gens disparaissent ou deviennent fous. Même le temps semble figé.\n\n" "Je t’en supplie, ne viens pas ici. Si tu reçois cette lettre, oublie-moi. Sauve-toi.\n\n" "Je t’aime.\n\n" "— Élodie" , type="text" )
-        chambre_1.inventory["lettre"]=lettre
-        flashlight=Flashlight("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
-        chambre_2.inventory["flashlight"]=flashlight
-        batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=35,type="weapon")
-        Lindsey_street.inventory["batte"]=batte_2
-    
-        chambre_1.inventory["batte"] = batte_1
-        bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
-        eglise.inventory["bible"]=bible
-        couteau=Weapon("couteau","Un gros couteau rouillé posé sur le comptoir du bar",0.6,damage=25,type="weapon")
-        bar.inventory["couteau"]=couteau
-        katana=Weapon("katana","réplique fidèle du katana du film 'Kill Bill Vol.1' nommé 'Hatori Hanzo'",1.8,damage=100,type="weapon")
-        cinema.inventory["katana"]=katana
-        barre=Weapon("barre de fer",description=None,weight=0.9,damage=30,type="weapon")
-        Martin_street.inventory["barre de fer"]=barre
+        lettre_fille = Item(
+        "lettre",
+        "Une lettre tachée de larmes, trouvée sur un lit défait.\nUne fois dans l'inventaire,utilisez la commande read <objet>.",
+        0,
+        "Maman,\n\nJe ne sais pas si tu liras un jour ces mots. Silent Hill n’est plus la ville que tu as connue. "
+        "La brume est partout, les rues sont désertes, et des choses... des choses horribles rôdent la nuit. "
+        "Les gens disparaissent ou deviennent fous. Même le temps semble figé.\n\n"
+        "Je t’en supplie, ne viens pas ici. Si tu reçois cette lettre, oublie-moi. Sauve-toi.\n\n"
+        "Je t’aime.\n\n— Élodie",
+        type="text")  # ça, c’est OK si Item accepte type=
+         chambre_1.inventory["lettre"] = lettre_fille
+        
+        flashlight = Flashlight("flashlight", "lampe-torche servant à éclairer des pièces.", 0.25)
+        chambre_2.inventory["flashlight"] = flashlight
+        
+        batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, 35)
+        Lindsey_street.inventory["batte"] = batte
+        
+        chambre_1.inventory["batte"] = batte  # si tu veux la même batte dans deux lieux, sinon crée une autre instance
+        
+        bible = Bible("bible", "une vieille bible étrange qui mériterait qu'on l'examine.", 0.3)
+        eglise.inventory["bible"] = bible
+        
+        couteau = Weapon("couteau", "Un gros couteau rouillé posé sur le comptoir du bar", 0.6, 25)
+        bar.inventory["couteau"] = couteau
+        
+        katana = Weapon("katana", "réplique fidèle du katana du film 'Kill Bill Vol.1' nommé 'Hatori Hanzo'", 1.8, 100)
+        cinema.inventory["katana"] = katana
+        
+        barre = Weapon("barre de fer", None, 0.9, 30)
+        Martin_street.inventory["barre de fer"] = barre
+
         
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
         pharma.inventory["doudou"] = doudou
