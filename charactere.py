@@ -50,7 +50,7 @@ class Charactere:
         self.msgs.append(msg)
         return msg
 
-class Monstre(Charactere): 
+class Monster(Charactere): 
     def __init__(self, name, description, current_room, health=100): 
         super().__init__(name, description, current_room, msgs=[], role="monster") 
         self.health = health 
