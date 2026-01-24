@@ -270,9 +270,9 @@ class Game:
             elif nombre > self.barman_secret:
                 print("C’est moins.")
             else:
-                print("Bravo ! C’était le bon prix.")
-                print("Le barman te glisse à l’oreille : ‘Souviens-toi de ce chiffre… 07.’")
-                print("Il ajoute en souriant : ‘Et tiens, pour ta victoire… 28. Ça pourrait t’être utile.’")
+                print(" 'Bravo ! C’était le bon prix.' ")
+                print(" 'Souviens-toi de ce chiffre… 28.’")
+                print(" ‘Et tiens, pour ta victoire… Ça pourrait t’être utile.’")
                 self.player.quest_manager.complete_objective("Réussir le défi du barman", "Trouver le juste prix")
                 
                 self.barman_game_active = False
