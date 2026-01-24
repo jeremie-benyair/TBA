@@ -108,9 +108,9 @@ class Game:
 
         #setup pnj
         infirmiere_1 = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.",current_room=croisement, health=70)
-        croisement.characters.append(infirmière_1)
+        croisement.characters.append(infirmiere_1)
         infirmiere_2 = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.",current_room=Sanders_street, health=70)
-        Sanders_street.characters.append(infirmière_2)
+        Sanders_street.characters.append(infirmiere_2)
         chien = Monster( name="Chien infecté", description="Un molosse baveux aux yeux injectés de sang.",current_room=pharma,  health=60 )
         pharma.characters.append(chien)
         curé=Monster(name="curé",description="Un curé sans tête qui traine au sol une redoutable faux.",current_room=eglise,health=100)
