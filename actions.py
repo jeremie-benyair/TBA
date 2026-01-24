@@ -227,8 +227,8 @@ class Actions:
     
         print(f"L'item {item.name} a été ajouté à votre inventaire\n")
 
-    del game.player.current_room.inventory[objet]
-    return True
+        del game.player.current_room.inventory[objet]
+        return True
 
 
 
