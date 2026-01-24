@@ -126,7 +126,7 @@ class Quest:
         """
         if not self.is_completed:
             self.is_completed = True
-            print(f"\n🏆 Quête terminée: {self.name}")
+            print(f"\n🏆 Quête terminée: {self.title}")
             if self.reward:
                 print(f"🎁 Récompense: {self.reward}")
                 if player:
