@@ -196,20 +196,40 @@ class Actions:
         return True
 
 
-    def take(game,list_of_words,number_of_parameters):
-        l=len(list_of_words)
-        if l!=number_of_parameters + 1:
-            command_word=list_of_words[0]
-            print(MSG1.format(command_word=command_word))
-            return False
-        elif list_of_words[1] not in game.player.current_room.inventory:
-            print("Cet objet n'est pas dans cet pièce\n")
+   def take(game, list_of_words, number_of_parameters):
+    l = len(list_of_words)
+    if l != number_of_parameters + 1:
+        command_word = list_of_words[0]
+        print(MSG1.format(command_word=command_word))
+        return False
+
+    objet = list_of_words[1]
+
+    if objet not in game.player.current_room.inventory:
+        print("Cet objet n'est pas dans cette pièce\n")
+        return False
+
+    item = game.player.current_room.inventory[objet]
+
+   
+    from item import Medkit
+    if isinstance(item, Medkit):
+        
+        if objet in game.player.inventory:
+            game.player.inventory[objet].number += 1
         else:
-            objet=list_of_words[1]
-            game.player.inventory[objet]=game.player.current_room.inventory[objet]
-            print(f"L'item {game.player.current_room.inventory[objet].name} a été ajouté à votre inventaire\n")
-            del game.player.current_room.inventory[objet]
-        return True
+            # Premier medkit → on l'ajoute avec number = 1
+            item.number = 1
+            game.player.inventory[objet] = item
+    else:
+        # Objet normal
+        game.player.inventory[objet] = item
+
+    print(f"L'item {item.name} a été ajouté à votre inventaire\n")
+
+    del game.player.current_room.inventory[objet]
+    return True
+
 
 
     def drop(game,list_of_words,number_of_parameters):
