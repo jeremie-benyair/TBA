@@ -1,7 +1,7 @@
 # Description: Game class
 
 # Import modules
-
+import random
 from room import Room
 from room import Cinema
 from room import Cave
