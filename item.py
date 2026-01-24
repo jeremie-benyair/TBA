@@ -34,11 +34,17 @@ class Beamer(Item):
     def __init__(self,name,description,weight):
         super().__init__(name,description,weight)
     def use_item(self,game):  
-        which_room=input("choisissez un lieu parmi ceux déjà visité.\n")
-        if which_room not in game.player.historique:
+        which_room=input("choisissez un lieu parmi ceux déjà visité.\n").strip().lower()
+        if which_room not in [room.name.lower() for room in game.player.historique]:
             print("vous n'avez pas encore visité ce lieu, vous ne pouvez donc pas vous y déplacer.\n")
-        current_room=which_room
-        print(game.player.current_room.get_long_description)
+            return
+        for room in game.rooms:    
+            if room.name.lower() == which_room: 
+                game.player.current_room = room 
+                print(f"✨ Téléportation vers {room.name} réussie !") 
+                print(room.get_long_description()) 
+                return 
+        print("❌ Salle introuvable malgré l'historique. Vérifiez le nom.")
 
 class Weapon(Item):
     def __init__(self, name, description, weight, damage):
