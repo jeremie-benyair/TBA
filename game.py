@@ -259,6 +259,7 @@ class Game:
             if self.player.current_room.name.lower() == "cinéma" and not self.player.current_room.darked: 
                 if "Indice : 05" not in self.player.rewards: 
                     self.player.add_reward("Indice : 05")
+                    print("🎁 Récompense : Indice : 05\n")
 
 
 
