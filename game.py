@@ -193,6 +193,13 @@ class Game:
         pharma.inventory["doudou"] = doudou
         beamer = Beamer("beamer", "un appareil étrange permettant de se téléporter", 0.5) 
         Neely_street.inventory["beamer"] = beamer
+        medkit_parc = Medkit("medkit", "une trousse de soins utile en cas de blessure", 0.35)
+        parc.inventory["medkit"] = medkit_parc
+        medkit_hotel = Medkit("medkit", "une trousse de soins utile en cas de blessure", 0.35)
+        hotel.inventory["medkit"] = medkit_hotel
+
+        
+
 
 
 
