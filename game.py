@@ -199,7 +199,7 @@ class Game:
         Office de Tourisme — 12 Jefferson Ave, SIlent Hill
                     """,type="text")
         hotel.inventory["flyer"]=flyer
-        lettre_fille = Item( "lettre","Une lettre tachée de larmes, trouvée sur un lit défait.\nUne fois dans l'inventaire,utilisez la commande read <objet>.",0, "Maman,\n\n" "Je ne sais pas si tu liras un jour ces mots. Silent Hill n’est plus la ville que tu as connue. " "La brume est partout, les rues sont désertes, et des choses... des choses horribles rôdent la nuit. " "Les gens disparaissent ou deviennent fous. Même le temps semble figé.\n\n" "Je t’en supplie, ne viens pas ici. Si tu reçois cette lettre, oublie-moi. Sauve-toi.\n\n" "Je t’aime.\n\n" "— Élodie" ), type="text" )
+        lettre_fille = Item( "lettre","Une lettre tachée de larmes, trouvée sur un lit défait.\nUne fois dans l'inventaire,utilisez la commande read <objet>.",0, "Maman,\n\n" "Je ne sais pas si tu liras un jour ces mots. Silent Hill n’est plus la ville que tu as connue. " "La brume est partout, les rues sont désertes, et des choses... des choses horribles rôdent la nuit. " "Les gens disparaissent ou deviennent fous. Même le temps semble figé.\n\n" "Je t’en supplie, ne viens pas ici. Si tu reçois cette lettre, oublie-moi. Sauve-toi.\n\n" "Je t’aime.\n\n" "— Élodie" , type="text" )
         chambre_1.inventory["lettre"]=lettre
         flashlight=Flashlight("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
         chambre_2.inventory["flashlight"]=flashlight
@@ -213,7 +213,7 @@ class Game:
         bar.inventory["couteau"]=couteau
         katana=Weapon("katana","réplique fidèle du katana du film 'Kill Bill Vol.1' nommé 'Hatori Hanzo'",1.8,damage=100,type="weapon")
         cinema.inventory["katana"]=katana
-        barre=Weapon("barre de fer",description=None,0.9,damage=30,type="weapon")
+        barre=Weapon("barre de fer",description=None,weight=0.9,damage=30,type="weapon")
         Martin_street.inventory["barre de fer"]=barre
         
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
