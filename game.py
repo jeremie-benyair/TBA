@@ -284,10 +284,13 @@ class Game:
                 self.barman_game_active = False
                 quest = self.player.quest_manager.get_quest_by_title("Réussir le défi du barman")
                 if quest and "Ramener l’objet au barman" not in quest.objectives:
-                    quest.objectives["Ramener l’objet au barman"] = False
+                    
+                    quest.objectives.append("Ramener l’objet au barman")
                     print("🆕 Nouvel objectif ajouté à la quête : Ramener l’objet au barman")
-
             return
+                    
+
+            
     
         # Traitement normal des commandes
         list_of_words = command_string.split(" ")
