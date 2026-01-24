@@ -268,7 +268,7 @@ class Game:
             for c in self.characters: 
                 if c.role == "monster" and c.current_room == self.player.current_room and c.is_alive(): 
                     import random 
-                    if random.random() < 0.33:
+                    if random.random() < 0.40:
                         print(f"{c.name} t’attaque soudainement !") 
                         c.attack_player(self.player)
     # Déplacement des PNJ
