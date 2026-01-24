@@ -1,4 +1,5 @@
 from item import Key
+key_cinema = Key("clé", "Une clé rouillée du cinéma", weight=0.1)
 
 # Description: The actions module.
 
