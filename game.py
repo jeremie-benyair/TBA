@@ -66,39 +66,41 @@ class Game:
 
         # Setup rooms
 
-        Neely_street= Room("Neely Street"," au niveau de Neely Street ")
-        self.rooms.append(Neely_street)
-        cinema = Cinema("Cinéma abandonné", " ",darked=True,locked=True)
-        self.rooms.append(cinema)
-        hotel = Room("Hotel abandonné", " ")
-        self.rooms.append(hotel)
-        parc = Room("Parc pour enfants abandonné", " ")
-        self.rooms.append(parc)
-        bar= Room("Bar", "")
-        self.rooms.append(bar)
-        pharma = Room("Pharmacie", " ")
-        self.rooms.append(pharma)
-        croisement=Room("intersection"," au nord se situe Neely Street, au sud se situe Martin Street, à l'est se situe Lindsey Street et à l'ouest se situe Sanders Street.  ")
-        self.rooms.append(croisement)
-        Martin_street=Room("Martin Street", " ")
-        self.rooms.append(Martin_street)
-        Lindsey_street=Room("Lindsey_Street", " ")
-        self.rooms.append(Lindsey_street)
-        Sanders_street=Room("Sanders Street", " ")
-        self.rooms.append(Sanders_street)
-        biblio=Room("bibliothèque", " ")
-        self.rooms.append(biblio)
-        eglise=Room("église abandonnée", " ")
-        self.rooms.append(eglise)
-        etage=Room("1er étage", " ") 
-        self.rooms.append(etage)
-        chambre_1=Room("chambre_1", " ",darked=True)
-        self.rooms.append(chambre_1)
-        chambre_2=Room(" chambre_2", " ")
-        self.rooms.append(chambre_2)
+        # Setup rooms
 
-        cave=Cave("cave", " ",locked=True)
+        Neely_street = Room("Neely Street", "Une rue déserte enveloppée de brouillard. À l’est se trouve l’hôtel abandonné, à l’ouest le parc pour enfants. Au nord, la rue mène vers le croisement central.")
+        self.rooms.append(Neely_street)
+        cinema = Cinema("Cinéma abandonné", "Un vieux cinéma plongé dans l’obscurité. Les sièges éventrés et l’odeur de poussière donnent l’impression que le temps s’est arrêté.", darked=True, locked=True)
+        self.rooms.append(cinema)
+        hotel = Room("Hotel abandonné", "Un hall silencieux où le papier peint se décolle des murs. Le comptoir d’accueil est renversé, et un courant d’air froid traverse la pièce.")
+        self.rooms.append(hotel)
+        parc = Room("Parc pour enfants abandonné", "Un parc désert où les balançoires grincent sous un vent invisible. Les jouets rouillés semblent t’observer.")
+        self.rooms.append(parc)
+        bar = Room("Bar", "Un bar délabré où les bouteilles brisées jonchent le sol. Une odeur d’alcool rance flotte encore dans l’air.")
+        self.rooms.append(bar)
+        pharma = Room("Pharmacie", "Des étagères renversées et des boîtes de médicaments éventrées. Le néon au plafond clignote faiblement.")
+        self.rooms.append(pharma)
+        croisement = Room("intersection", "Un croisement désert où le brouillard semble plus dense. Au nord se trouve Sanders Street, à l’est Lindsey Street, à l’ouest Martin Street, et au sud Neely Street.")
+        self.rooms.append(croisement)
+        Martin_street = Room("Martin Street", "Une rue étroite bordée de maisons abandonnées. À l’ouest se trouve le parc pour enfants, au nord l’église abandonnée, et au sud le croisement.")
+        self.rooms.append(Martin_street)
+        Lindsey_street = Room("Lindsey_Street", "Une longue rue plongée dans la brume. À l’est se trouve la bibliothèque, à l’ouest la pharmacie, et au sud le croisement.")
+        self.rooms.append(Lindsey_street)
+        Sanders_street = Room("Sanders Street", "Une rue sombre où les lampadaires sont tous brisés. À l’est se trouve le cinéma abandonné, à l’ouest le bar, et au sud le croisement.")
+        self.rooms.append(Sanders_street)
+        biblio = Room("bibliothèque", "Une bibliothèque silencieuse où les livres sont éparpillés au sol. L’odeur de papier humide envahit la pièce.")
+        self.rooms.append(biblio)
+        eglise = Room("église abandonnée", "Une église délabrée où les vitraux sont brisés. Une atmosphère lourde et sacrée persiste malgré l’abandon.")
+        self.rooms.append(eglise)
+        etage = Room("1er étage", "Un étage poussiéreux où le parquet craque sous tes pas. Les portes sont entrouvertes, comme si quelqu’un venait de passer.")
+        self.rooms.append(etage)
+        chambre_1 = Room("chambre_1", "Une petite chambre plongée dans le noir. Les meubles sont renversés et un miroir fissuré reflète ton ombre.", darked=True)
+        self.rooms.append(chambre_1)
+        chambre_2 = Room("chambre_2", "Une chambre froide et silencieuse. Le lit est défait, comme si quelqu’un l’avait quitté précipitamment.")
+        self.rooms.append(chambre_2)
+        cave = Cave("cave", "Une cave humide et obscure. L’air y est glacial et un goutte-à-goutte résonne dans le silence.", locked=True)
         self.rooms.append(cave)
+
         #setup pnj
 
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=["Trouver le doudou", "Donner le doudou à la fillette"], reward="Clé du cinéma" )
@@ -216,7 +218,7 @@ class Game:
 
          # Create exits for rooms
 
-        biblio.exits={"sortie":Lindsey_street,"N": None,"E": None,"O":None,"S": None, "Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        
         bar.exits = {"sortie" :Sanders_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         cinema.exits = {"sortie" : Sanders_street,"N": None,  "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         eglise.exits = {"sortie" : Martin_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
