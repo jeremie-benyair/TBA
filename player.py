@@ -73,7 +73,7 @@ class Player():
         """
         if reward and reward not in self.rewards:
             self.rewards.append(reward)
-            print(f"\n🎁 Vous avez obtenu: {reward}\n")
+            
     def back(self):
         if len(self.historique) < 2:
             print("\nImpossible de revenir en arrière.\n")
