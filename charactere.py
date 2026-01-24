@@ -24,7 +24,7 @@ class Charactere:
 
         import random
 
-        # 50% de chance de bouger
+        
         if random.random() < 0.2:
             return False
 
