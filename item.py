@@ -89,7 +89,35 @@ class Key(Item):
         print("la porte du cinéma est maintenant ouverte !\n")
         return True
         
-                     
+class MedKit(Item):
+    def __init__(self, name, description, weight,health_point=25,number=1):
+        super().__init__(name, description, weight)
+        self.health_point=health_point
+        self.number=number
+
+    def use_item(self, game): 
+        player = game.player 
+        # Si la vie est déjà pleine 
+        if player.health_stat == 100: 
+            print("Votre barre de vie est déjà à 100%.") 
+            return False 
+            
+        before = player.health_stat 
+        player.health_stat = min(100, player.health_stat + self.heal_point) 
+        healed = player.health_stat - before 
+        print(f"Vous utilisez une trousse de soins et récupérez {healed} points de vie.") 
+        print(f"Votre santé est maintenant de {player.health_stat/100}%.") 
+        
+        
+        self.number -= 1
+        if self.number <= 0: 
+            del player.inventory[self.name]
+        return True
+        
+        
+        
+        
+    
                   
     
      
