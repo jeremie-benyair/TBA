@@ -76,7 +76,7 @@ class Game:
 
         Neely_street = Room("Neely Street", "Une rue déserte enveloppée de brouillard.\nÀ l’est se trouve l’hôtel abandonné, à l’ouest le parc pour enfants.\nAu nord, la rue mène vers le croisement central.")
         self.rooms.append(Neely_street)
-        cinema = Cinema("Cinéma abandonné", "Un vieux cinéma plongé dans l’obscurité.\nLes sièges éventrés et l’odeur de poussière donnent l’impression que le temps s’est arrêté.", darked=True, locked=True)
+        cinema = Cinema("Cinéma abandonné", "Un vieux cinéma plongé dans l’obscurité.\nLes sièges éventrés et l’odeur de poussière donnent l’impression que le temps s’est arrêté.\nTout d'un coup, l'écran projette une étrange vidéo où il est marqué en gros : 05", darked=True, locked=True)
         self.rooms.append(cinema)
         hotel = Room("Hotel abandonné", "Un hall silencieux où le papier peint se décolle des murs.\nLe comptoir d’accueil est renversé, et un courant d’air froid traverse la pièce.")
         self.rooms.append(hotel)
@@ -256,7 +256,7 @@ class Game:
                     pnj.move()
             # Commande du joueur 
             self.process_command(input("> "))
-            if self.player.current_room.name.lower() == "cinéma" and not self.player.current_room.darked: 
+            if self.player.current_room.name.lower() == "Cinéma abandonné" and not self.player.current_room.darked: 
                 if "Indice : 05" not in self.player.rewards: 
                     self.player.add_reward("Indice : 05")
                     print("🎁 Récompense : Indice : 05\n")
