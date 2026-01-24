@@ -303,7 +303,7 @@ class Game:
                     pnj.move()
             # Commande du joueur 
             self.process_command(input("> "))
-            if self.player.current_room.name.lower() == "Cinéma abandonné" and not self.player.current_room.darked: 
+            if self.player.current_room.name.lower() == "Cinéma abandonné" and cinema.darked==False: 
                 if "Indice : 05" not in self.player.rewards: 
                     self.player.add_reward("Indice : 05")
                     print("🎁 Récompense : Indice : 05\n")
