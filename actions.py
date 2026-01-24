@@ -259,12 +259,18 @@ class Actions:
                 print("Aucun objet n'est présent dans votre inventaire.\n")
         else:
             print("Vous avez actuellement dans votre inventaire : \n")
-            for item in game.player.inventory.values():
-                print (f"        -{item}   ")
-            print("""\n rappel des commandes : "read <item>" : lire le contenu d'un objet s'il est lisible.
-                                                   "use <item>" : equiper un objet.
-                                                   "drop <item>" :  déposer un objet sur le sol.\n
-                      """)
+            
+            from item import MedKit 
+            for item in game.player.inventory.values(): 
+                if isinstance(item, MedKit) and item.number > 1: 
+                    print(f" - {item.name} (x{item.number})") 
+                else: print(f" - {item.name}")
+            
+            print("""\n rappel des commandes : 
+            "read <item>" : lire le contenu d'un objet s'il est lisible.
+            "use <item>" : equiper un objet.
+            "drop <item>" :  déposer un objet sur le sol.\n
+                """)
                                                 
                                                
         return True
