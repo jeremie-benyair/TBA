@@ -64,6 +64,9 @@ class Actions:
             
         #next_room=game.player.current_room.exits[direction]#
         next_room = game.player.current_room.exits.get(direction)
+        if next_room is None: 
+            print("Il n’y a pas de sortie dans cette direction.") 
+            return False
         if next_room.locked: 
             next_room.on_locked_attempt(player) 
             return False
