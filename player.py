@@ -36,13 +36,20 @@ class Player():
 
         return True
     def get_inventory(self):
-        if  self.inventory=={}:
+        if self.inventory == {}:
             return "Votre inventaire est vide."
         else:
             texte = "Vous disposez des items suivants :\n"
             for item in self.inventory.values():
-                texte += f"  - {item}\n"
+    
+                from item import Medkit
+                if isinstance(item, Medkit) and item.number > 1:
+                    texte += f"  - {item.name} (x{item.number})\n"
+                else:
+                    texte += f"  - {item.name}\n"
+                
             return texte
+
              
     def add_reward(self, reward):
         """
