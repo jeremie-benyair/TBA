@@ -417,7 +417,9 @@ class Actions:
             del player.inventory["doudou"]
             player.add_reward("Clé du cinéma")
             #player.quest_manager.complete_quest("Retrouver le doudou")#
-            player.quest_manager.complete_objective("Retrouver le doudou", "Donner le doudou à la fillette")
+            player.quest_manager.get_quest_by_title("Retrouver le doudou").complete_quest(player)
+
+            #player.quest_manager.complete_objective("Retrouver le doudou", "Donner le doudou à la fillette")#
             print("la clé a été ajouté à votre inventaire.\n")
 
 
