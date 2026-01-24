@@ -105,7 +105,7 @@ class Game:
         chambre_2 = Room("chambre_2", "Une chambre froide et silencieuse.\nLe lit est défait, comme si quelqu’un l’avait quitté précipitamment.")
         self.rooms.append(chambre_2)
         cave = Cave("cave", "Une cave humide et obscure.\nL’air y est glacial et un goutte-à-goutte résonne dans le silence.", locked=True)
-        self.rooms.append(cave)
+        self.rooms.append(cave) 
 
         #setup pnj
 
