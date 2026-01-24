@@ -190,17 +190,17 @@ class Game:
         chambre_1.inventory["lettre"]=lettre
         flashlight=Flashlight("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
         chambre_2.inventory["flashlight"]=flashlight
-        batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=35)
+        batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=35,type="weapon")
         Martin_Street.inventory["batte"]=batte_2
     
         chambre_1.inventory["batte"] = batte_1
         bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
         eglise.inventory["bible"]=bible
-        couteau=Weapon("couteau","Un gros couteau rouillé posé sur le comptoir du bar",0.6,damage=25)
+        couteau=Weapon("couteau","Un gros couteau rouillé posé sur le comptoir du bar",0.6,damage=25,type="weapon")
         bar.inventory["couteau"]=couteau
-        katana=Weapon("katana","réplique fidèle du katana du film 'Kill Bill Vol.1' nommé 'Hatori Hanzo'",1.8,damage=100)
+        katana=Weapon("katana","réplique fidèle du katana du film 'Kill Bill Vol.1' nommé 'Hatori Hanzo'",1.8,damage=100,type="weapon")
         cinema.inventory["katana"]=katana
-        barre=Weapon("barre de fer",description=None,0.9,damage=30)
+        barre=Weapon("barre de fer",description=None,0.9,damage=30,type="weapon")
         Martin_street.inventory["barre de fer"]=barre
         
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
