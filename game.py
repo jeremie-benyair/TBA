@@ -194,7 +194,7 @@ class Game:
         flashlight=Flashlight("flashlight","lampe-torche servant à éclairer des pièces.",0.25)
         chambre_2.inventory["flashlight"]=flashlight
         batte = Weapon("batte", "Une vieille batte de baseball cloutée", 1.0, damage=35,type="weapon")
-        Martin_Street.inventory["batte"]=batte_2
+        Lindsey_street.inventory["batte"]=batte_2
     
         chambre_1.inventory["batte"] = batte_1
         bible=Bible("bible","une vieille bible étrange qui mériterait qu'on l'examine.",0.3)
