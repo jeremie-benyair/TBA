@@ -27,6 +27,10 @@ class Game:
         self.rooms = []
         self.commands = {}
         self.player = None
+        self.barman_secret = 28  
+        self.barman_attempts = 0 
+        self.barman_game_active = False 
+        self.barman_found = False
 
     # Setup the game
     def setup(self):
@@ -108,14 +112,8 @@ class Game:
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=["Trouver le doudou", "Donner le doudou à la fillette"], reward="Clé du cinéma" )
         fillette = Charactere("fillette","Une petite fille apeurée.",parc,["Tu n'aurais pas vu mon doudou ?","Depuis que la brume est arrivée, tout le monde a disparu… même maman. Et puis… des monstres ont commencé à sortir de l’ombre."],role="static")
         parc.characters.append(fillette)
-        
-
-
-
-
-
-        pnj_2 = Charactere( "pnj_2","description",cinema,["phrase 1", "phrase 2"])
-        cinema.characters.append(pnj_2)
+        barman = Charactere( "barman", "Un homme au regard fatigué, essuyant un verre sale derrière le comptoir.", bar, ["Tu veux un défi ? "," S tu y arrives, je te file une récompense."] ) 
+        bar.characters.append(barman)
         pnj_3 = Charactere( "pnj_3","description",hotel,["phrase 1", "phrase 2"])
         hotel.characters.append(pnj_3)
 
