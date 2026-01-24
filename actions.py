@@ -212,13 +212,13 @@ class Actions:
         item = game.player.current_room.inventory[objet]
     
        
-        from item import Medkit
-        if isinstance(item, Medkit):
+        from item import MedKit
+        if isinstance(item, MedKit):
             
             if objet in game.player.inventory:
                 game.player.inventory[objet].number += 1
             else:
-                # Premier medkit → on l'ajoute avec number = 1
+                # Premier MedKit → on l'ajoute avec number = 1
                 item.number = 1
                 game.player.inventory[objet] = item
         else:
