@@ -8,7 +8,7 @@ class Player():
         self.historique = []
         self.inventory={}
         self.equipped_item= None
-        self.max_weight=2,5
+        self.max_weight=2.5
         self.health_stat=100
         self.rewards = []
         self.quest_manager = QuestManager(self)
