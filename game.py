@@ -69,9 +69,7 @@ class Game:
         self.commands["give"]=give
 
 
-        # Setup rooms
-
-        # Setup rooms
+    
 
         # Setup rooms
 
@@ -109,8 +107,20 @@ class Game:
         self.rooms.append(cave) 
 
         #setup pnj
-        infirmiere = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.", health=100)
-        self.rooms.append(croisement)
+        infirmiere_1 = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.", health=70)
+        croisement.rooms.append(infirmière_1)
+        infirmiere_2 = Monster( name="Infirmière défigurée", description="Elle tremble, armée d’un scalpel rouillé.", health=70)
+        Sanders_street.rooms.append(infirmière_2)
+        chien = Monster( name="Chien infecté", description="Un molosse baveux aux yeux injectés de sang.",  health=60 )
+        pharma.rooms.append(chien)
+        curé=Monster(name="curé",description="Un curé sans tête qui traine au sol une redoutable faux.",health=100)
+        eglise.rooms.append(curé)
+        habitant_1=Monster(name="habitant infecté",description= "Il lâche des gémissements qui font froid dans le dos.",health=40)
+        Lindsey_street.rooms.append(habitant_1)
+        monstre=Monster(name="créature", description="Un monstre à l'apparence d'une chimère qui rampe au sol.", health=110)
+        Martin_street.rooms.append(monstre)
+        
+        
         
         quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=[], reward="Clé du cinéma" )
         fillette = Charactere("fillette","Une petite fille apeurée.",parc,["Tu n'aurais pas vu mon doudou ?","Depuis que la brume est arrivée, tout le monde a disparu… même maman. Et puis… des monstres ont commencé à sortir de l’ombre."],role="static")
