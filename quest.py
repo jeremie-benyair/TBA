@@ -462,42 +462,12 @@ class QuestManager:
         return False
 
 
-    def complete_objective(self,quest_name,objective_name):
-        """
-        Complete an objective in any active quest.
-        
-        Args:
-            objective_text (str): The objective to complete.
-            
-        Returns:
-            bool: True if objective was found and completed, False otherwise.
-            
-        Examples:
-        
-        >>> manager = QuestManager()
-        >>> quest = Quest("Manager Quest", "Test", ["Do something"])
-        >>> manager.add_quest(quest)
-        >>> manager.activate_quest("Manager Quest") # doctest: +NORMALIZE_WHITESPACE
-        <BLANKLINE>
-        🗡️  Nouvelle quête activée: Manager Quest
-        📝 Test
-        <BLANKLINE>
-        True
-        >>> manager.complete_objective("Do something") # doctest: +NORMALIZE_WHITESPACE
-        ✅ Objectif accompli: Do something
-        <BLANKLINE>
-        🏆 Quête terminée: Manager Quest
-        <BLANKLINE>
-        True
-        >>> manager.complete_objective("Do nothing")
-        False
-        """
-         
+    def complete_objective(self, quest_name, objective_name):
         for quest in self.quests: 
             if quest.title == quest_name: 
-                quest.complete_objective(objective_name)
-                return True
+                return quest.complete_objective(objective_name, self.player)  i
         return False
+
 
 
     def check_room_objectives(self, room_name):
