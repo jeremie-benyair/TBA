@@ -214,7 +214,7 @@ class Actions:
             quest = self.player.quest_manager.get_quest_by_title("Trouver la bible")
             if quest and not quest.is_completed:
                 quest.complete_quest(self.player)
-                print("✅ Quête terminée : Trouver la bible.\nUne certaine page renferme un secret...mais laquelle ?")
+                print("✅ Quête terminée : Trouver la bible.\nUne certaine page renferme un secret...mais laquelle ?\nPour avoir accès aux pages, tapez 'use bible' après l'avoir équipé.\n")
                 
 
             
