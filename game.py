@@ -123,7 +123,7 @@ class Game:
         eglise.characters.append(curé)
         habitant_1=Monster(name="habitant infecté",description= "Il lâche des gémissements qui font froid dans le dos.",current_room=Lindsey_street,health=40)
         Lindsey_street.characters.append(habitant_1)
-        monstre=Monster(name="créature", description="Un monstre à l'apparence d'une chimère qui rampe au sol.",current_room=Martin_street, health=110)
+        monstre=Monster(name="Une créature diforme", description="Un monstre à l'apparence d'une chimère qui rampe au sol.",current_room=Martin_street, health=110)
         Martin_street.characters.append(monstre)
         
         
