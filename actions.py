@@ -211,10 +211,10 @@ class Actions:
             print("📜 Nouvelle quête secondaire : Trouver la bible et l’utiliser avec la commande 'use'")
             flyer_took=True
         if item.name.lower() == "bible":
-            quest = self.player.quest_manager.get_quest_by_title("Trouver la bible")
+            quest = game.player.quest_manager.get_quest_by_title("Trouver la bible")
             if quest and not quest.is_completed:
-                quest.complete_quest(self.player)
-                print("✅ Quête terminée : Trouver la bible.\nUne certaine page renferme un secret...mais laquelle ?\nPour avoir accès aux pages, tapez 'use bible' après l'avoir équipé.\n")
+                quest.complete_quest(game.player)
+                print("\nUne certaine page renferme un secret...mais laquelle ?\nPour avoir accès aux pages, tapez 'use bible' après l'avoir équipé.\n")
                 
 
             
