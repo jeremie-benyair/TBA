@@ -278,7 +278,7 @@ class Game:
         croisement.exits={"N":Sanders_street,"E":Lindsey_street,"O":Martin_street,"S":Neely_street,"Est": Lindsey_street, "Ouest": Martin_street,"Nord": Sanders_street,"Sud": Neely_street,"est": Lindsey_street, "ouest": Martin_street,"nord": Sanders_street,"sud":Neely_street}
         Martin_street.exits={"N":eglise,"S": croisement,"O":parc,"E": None,"Est": None, "Ouest": parc,"Nord": eglise,"Sud": croisement,"est": None, "ouest": parc,"nord": eglise,"sud": None}
         Sanders_street.exits={"N": None,"E": cinema,"O":bar,"S": croisement,"Est": cinema, "Ouest": bar,"Nord": None,"Sud": croisement,"est": cinema, "ouest": bar,"nord": None,"sud": croisement}
-        Lindsey_street.exits={"N": None,"E":biblio,"O":pharma,"S":croisement,"Est": biblio, "Ouest": pharma,"Nord": None,"Sud": croisement,"est": biblio, "ouest": pharma,"nord": None,"sud": croisement}
+        Lindsey_street.exits={"N": None,"E": None,"O":pharma,"S":croisement,"Est": None, "Ouest": pharma,"Nord": None,"Sud": croisement,"est": None, "ouest": pharma,"nord": None,"sud": croisement}
         cave.exits={"sortie":hotel, "N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         hotel.exits={"sortie":Neely_street,"cave":cave, "étage": etage,"N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         etage.exits={"chambre_1": chambre_1, "chambre_2": chambre_2,"hotel":hotel}
