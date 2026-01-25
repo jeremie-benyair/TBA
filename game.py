@@ -326,7 +326,7 @@ class Game:
                 if "Indice : 05" not in self.player.rewards: 
                     self.player.add_reward("Indice : 05")
                     print("🎁 Récompense : Indice : 05\n")
-            if self.win():
+            if self.win() and self.player.current_room.name.lower() == "cave":
                 print("\n Toutes les quêtes ont été accomplies !")
                 print(" Une silhouette familière t’attend dans l’obscurité de la cave...")
                 print(" « Tu m’as sauvé… » murmure ta femme en larmes.")
