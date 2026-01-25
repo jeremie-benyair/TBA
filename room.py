@@ -68,7 +68,7 @@ class Cinema(Room):
              #print("il semblerait que la porte du cinéma soit verrouillée.")#
              print("""Cette porte est verrouillée...par une serrure : Trouvez la clé, équipez-la puis utilisez-la.\n""")
 class Cave(Room): 
-         def on_locked_attempt(self, player): 
+         def on_locked_attempt(self, player,game): 
              #print("La porte de la cave est verrouillée par un digicode : tapez le code directement si vous pensez avoir la réponse ou tapez <quit> si vous ne voulez plus interragir avec le digicode \n ") 
              print("Cette porte est verrouillée...par un digicode : tapez le code directement si vous pensez avoir la réponse ou \ntapez <quit> si vous ne voulez plus interragir avec le digicode. \nVous avez 10 essais maximum. Au delà de ces 10 essais, vous perdez la partie. ")
              compteur=0
@@ -84,7 +84,11 @@ class Cave(Room):
                      return 
                 print("code incorrect : réessayez ou taper <quit> pour arrêter vos tentatives.")
                 compteur+=1
+                if compteur==10:
+                    print("Vous avez atteint votre nombre de tentatives maximums...\nLa cave se met à exploser...vous entendez des cris d'agonie : votre femme périt.\n")
+                    game.loose()
                 print(f"il vous reste {10-compteur} essais avant de perdre complètement la partie.\n")
+                
                  
                  
 
