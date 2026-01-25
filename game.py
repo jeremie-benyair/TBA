@@ -285,18 +285,22 @@ class Game:
         etage.exits={"chambre_1": chambre_1, "chambre_2": chambre_2,"hotel":hotel}
         chambre_1.exits={"étage":etage}
         chambre_2.exits={"étage":etage}
-
-    def win(self):
-    
-            return all(quest.completed for quest in self.player.quest_manager.quests)
-
-
+         
         # Setup player and starting room
 
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
         #self.player.quest_manager.add_quest(quete_doudou)
         #self.player.quest_manager.add_quest(quete_barman)
+
+    
+
+    def win(self):
+    
+            return all(quest.completed for quest in self.player.quest_manager.quests)
+
+
+      
     
     
 
