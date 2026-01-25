@@ -297,7 +297,7 @@ class Game:
 
     def win(self):
     
-            return all(quest.completed for quest in self.player.quest_manager.quests)
+            return all(quest.is_completed for quest in self.player.quest_manager.quests)
 
 
       
