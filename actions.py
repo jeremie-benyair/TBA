@@ -68,7 +68,7 @@ class Actions:
             print("Il n’y a pas de sortie dans cette direction.") 
             return False
         if next_room.locked: 
-            next_room.on_locked_attempt(player) 
+            next_room.on_locked_attempt(player,game) 
             return False
         
             
