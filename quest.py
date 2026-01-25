@@ -706,3 +706,6 @@ class QuestManager:
             print(quest.get_details(current_counts))
         else:
             print(f"\nQuête '{quest_title}' non trouvée.\n")
+
+    def win(self):
+        return all(quest.completed for quest in self.quests)
