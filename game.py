@@ -286,12 +286,19 @@ class Game:
         chambre_1.exits={"étage":etage}
         chambre_2.exits={"étage":etage}
 
+        def win(self):
+    
+            return all(quest.completed for quest in self.player.quest_manager.quests)
+
+
         # Setup player and starting room
 
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
         #self.player.quest_manager.add_quest(quete_doudou)
         #self.player.quest_manager.add_quest(quete_barman)
+    
+    
 
     # Play the game
     def play(self):
@@ -315,7 +322,7 @@ class Game:
                 if "Indice : 05" not in self.player.rewards: 
                     self.player.add_reward("Indice : 05")
                     print("🎁 Récompense : Indice : 05\n")
-            if self.player.quest_manager.win():
+            if self.win():
                 print("\n Toutes les quêtes ont été accomplies !")
                 print(" Une silhouette familière t’attend dans l’obscurité de la cave...")
                 print(" « Tu m’as sauvé… » murmure ta femme en larmes.")
