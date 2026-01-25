@@ -154,8 +154,13 @@ class Actions:
             command_word = list_of_words[0]
             print(MSG0.format(command_word=command_word))
             return False
-
         room = game.player.current_room
+        # Vérifie si la piece est sombre
+        if getattr(room, "darked", False): 
+            equipped = game.player.equipped_item 
+            if not equipped or equipped.name != "flashlight" or not getattr(equipped, "on", False): 
+                print("Il fait trop sombre ici... Vous ne pouvez rien distinguer sans lumière.") 
+                return True
 
         # Objets
         if not room.inventory:
