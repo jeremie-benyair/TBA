@@ -351,7 +351,11 @@ class Game:
                 print(" 'Bravo ! C’était le bon prix.' ")
                 print(" 'Souviens-toi de ce chiffre… 28.’")
                 print(" ‘Et tiens, pour ta victoire… Ça pourrait t’être utile.’")
-                self.player.quest_manager.complete_objective("Réussir le défi du barman", "Trouver le juste prix")
+                #self.player.quest_manager.complete_objective("Réussir le défi du barman", "Trouver le juste prix")
+                quest = self.player.quest_manager.get_quest_by_title("Réussir le défi du barman") 
+                if quest: 
+                    quest.complete_objective("Trouver le juste prix") 
+                    quest.complete_quest(self.player)
                 
                 self.barman_game_active = False
                 self.barman_found = True
@@ -377,7 +381,8 @@ class Game:
         command_word = list_of_words[0]
     
         if command_word not in self.commands.keys():
-            print(f"\nCommande '{command_word}' non reconnue. Entrez 'help' pour voir la liste des commandes disponibles.\n")
+            #print(f"\nCommande '{command_word}' non reconnue. Entrez 'help' pour voir la liste des commandes disponibles.\n")
+            
         else:
             command = self.commands[command_word]
             command.action(self, list_of_words, command.number_of_parameters)
