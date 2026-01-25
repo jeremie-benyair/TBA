@@ -318,7 +318,12 @@ def talk(game, list_of_words, number_of_parameters):
             if not pnj.has_spoken:
                 pnj.has_spoken = True
                 if pnj.name.lower() == "fillette":
-                    game.player.quest_manager.activate_quest("Retrouver le doudou")
+                    if not game.player.quest_manager.get_quest_by_title("Retrouver le doudou"): 
+                        from quest import Quest 
+                        quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=[], reward="Clé du cinéma" ) 
+                        game.player.quest_manager.add_quest(quete_doudou) 
+                        game.player.quest_manager.activate_quest("Retrouver le doudou")
+                   
 
             return True
 
