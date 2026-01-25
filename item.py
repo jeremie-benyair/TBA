@@ -102,7 +102,7 @@ class Bible(Item):
             if number_of_page == 1908 and not self.found_page_1908: 
                 self.found_page_1908 = True 
                 from player import Player
-                player.rewards.append("Indice : 07")
+                game.player.rewards.append("Indice : 07")
                 print("🎁 Récompense : indice — 07") 
                 
                 
