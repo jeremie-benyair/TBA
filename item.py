@@ -126,15 +126,15 @@ class MedKit(Item):
     def use_item(self, game): 
         player = game.player 
         # Si la vie est déjà pleine 
-        if player.health_stat == 100: 
+        if player.health == 100: 
             print("Votre barre de vie est déjà à 100%.") 
             return False 
             
-        before = player.health_stat 
-        player.health_stat = min(100, player.health_stat + self.health_point) 
-        healed = player.health_stat - before 
+        before = player.health 
+        player.health = min(100, player.health + self.health_point) 
+        healed = player.health - before 
         print(f"Vous utilisez une trousse de soins et récupérez {healed} points de vie.") 
-        print(f"Votre santé est maintenant de {player.health_stat/100}%.") 
+        print(f"Votre santé est maintenant de {player.health/100}%.") 
         
         
         self.number -= 1
