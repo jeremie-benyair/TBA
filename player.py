@@ -23,6 +23,11 @@ class Player():
 
     def move(self, direction):
         next_room = self.current_room.exits.get(direction)
+        if "hotel" in next_room.name.lower(): 
+                quest = self.quest_manager.get_quest_by_title("Trouver l’hôtel") 
+                if quest and not quest.is_completed: 
+                    
+                    quest.complete_quest(self) 
 
         if next_room is None:
             print("\nAucune porte dans cette direction !\n")
