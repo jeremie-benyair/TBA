@@ -249,7 +249,7 @@ class Game:
         barre_1 = Weapon("barre de fer", None, 0.9, 30)
         Martin_street.inventory["barre de fer"] = barre_1
         barre_2=Weapon("barre de fer",None, 0.8, 25)
-        parc.inventory["medkit"]=medkit_parc
+        
 
         
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
