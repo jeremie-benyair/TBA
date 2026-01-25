@@ -204,11 +204,11 @@ class Actions:
         if item.name.lower() == "flyer" and not flyer_took:
             from quest import Quest
         
-            quete_bible = Quest("Trouver la bible", "Le flyer mentionne une mystérieuse église. Il faudra la trouver et utiliser une bible qui cache un mystère...",objectives=[],reward=None )
+            quete_bible = Quest("Trouver la bible", "Le flyer mentionne une mystérieuse église. Il faudra s'y rendre et trouver une bible qui cache un mystère...",objectives=[],reward=None )
         
             game.player.quest_manager.add_quest(quete_bible)
             game.player.quest_manager.activate_quest("Trouver la bible")
-            print("📜 Nouvelle quête secondaire : Trouver la bible et l’utiliser avec la commande 'use'")
+            
             flyer_took=True
         if item.name.lower() == "bible":
             quest = game.player.quest_manager.get_quest_by_title("Trouver la bible")
