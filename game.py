@@ -429,7 +429,7 @@ class Game:
         
         self.player.quest_manager.add_quest(quete_hotel)
         self.player.quest_manager.activate_quest("Trouver l’hôtel")
-        print("\n🎯 Quête principale : Se rendre dans la cave")
+        print("\n🎯 Quête principale : Accéder à la cave")
         print("🧭 1ère quête secondaire : Trouver l’hôtel et s’y rendre\n")
 
 
