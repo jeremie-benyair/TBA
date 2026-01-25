@@ -135,7 +135,8 @@ class Game:
         barman = Charactere( "barman", "Un homme au regard fatigué, essuyant un verre sale derrière le comptoir.", bar, ["Tu veux un verre ?"] ) 
         bar.characters.append(barman)
         quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête comprit entre 1 et 100 en 9 essais maximum.\nEn cas d’échec, trouvez un objet spécial pour retenter votre chance.", objectives=["Trouver le juste prix"], reward="Indice : 28" ) 
-       
+        quete_principale = Quest( "Sauver votre femme", "Votre femme est retenue quelque part dans cette ville. Explorez les lieux et trouvez des indices pour la libérer.", objectives=["Accéder à la cave"], reward="Fin alternative"
+
         
 
 
@@ -289,8 +290,8 @@ class Game:
 
         self.player = Player(input("\nEntrez votre nom: "))
         self.player.current_room = Neely_street
-        self.player.quest_manager.add_quest(quete_doudou)
-        self.player.quest_manager.add_quest(quete_barman)
+        #self.player.quest_manager.add_quest(quete_doudou)
+        #self.player.quest_manager.add_quest(quete_barman)
 
     # Play the game
     def play(self):
