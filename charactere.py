@@ -95,8 +95,9 @@ class Monster(Charactere):
     
         if player.health <= 0:
             player.health = 0
-            print("Tu t’effondres… Le monstre t’a vaincu.")
-            player.game.finished = True 
+            print("Vous succombez à vos blessures...")
+           
+            game.loose()
         else:
             print(f"Il te reste {player.health} points de vie.")
 
