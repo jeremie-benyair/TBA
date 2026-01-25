@@ -376,8 +376,10 @@ class Game:
     
             if nombre < self.barman_secret:
                 print("C’est plus.")
+                return
             elif nombre > self.barman_secret:
                 print("C’est moins.")
+                return
             else:
                 print(" 'Bravo ! C’était le bon prix.' ")
                 print(" 'Souviens-toi de ce chiffre… 28.’")
