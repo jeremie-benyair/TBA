@@ -216,7 +216,7 @@ class Game:
         "Je t’en supplie, ne viens pas ici. Si tu reçois cette lettre, oublie-moi. Sauve-toi.\n\n"
         "Je t’aime.\n\n— Élodie",
         type="text")  # ça, c’est OK si Item accepte type=
-         chambre_1.inventory["lettre"] = lettre_fille
+        chambre_1.inventory["lettre"] = lettre_fille
         
         flashlight = Flashlight("flashlight", "lampe-torche servant à éclairer des pièces.", 0.25)
         chambre_2.inventory["flashlight"] = flashlight
