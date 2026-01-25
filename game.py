@@ -344,7 +344,7 @@ class Game:
                     import random 
                     if random.random() < 0.35:
                         print(f"{c.name} t’attaque soudainement !") 
-                        c.attack_player(self.player)
+                        c.attack_player(self.player,self)
     # Déplacement des PNJ
             for room in self.rooms:
                 for pnj in room.characters:
