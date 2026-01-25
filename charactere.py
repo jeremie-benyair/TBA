@@ -63,6 +63,12 @@ class Monster(Charactere):
             self.health = 0 
             room.characters.remove(self)
             return f"{self.name} est vaincu !" 
+            quest = game.player.quest_manager.get_quest_by_title("Réussir le défi du barman") 
+            if quest and "Tuer un monstre" in quest.objectives: 
+                game.player.quest_manager.complete_objective("Réussir le défi du barman", "Tuer un monstre") 
+                print("✅ Objectif accompli : Tuer un monstre")
+                print("🟢 Vous pouvez maintenant retourner jouer avec le barman.") 
+                game.barman_found = False
         return f"{self.name} a encore {self.health} PV." 
     def move(self): 
         if not self.is_alive() or self.health!=100: 
