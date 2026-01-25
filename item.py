@@ -145,9 +145,13 @@ class MedKit(Item):
         print(f"Vous utilisez une trousse de soins et récupérez {healed} points de vie.") 
         print(f"Votre santé est maintenant de {player.health/100}%.") 
         
+        if player.equipped_item==self:
+            player.equipped_item = None
+            
+            self.number -= 1
         
-        self.number -= 1
         if self.number <= 0: 
+            
             del player.inventory[self.name]
         return True
         
