@@ -61,7 +61,7 @@ class Monster(Charactere):
         self.health -= amount 
         if self.health <= 0: 
             self.health = 0 
-            room.characters.remove(self)
+            self.current_room.characters.remove(self)
             return f"{self.name} est vaincu !" 
             quest = game.player.quest_manager.get_quest_by_title("Réussir le défi du barman") 
             if quest and "Tuer un monstre" in quest.objectives: 
