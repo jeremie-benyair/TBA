@@ -71,7 +71,7 @@ class Weapon(Item):
                 import random
                 if c.is_alive() and random.random() < 0.33:
                     print(f"{c.name} contre-attaque !")
-                    c.attack_player(player)
+                    c.attack_player(player,game)
                     
                 return
     
