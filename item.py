@@ -44,7 +44,7 @@ class Beamer(Item):
                 print(f"✨ Téléportation vers {room.name} réussie !") 
                 print(room.get_long_description()) 
                 return 
-        print("❌ Salle introuvable malgré l'historique. Vérifiez le nom.")
+        print(" Salle introuvable malgré l'historique.\nVeillez à bien orthographier le nom de la salle tel qu'écrit dans l'historique.")
 
 class Weapon(Item):
     def __init__(self, name, description, weight, damage):
