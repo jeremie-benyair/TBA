@@ -315,9 +315,9 @@ class Game:
 
     def win(self):
     
-            return all(quest.is_completed for quest in self.player.quest_manager.quests)
+        return all(quest.is_completed for quest in self.player.quest_manager.quests)
     def loose(self):
-        print("\nLa porte de la cave est désormais condamné.Votre femme a péri.\nVous avez perdu.")
+        print("Vous avez perdu\n.")
         print("Fin de l’aventure. Peut-être une prochaine fois...")
         self.finished = True
         
