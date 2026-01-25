@@ -386,7 +386,7 @@ class Game:
         command_word = list_of_words[0]
     
         if command_word not in self.commands.keys():
-            #print(f"\nCommande '{command_word}' non reconnue. Entrez 'help' pour voir la liste des commandes disponibles.\n")
+            print(f"\nCommande '{command_word}' non reconnue. Entrez 'help' pour voir la liste des commandes disponibles.\n")
             
         else:
             command = self.commands[command_word]
