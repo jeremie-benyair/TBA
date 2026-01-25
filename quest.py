@@ -707,5 +707,4 @@ class QuestManager:
         else:
             print(f"\nQuête '{quest_title}' non trouvée.\n")
 
-    def win(self):
-        return all(quest.completed for quest in self.quests)
+    
