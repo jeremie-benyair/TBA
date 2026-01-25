@@ -307,7 +307,7 @@ class Actions:
                         quest = game.player.quest_manager.get_quest_by_title("Réussir le défi du barman") 
                         if not quest: 
                             from quest import Quest 
-                            quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête compris entre 1 et 100, objectives=["Trouver le juste prix"], reward="Indice : 28" ) 
+                            quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête compris entre 1 et 100", objectives=["Trouver le juste prix"], reward="Indice : 28" ) 
                             game.player.quest_manager.add_quest(quete_barman) 
                             game.player.quest_manager.activate_quest("Réussir le défi du barman") 
                             print("🗝️ Nouvelle quête activée : Réussir le défi du barman")
