@@ -59,12 +59,12 @@ class Room:
                 texte+=f"    -{item}"
             return texte
     
-    def on_locked_attempt(self, player): 
+    def on_locked_attempt(self, player,game): 
         print("Cette porte est verrouillée... ")
 
 
 class Cinema(Room): 
-         def on_locked_attempt(self, player): 
+         def on_locked_attempt(self, player,game): 
              #print("il semblerait que la porte du cinéma soit verrouillée.")#
              print("""Cette porte est verrouillée...par une serrure : Trouvez la clé, équipez-la puis utilisez-la.\n""")
 class Cave(Room): 
