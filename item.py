@@ -88,6 +88,7 @@ class Bible(Item):
         pages_apres = ["page vide" for i in range(91)]
 
         self.pages = pages_avant + page_speciale + pages_apres
+        self.found_page_1908=False
 
     def use_item(self, game):
         which_page = input("À quelle page voulez-vous aller ?\n (retapez use à chaque fois pour accéder à une nouvelle page)")
@@ -96,6 +97,12 @@ class Bible(Item):
         
         if 0 <= number_of_page < len(self.pages):
             print(f"Contenu de la page {number_of_page} : {self.pages[number_of_page]}")
+            if number_of_page == 1908 and not self.found_page_1908: 
+                self.found_page_1908 = True 
+                print("🎁 Récompense : indice — 07") 
+                self.add_reward("indice : 07")
+                
+                
         else:
             print("Cette page n'existe pas.")
 class Key(Item):
