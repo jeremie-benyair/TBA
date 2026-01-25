@@ -354,14 +354,16 @@ class Game:
                 return
     
             if self.barman_attempts >= 7:
-                print(" 'Raté.'Tu as épuisé tes 7 essais.")
+                print(" 'Raté.' Tu as épuisé tes 7 essais.")
                 self.barman_game_active = False
+            
                 quest = self.player.quest_manager.get_quest_by_title("Réussir le défi du barman")
-                if quest and "Ramener l’objet au barman" not in quest.objectives:
-                    
-                    quest.objectives.append("Ramener l’objet au barman")
-                    print("🆕 Nouvel objectif ajouté à la quête : Ramener l’objet au barman")
-            return
+                if quest and "Tuer un monstre" not in quest.objectives:
+                    quest.objectives.append("Tuer un monstre")
+                    quest.completed = False 
+                    print("🧟‍♂️ Nouvel objectif ajouté à la quête : Tuer un monstre pour pouvoir rejouer avec le barman.")
+
+                return
                     
 
             
