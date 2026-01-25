@@ -67,6 +67,14 @@ class Game:
         self.commands["read"]=read
         give= Command("give","<objet> : donner un objet à un pnj.",Actions.give,1)
         self.commands["give"]=give
+        quests = Command("quests", " : afficher la liste de toutes les quêtes", Actions.quests, 0) 
+        self.commands["quests"] = quests 
+        quest = Command("quest", " <titre> : afficher les détails d'une quête", Actions.quest, 1) 
+        self.commands["quest"] = quest 
+        rewards = Command("rewards", " : afficher les récompenses obtenues", Actions.rewards, 0) 
+        self.commands["rewards"] = rewards 
+        reward = Command("reward", " : alias de 'rewards'", Actions.rewards, 0) 
+        self.commands["reward"] = reward
 
 
     
