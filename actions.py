@@ -206,8 +206,8 @@ class Actions:
         
             quete_bible = Quest("Trouver la bible", "Le flyer mentionne une mystérieuse église. Il faudra la trouver et utiliser une bible qui cache un mystère...",objectives=[],reward=None )
         
-            self.player.quest_manager.add_quest(quete_bible)
-            self.player.quest_manager.activate_quest("Trouver la bible")
+            game.player.quest_manager.add_quest(quete_bible)
+            game.player.quest_manager.activate_quest("Trouver la bible")
             print("📜 Nouvelle quête secondaire : Trouver la bible et l’utiliser avec la commande 'use'")
             flyer_took=True
         if item.name.lower() == "bible":
