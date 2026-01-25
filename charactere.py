@@ -84,7 +84,7 @@ class Monster(Charactere):
         self.current_room = next_room 
         return True
     
-    def attack_player(self, player):
+    def attack_player(self, player,game):
         if not self.is_alive():
             return
     
