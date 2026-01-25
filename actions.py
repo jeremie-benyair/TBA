@@ -185,6 +185,7 @@ class Actions:
 
     def take(game, list_of_words, number_of_parameters):
         l = len(list_of_words)
+        flyer_took=False
         if l != number_of_parameters + 1:
             command_word = list_of_words[0]
             print(MSG1.format(command_word=command_word))
@@ -197,8 +198,18 @@ class Actions:
         if objet not in room.inventory:
             print("Cet objet n'est pas dans cette pièce\n")
             return False
-    
+     
         item = room.inventory[objet]  
+        if item.name.lower() == "flyer" and not flyer_took:
+            from quest import Quest
+        
+            quete_bible = Quest("Trouver la bible", "Le flyer mentionne une mystérieuse bible cachée quelque part. Il faudra la trouver… et l’utiliser.",objectives=[],eward=None )
+        
+            self.player.quest_manager.add_quest(quete_bible)
+            self.player.quest_manager.activate_quest("Trouver la bible")
+            print("📜 Nouvelle quête secondaire : Trouver la bible et l’utiliser avec la commande 'use'")
+            flyer_took=True
+            
     
         # Vérifie le poids
         poids_total = game.player.total_weight()
