@@ -211,8 +211,8 @@ class Game:
         "lettre",
         "Une lettre tachée de larmes, trouvée sur un lit défait.\nUne fois dans l'inventaire,utilisez la commande read <objet>.",
         0,
-        "Maman,\n\nJe ne sais pas si tu liras un jour ces mots. Silent Hill n’est plus la ville que tu as connue. "
-        "La brume est partout, les rues sont désertes, et des choses... des choses horribles rôdent la nuit. "
+        "Maman,\n\nJe ne sais pas si tu liras un jour ces mots.\nSilent Hill n’est plus la ville que tu as connue. "
+        "La brume est partout, les rues sont désertes, et des choses... des choses horribles rôdent la nuit.\n "
         "Les gens disparaissent ou deviennent fous. Même le temps semble figé.\n\n"
         "Je t’en supplie, ne viens pas ici. Si tu reçois cette lettre, oublie-moi. Sauve-toi.\n\n"
         "Je t’aime.\n\n— Élodie",
