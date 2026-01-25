@@ -119,14 +119,16 @@ class Actions:
         """
         Affiche la liste des commandes disponibles avec leur description.
         """
-        if len(list_of_words) != number_of_parameters + 1:
+        l = len(list_of_words)
+        if l != number_of_parameters + 1:
             command_word = list_of_words[0]
-            print(f"❌ La commande '{command_word}' attend {number_of_parameters} paramètre(s).")
+            print(MSG0.format(command_word=command_word))
             return False
-
-        print("\n📜 Voici les commandes disponibles :\n")
+        
+        # Print the list of available commands.
+        print("\nVoici les commandes disponibles:")
         for command in game.commands.values():
-            print(f"\t- {command.name}{command.description}")
+            print("\t- " + str(command))
         print()
         return True
 
