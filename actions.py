@@ -278,60 +278,60 @@ class Actions:
                 game.player.equipped_item=item
                 print(f"{item.name} est désormais équipé.\n")
                 return True
-def talk(game, list_of_words, number_of_parameters):
-    l = len(list_of_words)
-    if l != number_of_parameters + 1:
-        command_word = list_of_words[0]
-        print(MSG1.format(command_word=command_word))
-        return False
-
-    target_name = list_of_words[1].lower()
-    room = game.player.current_room
-
-    if not room.characters:
-        print("\nIl n'y a personne à qui parler ici.\n")
-        return False
-
-    for pnj in room.characters:
-        if pnj.name.lower() == target_name:
-            # Cas spécial : barman
-            if pnj.name.lower() == "barman":
-                print("Barman : Tu veux jouer au juste prix ?\n1. Oui\n2. Non")
-                choix = input("> ").strip()
-                if choix == "1":
-                    if game.barman_found:
-                        print("Barman : Tu as déjà trouvé le bon prix. Tu veux rejouer ? Trop tard.")
-                        return True
-                    if game.barman_found and ("Tuer un monstre" not in quest.objectives):
-                        print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
-                    
-                    game.barman_game_active = True
-                    game.barman_attempts = 0
-                    print("Très bien. Devine le prix exact de la bouteille de whisky.")
-                    print("C’est un nombre entre 1 et 100. Tu as 7 essais.")
-                    print("Tape simplement un nombre pour jouer.")
-                    game.player.quest_manager.activate_quest("Réussir le défi du barman")
-                else:
-                    print("Barman : Tant pis, une autre fois peut-être.")
+    def talk(game, list_of_words, number_of_parameters):
+        l = len(list_of_words)
+        if l != number_of_parameters + 1:
+            command_word = list_of_words[0]
+            print(MSG1.format(command_word=command_word))
+            return False
+    
+        target_name = list_of_words[1].lower()
+        room = game.player.current_room
+    
+        if not room.characters:
+            print("\nIl n'y a personne à qui parler ici.\n")
+            return False
+    
+        for pnj in room.characters:
+            if pnj.name.lower() == target_name:
+                # Cas spécial : barman
+                if pnj.name.lower() == "barman":
+                    print("Barman : Tu veux jouer au juste prix ?\n1. Oui\n2. Non")
+                    choix = input("> ").strip()
+                    if choix == "1":
+                        if game.barman_found:
+                            print("Barman : Tu as déjà trouvé le bon prix. Tu veux rejouer ? Trop tard.")
+                            return True
+                        if game.barman_found and ("Tuer un monstre" not in quest.objectives):
+                            print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
+                        
+                        game.barman_game_active = True
+                        game.barman_attempts = 0
+                        print("Très bien. Devine le prix exact de la bouteille de whisky.")
+                        print("C’est un nombre entre 1 et 100. Tu as 7 essais.")
+                        print("Tape simplement un nombre pour jouer.")
+                        game.player.quest_manager.activate_quest("Réussir le défi du barman")
+                    else:
+                        print("Barman : Tant pis, une autre fois peut-être.")
+                    return True
+    
+                # Dialogue normal
+                print(pnj.get_msg())
+    
+                if not pnj.has_spoken:
+                    pnj.has_spoken = True
+                    if pnj.name.lower() == "fillette":
+                        if not game.player.quest_manager.get_quest_by_title("Retrouver le doudou"): 
+                            from quest import Quest 
+                            quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=[], reward="Clé du cinéma" ) 
+                            game.player.quest_manager.add_quest(quete_doudou) 
+                            game.player.quest_manager.activate_quest("Retrouver le doudou")
+                       
+    
                 return True
-
-            # Dialogue normal
-            print(pnj.get_msg())
-
-            if not pnj.has_spoken:
-                pnj.has_spoken = True
-                if pnj.name.lower() == "fillette":
-                    if not game.player.quest_manager.get_quest_by_title("Retrouver le doudou"): 
-                        from quest import Quest 
-                        quete_doudou = Quest( "Retrouver le doudou", "La fillette a perdu son doudou. Retrouvez-le et ramenez-le-lui.", objectives=[], reward="Clé du cinéma" ) 
-                        game.player.quest_manager.add_quest(quete_doudou) 
-                        game.player.quest_manager.activate_quest("Retrouver le doudou")
-                   
-
-            return True
-
-    print(f"\nIl n'y a pas de personnage nommé '{target_name}' ici.\n")
-    return False
+    
+            print(f"\nIl n'y a pas de personnage nommé '{target_name}' ici.\n")
+            return False
 
 
             
