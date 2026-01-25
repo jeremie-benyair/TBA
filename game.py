@@ -73,8 +73,7 @@ class Game:
         self.commands["quest"] = quest 
         rewards = Command("rewards", " : afficher les récompenses obtenues", Actions.rewards, 0) 
         self.commands["rewards"] = rewards 
-        reward = Command("reward", " : alias de 'rewards'", Actions.rewards, 0) 
-        self.commands["reward"] = reward
+        
 
 
     
