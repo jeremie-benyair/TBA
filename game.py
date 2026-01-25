@@ -236,8 +236,10 @@ class Game:
         katana = Weapon("katana", "réplique fidèle du katana du film 'Kill Bill Vol.1' nommé 'Hatori Hanzo'", 1.8, 100)
         cinema.inventory["katana"] = katana
         
-        barre = Weapon("barre de fer", None, 0.9, 30)
-        Martin_street.inventory["barre de fer"] = barre
+        barre_1 = Weapon("barre de fer", None, 0.9, 30)
+        Martin_street.inventory["barre de fer"] = barre_1
+        barre_2=Weapon("barre de fer",None, 0.8, 25)
+        parc.inventory["medkit"]=medkit_parc
 
         
         doudou = Item("doudou", "un petit ours en peluche", 0.15)
