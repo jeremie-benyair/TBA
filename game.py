@@ -218,6 +218,16 @@ class Game:
         "Je t’aime.\n\n— Élodie",
         type="text")  # ça, c’est OK si Item accepte type=
         chambre_1.inventory["lettre"] = lettre_fille
+        indice_1=Item("indice", "bout de papier étrange : il semblerait que quelque chose est écrit dessus...",0, "L'ODRRE N'A PAS D'IPMROTNCAE.",type="text")
+        cinema.inventory["indice"]=indice_1
+        indice_2=Item("indice", "bout de papier étrange : il semblerait que quelque chose est écrit dessus...",0, "L'ODRRE N'A PAS D'IPMROTNCAE.",type="text")
+        bar.inventory["indice"]=indice_2
+        indice_3=Item("indice", "bout de papier étrange : il semblerait que quelque chose est écrit dessus...",0, "L'ODRRE N'A PAS D'IPMROTNCAE.",type="text")
+        parc.inventory["indice"]=indice_3
+        indice_4=Item("indice", "bout de papier étrange : il semblerait que quelque chose est écrit dessus...",0, "L'ODRRE N'A PAS D'IPMROTNCAE.",type="text")
+        eglise.inventory["indice"]=indice_4
+        indice_5=Item("indice", "bout de papier étrange : il semblerait que quelque chose est écrit dessus...",0, "L'ODRRE N'A PAS D'IPMROTNCAE.",type="text")
+        Neely_street.inventory["indice"]=indice_5
         
         flashlight = Flashlight("flashlight", "lampe-torche servant à éclairer des pièces.", 0.25)
         chambre_2.inventory["flashlight"] = flashlight
@@ -278,12 +288,12 @@ class Game:
          # Create exits for rooms
 
         
-        bar.exits = {"sortie" :Sanders_street ,"N" : None, "E" : None, "S" : None, "O"}
-        cinema.exits = {"sortie" : Sanders_street,"N": None,  "E" : None, "S" : None, "O"}
-        eglise.exits = {"sortie" : Martin_street ,"N" : None, "E" : None, "S" : None, "O"}
-        parc.exits = {"sortie": Neely_street , "N" : None, "E" : None, "S" : None, "O"}
-        Neely_street.exits = {"N" : croisement, "E" : hotel, "S" : None, "O"}
-        pharma.exits = {"N" : None, "E" : None, "S" : None, "O"}
+        bar.exits = {"sortie" :Sanders_street ,"N" : None, "E" : None, "S" : None, "O":None}
+        cinema.exits = {"sortie" : Sanders_street,"N": None,  "E" : None, "S" : None, "O":None}
+        eglise.exits = {"sortie" : Martin_street ,"N" : None, "E" : None, "S" : None, "O":None}
+        parc.exits = {"sortie": Neely_street , "N" : None, "E" : None, "S" : None, "O":None}
+        Neely_street.exits = {"N" : croisement, "E" : hotel, "S" : None, "O":parc}
+        pharma.exits = {"N" : None, "E" : None, "S" : None, "O":None}
         croisement.exits={"N":Sanders_street,"E":Lindsey_street,"O":Martin_street,"S":Neely_street}
         Martin_street.exits={"N":eglise,"S": croisement,"O":parc,"E": None}
         Sanders_street.exits={"N": None,"E": cinema,"O":bar,"S": croisement}
