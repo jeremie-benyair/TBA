@@ -317,7 +317,7 @@ class Game:
     
         return all(quest.is_completed for quest in self.player.quest_manager.quests)
     def loose(self):
-        print("Vous avez perdu\.n")
+        print("Vous avez perdu.\n")
         print("Fin de l’aventure. Peut-être une prochaine fois...")
         self.finished = True
         
