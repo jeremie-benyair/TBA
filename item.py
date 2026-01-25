@@ -25,8 +25,7 @@ class Flashlight(Item):
                 print(game.player.current_room.get_long_description())
                 
                 
-                game.player.add_reward("Indice : 05")
-                print("🎁 Récompense : Indice : 05\n") 
+                
                 
         else:
             print("lampe éteinte.\n")
