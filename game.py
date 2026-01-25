@@ -286,7 +286,7 @@ class Game:
         chambre_1.exits={"étage":etage}
         chambre_2.exits={"étage":etage}
 
-        def win(self):
+    def win(self):
     
             return all(quest.completed for quest in self.player.quest_manager.quests)
 
