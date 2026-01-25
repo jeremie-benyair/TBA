@@ -310,6 +310,11 @@ class Game:
         self.print_welcome()
         # Loop until the game is finished
         while not self.finished:
+            if self.player.current_room.name.lower() == "hôtel": 
+                quest = self.player.quest_manager.get_quest_by_title("Trouver l’hôtel") 
+                if quest and not quest.is_completed: 
+                    quest.complete_quest(self.player) 
+                    print("✅ Quête terminée : Trouver l’hôtel")
             for c in self.player.current_room.characters: 
                 if c.role == "monster" and c.current_room == self.player.current_room and c.is_alive(): 
                     import random 
@@ -394,6 +399,16 @@ class Game:
         print("Entrez 'help' si vous avez besoin d'aide.")
 
         print(self.player.current_room.get_long_description())
+        from quest import Quest
+
+        quete_hotel = Quest("Trouver l’hôtel","Un mystérieux message vous invite à localiser l’hôtel abandonné.",objectives=[],reward=None)
+        
+        self.player.quest_manager.add_quest(quete_hotel)
+        self.player.quest_manager.activate_quest("Trouver l’hôtel")
+        print("\n🎯 Quête principale : Se rendre dans la cave")
+        print("🧭 1ère quête secondaire : Trouver l’hôtel et s’y rendre\n")
+
+
 
 
 def main():
