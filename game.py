@@ -293,7 +293,7 @@ class Game:
         eglise.exits = {"sortie" : Martin_street ,"N" : None, "E" : None, "S" : None, "O":None}
         parc.exits = {"sortie": Neely_street , "N" : None, "E" : None, "S" : None, "O":None}
         Neely_street.exits = {"N" : croisement, "E" : hotel, "S" : None, "O":parc}
-        pharma.exits = {"N" : None, "E" : None, "S" : None, "O":None}
+        pharma.exits = {"sortie":Lindsey_street,"N" : None, "E" : None, "S" : None, "O":None}
         croisement.exits={"N":Sanders_street,"E":Lindsey_street,"O":Martin_street,"S":Neely_street}
         Martin_street.exits={"N":eglise,"S": croisement,"O":parc,"E": None}
         Sanders_street.exits={"N": None,"E": cinema,"O":bar,"S": croisement}
