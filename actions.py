@@ -379,7 +379,7 @@ class Actions:
 
         
         if game.player.equipped_item==None:
-             print("Aucun objet n'est actuellement équipé.Veuillez d'abord équiper l'arme de votre choix avec la commande carry <item> \n")
+             print("Aucun objet n'est actuellement équipé.Veuillez d'abord équiper l'item de votre choix avec la commande carry <item> \n")
              return False
          
         
