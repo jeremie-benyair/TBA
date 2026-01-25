@@ -117,43 +117,19 @@ class Actions:
 
     def help(game, list_of_words, number_of_parameters):
         """
-        Print the list of available commands.
-        
-        Args:
-            game (Game): The game object.
-            list_of_words (list): The list of words in the command.
-            number_of_parameters (int): The number of parameters expected by the command.
-
-        Returns:
-            bool: True if the command was executed successfully, False otherwise.
-
-        Examples:
-
-        >>> from game import Game
-        >>> game = Game()
-        >>> game.setup()
-        >>> help(game, ["help"], 0)
-        True
-        >>> help(game, ["help", "N"], 0)
-        False
-        >>> help(game, ["help", "N", "E"], 0)
-        False
-
+        Affiche la liste des commandes disponibles avec leur description.
         """
-
-        # If the number of parameters is incorrect, print an error message and return False.
-        l = len(list_of_words)
-        if l != number_of_parameters + 1:
+        if len(list_of_words) != number_of_parameters + 1:
             command_word = list_of_words[0]
-            print(MSG0.format(command_word=command_word))
+            print(f"❌ La commande '{command_word}' attend {number_of_parameters} paramètre(s).")
             return False
-        
-        # Print the list of available commands.
-        print("\nVoici les commandes disponibles:")
+
+        print("\n📜 Voici les commandes disponibles :\n")
         for command in game.commands.values():
-            print("\t- " + str(command))
+            print(f"\t- {command.name}{command.description}")
         print()
         return True
+
     def history(game, list_of_words, number_of_parameters):
         l = len(list_of_words)
         if l != number_of_parameters + 1:
