@@ -302,6 +302,9 @@ def talk(game, list_of_words, number_of_parameters):
                     if game.barman_found:
                         print("Barman : Tu as déjà trouvé le bon prix. Tu veux rejouer ? Trop tard.")
                         return True
+                    if game.barman_found and ("Tuer un monstre" not in quest.objectives):
+                        print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
+                    
                     game.barman_game_active = True
                     game.barman_attempts = 0
                     print("Très bien. Devine le prix exact de la bouteille de whisky.")
