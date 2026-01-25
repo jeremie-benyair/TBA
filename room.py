@@ -66,27 +66,27 @@ class Room:
 class Cinema(Room): 
          def on_locked_attempt(self, player): 
              #print("il semblerait que la porte du cinéma soit verrouillée.")#
-             print("""Cette porte est verrouillée...
-                    par une serrure : Trouvez la clé, équipez-la puis utilisez-la.\n""")
+             print("""Cette porte est verrouillée...par une serrure : Trouvez la clé, équipez-la puis utilisez-la.\n""")
 class Cave(Room): 
          def on_locked_attempt(self, player): 
              #print("La porte de la cave est verrouillée par un digicode : tapez le code directement si vous pensez avoir la réponse ou tapez <quit> si vous ne voulez plus interragir avec le digicode \n ") 
-             print("""Cette porte est verrouillée...
-                      par un digicode : tapez le code directement si vous pensez avoir la réponse 
-                      ou 
-                      tapez <quit> si vous ne voulez plus interragir avec le digicode \n """)
-             
+             print("Cette porte est verrouillée...par un digicode : tapez le code directement si vous pensez avoir la réponse ou \ntapez <quit> si vous ne voulez plus interragir avec le digicode. \nVous avez 10 essais maximum. Au delà de ces 10 essais, vous perdez la partie. ")
+             compteur=0
              while True:
                 code = input("Entrez le code : ") 
                 if code==("quit"):
                      print("Vous abandonnez pour le moment.")
                      return 
                 
-                if code==("2807"):
+                if code==("280705"):
                      print("La porte s'ouvre ! Vous pouvez maintenant rentrer dans ce lieu.") 
                      self.locked = False 
                      return 
                 print("code incorrect : réessayez ou taper <quit> pour arrêter vos tentatives.")
+                compteur+=1
+                print(f"il vous reste {10-compteur} essais avant de perdre complètement la partie.\n")
+                 
+                 
 
                      
                      
