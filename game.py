@@ -334,6 +334,19 @@ class Game:
         self.print_welcome()
         # Loop until the game is finished
         while not self.finished:
+            self.process_command(input("> "))
+            if self.player.current_room.name.lower() == "Cinéma abandonné" and cinema.darked==False: 
+                if "Indice : 05" not in self.player.rewards: 
+                    self.player.add_reward("Indice : 05")
+                    print("🎁 Récompense : Indice : 05\n")
+            if self.win() and self.player.current_room.name.lower() == "cave":
+                print("\n Toutes les quêtes ont été accomplies !")
+                print(" Une silhouette familière t’attend dans l’obscurité de la cave...")
+                print(" « Tu m’as sauvé… » murmure votre femme en larmes.")
+                print(" Vous vous enlacez dans un silence chargé d’émotion.")
+                print("🏁 Fin du jeu.")
+                self.finished = True
+                
             if self.player.current_room.name.lower() == "hôtel": 
                 quest = self.player.quest_manager.get_quest_by_title("Trouver l’hôtel") 
                 if quest and not quest.is_completed: 
@@ -349,19 +362,8 @@ class Game:
             for room in self.rooms:
                 for pnj in room.characters:
                     pnj.move()
-            # Commande du joueur 
-            self.process_command(input("> "))
-            if self.player.current_room.name.lower() == "Cinéma abandonné" and cinema.darked==False: 
-                if "Indice : 05" not in self.player.rewards: 
-                    self.player.add_reward("Indice : 05")
-                    print("🎁 Récompense : Indice : 05\n")
-            if self.win() and self.player.current_room.name.lower() == "cave":
-                print("\n Toutes les quêtes ont été accomplies !")
-                print(" Une silhouette familière t’attend dans l’obscurité de la cave...")
-                print(" « Tu m’as sauvé… » murmure votre femme en larmes.")
-                print(" Vous vous enlacez dans un silence chargé d’émotion.")
-                print("🏁 Fin du jeu.")
-                self.finished = True
+           
+            
 
 
 
