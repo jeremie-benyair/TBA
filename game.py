@@ -32,6 +32,7 @@ class Game:
         self.barman_attempts = 0 
         self.barman_game_active = False 
         self.barman_found = False
+        self.monster_killed=False
 
     # Setup the game
     def setup(self):
@@ -384,6 +385,7 @@ class Game:
                 if quest and "Tuer un monstre" not in quest.objectives:
                     quest.objectives.append("Tuer un monstre")
                     quest.is_completed = False
+                    self.monster_killed=False
                     
                     print("🧟‍♂️ Nouvel objectif ajouté à la quête : Tuer un monstre pour pouvoir rejouer avec le barman.")
                     
