@@ -383,7 +383,7 @@ class Game:
                 if quest and "Tuer un monstre" not in quest.objectives:
                     quest.objectives.append("Tuer un monstre")
                     quest.is_completed = False
-                    self.barman_found=True
+                    
                     print("🧟‍♂️ Nouvel objectif ajouté à la quête : Tuer un monstre pour pouvoir rejouer avec le barman.")
                     
             
