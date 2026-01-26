@@ -378,6 +378,7 @@ class Game:
             if self.barman_attempts >= 7:
                 print(" 'Raté.' Tu as épuisé tes 7 essais.")
                 self.barman_game_active = False
+                self.barman_found = False
             
                 quest = self.player.quest_manager.get_quest_by_title("Réussir le défi du barman")
                 if quest and "Tuer un monstre" not in quest.objectives:
