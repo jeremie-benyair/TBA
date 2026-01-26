@@ -78,7 +78,7 @@ class Cave(Room):
                      print("Vous abandonnez pour le moment.")
                      return 
                 
-                if "28" in code and "05" in code and "07" in code=
+                if "28" in code and "05" in code and "07" in code:
                      print("La porte s'ouvre ! Vous pouvez maintenant rentrer dans ce lieu.") 
                      self.locked = False 
                      return 
