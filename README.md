@@ -87,9 +87,7 @@ Les quêtes sont gérées dynamiquement via le `QuestManager`, avec suivi des ob
 
 L’architecture du jeu repose sur une structure orientée objet claire et modulaire. Chaque entité (joueur, pièce, objet, quête, PNJ) est représentée par une classe dédiée. Le moteur du jeu (`Game`) orchestre les interactions entre ces entités.
 
-Un diagramme de classes peut être ajouté pour visualiser les relations entre :
-
-- `Game`, `Player`, `Room`, `Item`, `Charactere`, `Quest`, `QuestManager`, etc.
+Voici un diagramme de classes permettant de comprendre l'organisation des différentes classes :
 
 ## Perspectives de développement
 
