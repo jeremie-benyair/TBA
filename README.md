@@ -89,6 +89,144 @@ L’architecture du jeu repose sur une structure orientée objet claire et modul
 
 Voici un diagramme de classes permettant de comprendre l'organisation des différentes classes :
 
+# Diagramme de classes – Silent Hill (version textuelle)
+
+## Game
+- player: Player  
+- rooms: List[Room]  
+- finished: bool  
+- won: bool  
+- lost: bool  
+- play()  
+- setup()  
+- win()  
+- loose()  
+- process_command()
+
+Relations :
+- Contient un `Player`
+- Contient une liste de `Room`
+
+---
+
+## Player
+- current_room: Room  
+- historique: List[Room]  
+- inventory: Dict[str, Item]  
+- equipped_item: Item  
+- max_weight: float  
+- health: int  
+- rewards: List[str]  
+- get_history()  
+- move(direction)  
+- get_inventory()  
+- add_reward(reward)  
+- back()
+
+Relations :
+- Possède un `QuestManager`
+- Interagit avec des `Item`, `Room`, `Charactere`, `Quest`
+
+---
+
+## Room
+- name: str  
+- description: str  
+- exits: Dict[str, Room]  
+- inventory: Dict[str, Item]  
+- darked: bool  
+- locked: bool  
+- characters: List[Charactere]  
+- get_exit(direction)  
+- get_exit_string()  
+- get_long_description()  
+- get_inventory()  
+- on_locked_attempt(player, game)
+
+Sous-classes :
+- Cinema(Room)  
+- Cave(Room)
+
+---
+
+## Item
+- name: str  
+- description: str  
+- weight: float  
+- use_item(game)  
+- __str__()
+
+Sous-classes :
+- Weapon  
+  - damage: int  
+  - use_item(game)  
+- Flashlight  
+  - on: bool  
+  - use_item(game)  
+- Bible  
+  - use_item(game)  
+- Beamer  
+  - use_item(game)  
+- Key  
+  - use_item(game)  
+- MedKit  
+  - number: int  
+  - use_item(game)
+
+---
+
+## Charactere
+- name: str  
+- description: str  
+- role: str  
+- current_room: Room  
+- take_damage(damage, game)  
+- attack_player(player, game)  
+- is_alive()
+
+Sous-classe :
+- Monster(Charactere)  
+  - take_damage(damage, game)  
+  - attack_player(player, game)
+
+---
+
+## Quest
+- title: str  
+- description: str  
+- objectives: List[str]  
+- completed_objectives: List[str]  
+- is_completed: bool  
+- is_active: bool  
+- reward: str  
+- activate()  
+- complete_objective(objective, player)  
+- complete_quest(player)  
+- get_status()  
+- get_details(current_counts)  
+- check_room_objective(room_name, player)  
+- check_action_objective(action, target, player)  
+- check_counter_objective(counter_name, current_count, player)
+
+---
+
+## QuestManager
+- quests: List[Quest]  
+- active_quests: List[Quest]  
+- player: Player  
+- add_quest(quest)  
+- activate_quest(title)  
+- complete_objective(quest_name, objective_name)  
+- check_room_objectives(room_name)  
+- check_action_objectives(action, target)  
+- check_counter_objectives(counter_name, current_count)  
+- get_active_quests()  
+- get_all_quests()  
+- get_quest_by_title(title)  
+- show_quests()  
+- show_quest_details(title, current_counts)
+
+
 ## Perspectives de développement
 
 - Ajout d’une interface graphique (images, boutons, navigation visuelle)  
