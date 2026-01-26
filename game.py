@@ -422,7 +422,10 @@ class Game:
 
 
     def print_welcome(self):
-        def print_welcome(self): print( f"\nBienvenue {self.player.name} dans ce jeu d'aventure textuel.\n" 
+        def print_welcome(self): 
+            
+            print( 
+                                        f"\nBienvenue {self.player.name} dans ce jeu d'aventure textuel.\n" 
                                          "Vous venez d’arriver dans une ville abandonnée, autrefois paisible, aujourd’hui rongée par le silence et la peur.\n" 
                                          "Les rues sont désertes, les bâtiments à l’abandon, les habitants ont disparu ou ont laissé place à quelque chose de bien plus inquiétant.\n" 
                                          "C’est ici que votre femme a été vue pour la dernière fois. Depuis, plus aucun signe d’elle.\n" 
