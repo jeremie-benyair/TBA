@@ -333,11 +333,13 @@ class Actions:
                             game.player.quest_manager.add_quest(quete_barman) 
                             game.player.quest_manager.activate_quest("Réussir le défi du barman") 
                             print("🗝️ Nouvelle quête activée : Réussir le défi du barman")
+                        
+                        if quest and "Tuer un monstre" in quest.objectives:
+                            print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
                         if game.barman_found:
                             print("Barman : Tu as déjà trouvé le bon prix. Tu veux rejouer ? Trop tard.")
                             return True
-                        if game.barman_found and ("Tuer un monstre" not in quest.objectives):
-                            print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
+                        
                         
                         game.barman_game_active = True
                         game.barman_attempts = 0
