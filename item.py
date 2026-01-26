@@ -67,7 +67,7 @@ class Weapon(Item):
         for c in room.characters:
             if c.role == "monster":
                 
-                print(c.take_damage(self.damage))
+                print(c.take_damage(self.damage,game))
     
                 
                 import random
