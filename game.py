@@ -422,10 +422,7 @@ class Game:
 
 
     def print_welcome(self):
-        def print_welcome(self): 
-            
-            print( 
-                                        f"\nBienvenue {self.player.name} dans ce jeu d'aventure textuel.\n" 
+         print(f"\nBienvenue {self.player.name} dans ce jeu d'aventure textuel.\n" 
                                          "Vous venez d’arriver dans une ville abandonnée, autrefois paisible, aujourd’hui rongée par le silence et la peur.\n" 
                                          "Les rues sont désertes, les bâtiments à l’abandon, les habitants ont disparu ou ont laissé place à quelque chose de bien plus inquiétant.\n" 
                                          "C’est ici que votre femme a été vue pour la dernière fois. Depuis, plus aucun signe d’elle.\n" 
@@ -438,7 +435,10 @@ class Game:
                                          "- Ensuite, utilisez-le simplement avec : use\n" 
                                          "- Pour voir toutes les commandes disponibles : help\n\n" "Un bon premier réflexe : tapez la commande 'help' pour afficher toutes les commandes disponibles.\n" 
                                          "Le moindre détail peut faire la différence.\n" 
-                                         "Bonne chance." )
+                                         "Bonne chance.")
+       
+            
+            
         
 
         print(self.player.current_room.get_long_description())
