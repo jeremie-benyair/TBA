@@ -422,8 +422,21 @@ class Game:
 
 
     def print_welcome(self):
-        print(f"\nBienvenue {self.player.name} dans ce jeu d'aventure !")
-        print("Entrez 'help' si vous avez besoin d'aide.")
+        def print_welcome(self): print( f"\nBienvenue {self.player.name} dans ce jeu d'aventure textuel.\n" 
+                                         "Vous venez d’arriver dans une ville abandonnée, autrefois paisible, aujourd’hui rongée par le silence et la peur.\n" 
+                                         "Les rues sont désertes, les bâtiments à l’abandon, les habitants ont disparu ou ont laissé place à quelque chose de bien plus inquiétant.\n" 
+                                         "C’est ici que votre femme a été vue pour la dernière fois. Depuis, plus aucun signe d’elle.\n" 
+                                         "Votre objectif est clair : la retrouver. Pour cela, vous devrez explorer chaque recoin de cette ville, recoller les morceaux d’un passé brisé,\n" 
+                                         "et surtout, rassembler les indices qui vous mèneront jusqu’à elle.\n" 
+                                         "Mais attention : rien n’est laissé au hasard. Chaque pièce mérite d’être fouillée, chaque objet lisible mérite d’être lu et analysé en détail,\n" 
+                                         "chaque mot, chaque numéro a son importance. Ce que vous croyez anodin pourrait bien être la clé de votre progression.\n\n" 
+                                         "Quelques rappels utiles :\n"
+                                         "- Pour utiliser un objet, vous devez d’abord l’équiper avec la commande : carry <nom_objet>\n" 
+                                         "- Ensuite, utilisez-le simplement avec : use\n" 
+                                         "- Pour voir toutes les commandes disponibles : help\n\n" "Un bon premier réflexe : tapez la commande 'help' pour afficher toutes les commandes disponibles.\n" 
+                                         "Le moindre détail peut faire la différence.\n" 
+                                         "Bonne chance." )
+        
 
         print(self.player.current_room.get_long_description())
         from quest import Quest
@@ -434,6 +447,7 @@ class Game:
         self.player.quest_manager.activate_quest("Trouver l’hôtel")
         print("\n🎯 Quête principale : Accéder à la cave")
         print("🧭 1ère quête secondaire : Trouver l’hôtel et s’y rendre\n")
+        print("Entrez 'help' si vous avez besoin d'aide.")
 
 
 
