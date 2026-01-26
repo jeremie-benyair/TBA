@@ -337,10 +337,10 @@ class Actions:
                         if game.barman_found==False:
 
                         
-                            if quest and "Tuer un monstre" in quest.objectives:
+                            if "Tuer un monstre" in quest.objectives and game.monster_killed==False:
                                 print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
                                 return True
-                            else:
+                            if game.monster_killed==True:
                                 game.barman_game_active = True
                                 game.barman_attempts = 0
                                 print("Très bien. Devine le prix exact de la bouteille de whisky.")
