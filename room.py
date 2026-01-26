@@ -87,6 +87,7 @@ class Cave(Room):
                 if compteur==10:
                     print("Vous avez atteint votre nombre de tentatives maximums...\nLa cave se met à exploser...vous entendez des cris d'agonie : votre femme périt.\n")
                     game.loose()
+                    return
                 print(f"il vous reste {10-compteur} essais avant de perdre complètement la partie.\n")
                 
                  
