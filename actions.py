@@ -332,7 +332,7 @@ class Actions:
                             quete_barman = Quest( "Réussir le défi du barman", "Devinez le nombre que le barman a en tête compris entre 1 et 100", objectives=["Trouver le juste prix"], reward="Indice : 28" ) 
                             game.player.quest_manager.add_quest(quete_barman) 
                             game.player.quest_manager.activate_quest("Réussir le défi du barman") 
-                            print("🗝️ Nouvelle quête activée : Réussir le défi du barman")
+                            
                             quest = quete_barman
                         if game.barman_found==False:
 
@@ -346,7 +346,15 @@ class Actions:
                                 print("Très bien. Devine le prix exact de la bouteille de whisky.")
                                 print("C’est un nombre entre 1 et 100. Tu as 7 essais.")
                                 print("Tape simplement un nombre pour jouer.")
+                                return True
+                            else:
+                                game.barman_game_active = True
+                                game.barman_attempts = 0
+                                print("Très bien. Devine le prix exact de la bouteille de whisky.")
+                                print("C’est un nombre entre 1 et 100. Tu as 7 essais.")
+                                print("Tape simplement un nombre pour jouer.")
                                 game.player.quest_manager.activate_quest("Réussir le défi du barman")
+                                return True
                         else:
                             print("Barman : Tu as déjà trouvé le bon prix. Tu veux rejouer ? Trop tard.")
                             return True
