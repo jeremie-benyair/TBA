@@ -69,6 +69,7 @@ class Monster(Charactere):
                
                 print("🟢 Vous pouvez maintenant retourner jouer avec le barman.")
                 game.barman_found = False
+                game.monster_killed=True
             return f"{self.name} est vaincu !" 
                 
         return f"{self.name} a encore {self.health} PV." 
