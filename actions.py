@@ -333,20 +333,26 @@ class Actions:
                             game.player.quest_manager.add_quest(quete_barman) 
                             game.player.quest_manager.activate_quest("Réussir le défi du barman") 
                             print("🗝️ Nouvelle quête activée : Réussir le défi du barman")
+                            quest = quete_barman
+                        if game.barman_found==False:
+
                         
-                        if quest and "Tuer un monstre" in quest.objectives:
-                            print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
-                        if game.barman_found:
+                            if quest and "Tuer un monstre" in quest.objectives:
+                                print(" 'Tu as déjà joué. Va tuer un monstre si tu veux rejouer.\n' ")
+                                return True
+                            else:
+                                game.barman_game_active = True
+                                game.barman_attempts = 0
+                                print("Très bien. Devine le prix exact de la bouteille de whisky.")
+                                print("C’est un nombre entre 1 et 100. Tu as 7 essais.")
+                                print("Tape simplement un nombre pour jouer.")
+                                game.player.quest_manager.activate_quest("Réussir le défi du barman")
+                        else:
                             print("Barman : Tu as déjà trouvé le bon prix. Tu veux rejouer ? Trop tard.")
                             return True
                         
                         
-                        game.barman_game_active = True
-                        game.barman_attempts = 0
-                        print("Très bien. Devine le prix exact de la bouteille de whisky.")
-                        print("C’est un nombre entre 1 et 100. Tu as 7 essais.")
-                        print("Tape simplement un nombre pour jouer.")
-                        game.player.quest_manager.activate_quest("Réussir le défi du barman")
+                        
                     else:
                         print("Barman : Tant pis, une autre fois peut-être.")
                     return True
