@@ -373,6 +373,18 @@ class Game:
             nombre = int(command_string.strip())
             self.barman_attempts += 1
     
+            
+    
+            if self.barman_attempts >= 7:
+                print(" 'Raté.' Tu as épuisé tes 7 essais.")
+                self.barman_game_active = False
+            
+                quest = self.player.quest_manager.get_quest_by_title("Réussir le défi du barman")
+                if quest and "Tuer un monstre" not in quest.objectives:
+                    quest.objectives.append("Tuer un monstre")
+                    quest.is_completed = False 
+                    print("🧟‍♂️ Nouvel objectif ajouté à la quête : Tuer un monstre pour pouvoir rejouer avec le barman.")
+            
             if nombre < self.barman_secret:
                 print("C’est plus.")
                 return
@@ -392,18 +404,8 @@ class Game:
                 self.barman_game_active = False
                 self.barman_found = True
                 return
-    
-            if self.barman_attempts >= 7:
-                print(" 'Raté.' Tu as épuisé tes 7 essais.")
-                self.barman_game_active = False
-            
-                quest = self.player.quest_manager.get_quest_by_title("Réussir le défi du barman")
-                if quest and "Tuer un monstre" not in quest.objectives:
-                    quest.objectives.append("Tuer un monstre")
-                    quest.is_completed = False 
-                    print("🧟‍♂️ Nouvel objectif ajouté à la quête : Tuer un monstre pour pouvoir rejouer avec le barman.")
 
-                return
+              
                     
 
             
