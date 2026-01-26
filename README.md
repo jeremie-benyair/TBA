@@ -1,6 +1,11 @@
 # Silent Hill - Jeu d’aventure textuel
+Un jeu narratif et immersif dans une ville brumeuse et inquiétante, inspiré de l’univers de Silent Hill. Vous incarnez un homme à la recherche de sa femme disparue, contraint d’explorer une ville abandonnée peuplée de créatures hostiles et de personnages énigmatiques.
 
-Ce dépôt contient la version finale du jeu d’aventure textuel inspiré de l’univers de Silent Hill.
+Ce dépôt contient la version finale du jeu pour évaluation.
+
+Un jeu de Benyair Jérémie et Jourdain Alix.
+
+
 
 Le joueur incarne un homme à la recherche de sa femme disparue dans une ville brumeuse et inquiétante. Le jeu propose déjà une exploration libre, des objets interactifs, des personnages non-joueurs (PNJ), des monstres hostiles, ainsi qu’un système de quêtes dynamiques.
 
@@ -27,7 +32,7 @@ Clonez ce dépôt, puis exécutez le fichier `game.py` dans un terminal Python. 
 
 ## L’univers et la quête
 
-Vous incarnez un homme à la recherche de sa femme disparue dans la ville brumeuse et inquiétante de Silent Hill. La ville est plongée dans le silence, peuplée de créatures monstrueuses et de personnages énigmatiques. Pour retrouver votre femme, vous devrez explorer les lieux, interagir avec les PNJ, résoudre des énigmes, et accomplir plusieurs quêtes.
+Vous incarnez un homme à la recherche de sa femme disparue dans la ville brumeuse et inquiétante de Silent Hill. Cette ville, autrefois habitée, est désormais plongée dans un silence oppressant, peuplée de créatures monstrueuses, de lieux abandonnés et de personnages énigmatiques. Votre objectif est de découvrir où se trouve votre femme et comment l’atteindre. Pour cela, vous devrez explorer la ville, fouiller les bâtiments, collecter des objets utiles, et interagir avec les personnages non-joueurs (PNJ) qui détiennent parfois des indices cruciaux. Certaines zones sont inaccessibles sans avoir résolu certaines énigmes ou accompli des quêtes spécifiques.L’histoire se dévoile progressivement à travers les dialogues, les objets trouvés et les quêtes accomplies. Chaque découverte vous rapproche un peu plus de la vérité… et de votre objectif.
 
 ## Commandes disponibles
 
