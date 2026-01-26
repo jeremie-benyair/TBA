@@ -229,9 +229,13 @@ Sous-classe :
 
 ## Perspectives de développement
 
-- Ajout d’une interface graphique (images, boutons, navigation visuelle)  
-- Nouvelles salles, objets, monstres et quêtes pour enrichir l’univers  
-- Salles spéciales (pièces cachées, énigmes lumineuses, portes secrètes)  
-- Dialogues conditionnels selon les objets, quêtes ou interactions passées  
+- Ajout d’une interface graphique (images, boutons, navigation visuelle)
+- Ajout d'une ambiance sonore
+- Affichage du pourcentage de stockage atteint lorsque l'on fait tape la commande 'check'.
+- Affichege du status du joueur(pourcentage de PV restants...) à l'aide d'une commande.
+- Agrandir la map, rajouter des salles, rajouter des énigmes...
+- Limiter le temps de partie pour augmenter la difficulté .
+- Améliorer le gameplay en ce qui concerne l'enchainement carry/use(qui peut sembler fastidieux et frustrant) lorsqu'on veut utiliser un objet.
+- Rajouter un boss finale dans la cave plus difficile à abattre que les pnj de type "Monster".
 - Système de sauvegarde/chargement de partie  
-- Succès cachés ou fins alternatives selon les choix du joueur  
+- fins alternatives selon les choix du joueur (dilemme moraux...etc) 
